@@ -1,0 +1,143 @@
+{
+	"info": {
+		"_postman_id": "f695a235-d16f-4679-a546-cb48e36ea6e5",
+		"name": "Infinity-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost/infinity-api/user/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "root@email.tld",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "rootroot",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/infinity-api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"infinity-api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/infinity-api/user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImV4cCI6MTYxNDE0NDAzMSwicm9sZSI6InJvb3QifQ.i_IDXUaSpCVAXal1SnAZlnS96P_5ElEQb7vPZhw4y9I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/infinity-api/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"infinity-api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/infinity-api/user/view/1",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImV4cCI6MTYxNDE0NDAzMSwicm9sZSI6InJvb3QifQ.i_IDXUaSpCVAXal1SnAZlnS96P_5ElEQb7vPZhw4y9I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/infinity-api/user/view/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"infinity-api",
+						"user",
+						"view",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/infinity-api/user/add",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImV4cCI6MTYxNDE0NDAzMSwicm9sZSI6InJvb3QifQ.i_IDXUaSpCVAXal1SnAZlnS96P_5ElEQb7vPZhw4y9I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"\",\r\n    \"email\": \"sophonaratouch@gmail.com\",\r\n    \"password\": \"Nara@12345678\",\r\n    \"active\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/infinity-api/user/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"infinity-api",
+						"user",
+						"add"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
