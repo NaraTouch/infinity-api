@@ -47,7 +47,7 @@ class UsersController extends AppController
 	{
 		if ($this->request->is('post')) {
 			$this->paginate = [
-				'contain' => ['Roles'],
+				'contain' => ['Groups'],
 			];
 			$users = $this->paginate($this->Users);
 			$data = [];
@@ -64,7 +64,7 @@ class UsersController extends AppController
 	{
 		if ($this->request->is('post')) {
 			$user = $this->Users->get($id, [
-				'contain' => ['Roles'],
+				'contain' => ['Groups'],
 			]);
 			$data = [];
 			if ($user) {

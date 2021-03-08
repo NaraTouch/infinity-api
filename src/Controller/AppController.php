@@ -18,7 +18,7 @@ class AppController extends Controller
 						'username' => 'email',
 						'password' => 'password',
 					],
-					'contain' => ['Roles']
+					'contain' => ['Groups']
 				],
 				'ADmad/JwtAuth.Jwt' => [
 					'parameter' => 'token',

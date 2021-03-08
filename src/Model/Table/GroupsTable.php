@@ -3,19 +3,19 @@ namespace App\Model\Table;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
-class RolesTable extends Table
+class GroupsTable extends Table
 {
 
 	public function initialize(array $config)
 	{
 		parent::initialize($config);
 
-		$this->setTable('roles');
+		$this->setTable('groups');
 		$this->setDisplayField('name');
 		$this->setPrimaryKey('id');
 
 		$this->hasMany('Users', [
-			'foreignKey' => 'role_id',
+			'foreignKey' => 'group_id',
 		]);
 	}
 

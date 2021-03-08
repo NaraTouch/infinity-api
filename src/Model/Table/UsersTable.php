@@ -17,8 +17,8 @@ class UsersTable extends Table
 
 		$this->addBehavior('Timestamp');
 
-		$this->belongsTo('Roles', [
-			'foreignKey' => 'role_id',
+		$this->belongsTo('Groups', [
+			'foreignKey' => 'group_id',
 			'joinType' => 'INNER',
 		]);
 		$this->hasOne('Tokens')
