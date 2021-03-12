@@ -15,7 +15,7 @@ class TokensTable extends Table
 
 		$this->addBehavior('Timestamp');
 
-		$this->belongsTo('User')
+		$this->belongsTo('Users')
 			->setForeignKey('user_id');
 	}
 
