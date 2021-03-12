@@ -12,6 +12,7 @@ class GroupsTable extends Table
 
 		$this->setTable('groups');
 		$this->setDisplayField('name');
+		$this->addBehavior('Timestamp');
 		$this->setPrimaryKey('id');
 
 		$this->hasMany('Users', [

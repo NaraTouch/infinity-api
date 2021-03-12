@@ -111,8 +111,10 @@ return [
 
 	'Datasources' => [
 		'default' => [
-			'className' => Connection::class,
-			'driver' => Mysql::class,
+//			'className' => Connection::class,
+//			'driver' => Mysql::class,
+			'className' => 'Cake\Database\Connection',
+            'driver' => 'Cake\Database\Driver\Postgres',
 			'persistent' => false,
 			'host' => 'localhost',
 			/*
@@ -121,8 +123,8 @@ return [
 			 * the following line and set the port accordingly
 			 */
 			//'port' => 'non_standard_port_number',
-			'username' => 'root',
-			'password' => '',
+			'username' => 'postgres',
+			'password' => '123456',
 			'database' => 'infinity-database',
 			/*
 			 * You do not need to set this flag to use full utf-8 encoding (internal default since CakePHP 3.6).

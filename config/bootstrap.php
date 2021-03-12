@@ -84,6 +84,8 @@ Type::build('datetime')
 Type::build('timestamp')
 	->useImmutable();
 
+// API MASTER GROUP Code.
+define('MASTER_CODE', 'NARA');
 
 //Define Message Area
 define('MESSAGE_REQUIRED', ' is required.');

@@ -11119,3 +11119,100 @@ Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
 
 
 
+2021-03-12 09:01:04 Error: [Cake\Database\Exception\MissingExtensionException] Database driver Cake\Database\Driver\Postgres cannot be used due to a missing PHP extension or unmet dependency in C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Connection.php on line 178
+Exception Attributes: array (
+  'driver' => 'Cake\\Database\\Driver\\Postgres',
+)
+Stack Trace:
+#0 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Connection.php(119): Cake\Database\Connection->setDriver(Object(Cake\Database\Driver\Postgres), Array)
+#1 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Datasource\ConnectionRegistry.php(88): Cake\Database\Connection->__construct(Array)
+#2 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Core\ObjectRegistry.php(96): Cake\Datasource\ConnectionRegistry->_create('Cake\\Database\\C...', 'default', Array)
+#3 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Datasource\ConnectionManager.php(204): Cake\Core\ObjectRegistry->load('Cake\\Database\\C...', Array)
+#4 C:\xampp\htdocs\infinity-api\vendor\cakephp\debug_kit\src\Panel\SqlLogPanel.php(50): Cake\Datasource\ConnectionManager::get('default')
+#5 C:\xampp\htdocs\infinity-api\vendor\cakephp\debug_kit\src\ToolbarService.php(196): DebugKit\Panel\SqlLogPanel->initialize()
+#6 C:\xampp\htdocs\infinity-api\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(52): DebugKit\ToolbarService->initializePanels()
+#7 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Server.php(97): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#10 C:\xampp\htdocs\infinity-api\webroot\index.php(40): Cake\Http\Server->run()
+#11 {main}
+
+
+2021-03-12 09:02:16 Error: [PDOException] SQLSTATE[42883]: Undefined function: 7 ERROR:  operator does not exist: uuid = character varying
+LINE 1: ...users Users INNER JOIN groups Groups ON Groups.id = (Users.g...
+                                                             ^
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts. (C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php:173)
+#0 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(173): PDOStatement->execute(NULL)
+#1 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(173): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(55): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Connection.php(333): Cake\Database\Log\LoggingStatement->execute()
+#4 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Core\Retry\CommandRetry.php(67): Cake\Database\Connection->Cake\Database\{closure}()
+#5 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Connection.php(336): Cake\Core\Retry\CommandRetry->run(Object(Closure))
+#6 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Query.php(218): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#7 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\ORM\Query.php(1141): Cake\Database\Query->execute()
+#8 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(310): Cake\ORM\Query->_execute()
+#9 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\ORM\Query.php(1088): Cake\ORM\Query->_all()
+#10 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(472): Cake\ORM\Query->all()
+#11 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Auth\BaseAuthenticate.php(114): Cake\ORM\Query->first()
+#12 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Auth\FormAuthenticate.php(86): Cake\Auth\BaseAuthenticate->_findUser('root@email.tld', 'rootroot')
+#13 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Component\AuthComponent.php(824): Cake\Auth\FormAuthenticate->authenticate(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#14 C:\xampp\htdocs\infinity-api\src\Controller\UsersController.php(26): Cake\Controller\Component\AuthComponent->identify()
+#15 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Controller.php(609): App\Controller\UsersController->login()
+#16 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(120): Cake\Controller\Controller->invokeAction()
+#17 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\UsersController))
+#18 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\BaseApplication.php(234): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#19 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#20 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(162): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#21 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#22 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#23 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#24 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(96): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#25 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#26 C:\xampp\htdocs\infinity-api\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#27 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#28 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#29 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Server.php(97): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#30 C:\xampp\htdocs\infinity-api\webroot\index.php(40): Cake\Http\Server->run()
+#31 {main}
+Request URL: /user/login
+
+
+2021-03-12 09:10:01 Error: [PDOException] SQLSTATE[42883]: Undefined function: 7 ERROR:  operator does not exist: uuid = character varying
+LINE 1: ...users Users INNER JOIN groups Groups ON Groups.id = (Users.g...
+                                                             ^
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts. (C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php:173)
+#0 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(173): PDOStatement->execute(NULL)
+#1 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(173): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(55): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Connection.php(333): Cake\Database\Log\LoggingStatement->execute()
+#4 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Core\Retry\CommandRetry.php(67): Cake\Database\Connection->Cake\Database\{closure}()
+#5 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Connection.php(336): Cake\Core\Retry\CommandRetry->run(Object(Closure))
+#6 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Query.php(218): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#7 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\ORM\Query.php(1141): Cake\Database\Query->execute()
+#8 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(310): Cake\ORM\Query->_execute()
+#9 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\ORM\Query.php(1088): Cake\ORM\Query->_all()
+#10 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(472): Cake\ORM\Query->all()
+#11 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Auth\BaseAuthenticate.php(114): Cake\ORM\Query->first()
+#12 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Auth\FormAuthenticate.php(86): Cake\Auth\BaseAuthenticate->_findUser('root@email.tld', 'rootroot')
+#13 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Component\AuthComponent.php(824): Cake\Auth\FormAuthenticate->authenticate(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#14 C:\xampp\htdocs\infinity-api\src\Controller\UsersController.php(26): Cake\Controller\Component\AuthComponent->identify()
+#15 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Controller.php(609): App\Controller\UsersController->login()
+#16 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(120): Cake\Controller\Controller->invokeAction()
+#17 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\UsersController))
+#18 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\BaseApplication.php(234): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#19 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#20 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(162): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#21 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#22 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#23 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#24 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(96): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#25 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#26 C:\xampp\htdocs\infinity-api\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#27 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#28 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#29 C:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Server.php(97): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#30 C:\xampp\htdocs\infinity-api\webroot\index.php(40): Cake\Http\Server->run()
+#31 {main}
+Request URL: /user/login
+
+
