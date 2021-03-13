@@ -31,9 +31,9 @@ class ResponseComponent extends Component
 		if ($http_status == 400) {
 			$message = 'Bad Request';
 		} else if ($http_status == 401) {
-			$message = 'Unauthorized';
+			$message = 'Your session has been logout from data center. Please logout and login again.';
 		} else if ($http_status == 402) {
-			$message = 'Your session has been logout';
+			$message = 'Unauthorized';
 		} else if ($http_status == 403) {
 			$message = 'Forbidden';
 		} else if ($http_status == 404) {

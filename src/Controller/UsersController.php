@@ -12,7 +12,6 @@ class UsersController extends AppController
 		$this->loadComponent('Response');
 		$this->loadComponent('AuthJWT');
 		$this->Auth->allow(['login']);
-		$this->verifyAccess();
 	}
 	
 	public function getProfile()
