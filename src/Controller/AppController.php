@@ -29,36 +29,13 @@ class AppController extends Controller
 					'fields' => [
 						'username' => 'id'
 					],
-					'queryDatasource' => false
+					'queryDatasource' => true
 				]
 			],
-			'unauthorizedRedirect' => false,
+			'authError' => ['controller' => 'Error', 'action' => 'Message', 402],
+			'unauthorizedRedirect' => ['controller' => 'Error', 'action' => 'Message', 401],
 			'checkAuthIn' => 'Controller.initialize'
 		]);
-		$this->verifyAccess();
-	}
-
-	public function verifyAccess()
-	{
-		$header = $this->request->getHeaders();
-		$controller = strtolower($this->request->getParam('controller'));
-		$action = strtolower($this->request->getParam('action'));
-		if ($controller !== 'users' || $action !== 'login') {
-			if(array_key_exists('Authorization', $header) && !empty($header['Authorization'])) {
-				$str_token = explode(" ", $header['Authorization'][0]);
-				if (isset($str_token) && $str_token[0] === 'Bearer') {
-					$token = $str_token[1];
-					$get_token = $this->Tokens->getUserByToken($token);
-					if (!$get_token) {
-						return $this->redirect(['controller' => 'Error', 'action' => 'Message', 402]);
-					}
-				} else {
-					return $this->redirect(['controller' => 'Error', 'action' => 'Message', 402]);
-				}
-			} else {
-				return $this->redirect(['controller' => 'Error', 'action' => 'Message', 401]);
-			}
-		}
 	}
 	
 }

@@ -5,22 +5,22 @@ use Cake\Routing\Route\DashedRoute;
 Router::defaultRouteClass(DashedRoute::class);
 
 Router::scope('/', function (RouteBuilder $routes) {
-	$routes->connect('/user/get_profile',
+	$routes->connect('/users/get_profile',
 			[
 				'controller' => 'Users',
 				'action' => 'getProfile'
 			]);
-	$routes->connect('/user/login',
+	$routes->connect('/users/login',
 			[
 				'controller' => 'Users',
 				'action' => 'login'
 			]);
-	$routes->connect('/user',
+	$routes->connect('/users',
 			[
 				'controller' => 'Users',
 				'action' => 'index'
 			]);
-	$routes->connect('/user/view/:id',
+	$routes->connect('/users/view/:id',
 			[
 				'controller' => 'Users',
 				'action' => 'view'
@@ -28,7 +28,7 @@ Router::scope('/', function (RouteBuilder $routes) {
 			[
 				'pass' => ['id']
 			]);
-	$routes->connect('/user/add',
+	$routes->connect('/users/add',
 			[
 				'controller' => 'Users',
 				'action' => 'add'

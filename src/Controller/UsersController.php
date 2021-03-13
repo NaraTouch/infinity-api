@@ -1,6 +1,7 @@
 <?php
 namespace App\Controller;
 use App\Controller\AppController;
+use Cake\Event\EventInterface;
 
 class UsersController extends AppController
 {
@@ -11,8 +12,9 @@ class UsersController extends AppController
 		$this->loadComponent('Response');
 		$this->loadComponent('AuthJWT');
 		$this->Auth->allow(['login']);
+		$this->verifyAccess();
 	}
-
+	
 	public function getProfile()
 	{
 		if ($this->request->is('post')) {
@@ -82,17 +84,18 @@ class UsersController extends AppController
 		if ($this->request->is('post')) {
 			$user = $this->Users->newEntity();
 			$request_body = $this->request->input('json_decode');
-			$data = (array)$request_body;
-			$entity = $this->Users->patchEntity($user, $data);
-			if ($this->Users->save($entity)) {
-				$http_code = 200;
-				$message = 'Success';
-				return $this->Response->Response($http_code, $message);
-			} else {
-				$http_code = 400;
-				$message = 'Success';
-				return $this->Response->Response($http_code, $message, null, $entity->errors());
-			}
+			dump($request_body);
+//			$data = (array)$request_body;
+//			$entity = $this->Users->patchEntity($user, $data);
+//			if ($this->Users->save($entity)) {
+//				$http_code = 200;
+//				$message = 'Success';
+//				return $this->Response->Response($http_code, $message);
+//			} else {
+//				$http_code = 400;
+//				$message = 'Success';
+//				return $this->Response->Response($http_code, $message, null, $entity->errors());
+//			}
 		}
 	}
 
