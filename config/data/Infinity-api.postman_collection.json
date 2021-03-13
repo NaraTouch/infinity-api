@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "f695a235-d16f-4679-a546-cb48e36ea6e5",
+		"_postman_id": "c51d12bc-9af4-4ed4-be15-adb27fbb95c9",
 		"name": "Infinity-api",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -26,14 +26,14 @@
 					]
 				},
 				"url": {
-					"raw": "http://localhost/infinity-api/user/login",
+					"raw": "http://localhost/infinity-api/users/login",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"path": [
 						"infinity-api",
-						"user",
+						"users",
 						"login"
 					]
 				}
@@ -48,22 +48,31 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImV4cCI6MTYxNDE0NDAzMSwicm9sZSI6InJvb3QifQ.i_IDXUaSpCVAXal1SnAZlnS96P_5ElEQb7vPZhw4y9I",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImV4cCI6MTYxNTYyNjM1OSwicm9sZSI6IkdvZCJ9.Zi0EkJx-WRbeMmsFpwjWD3cnKnEIkRTtyGRo9iKCz5M",
 							"type": "string"
 						}
 					]
 				},
 				"method": "POST",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "http://localhost/infinity-api/user",
+					"raw": "http://localhost/infinity-api/users",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"path": [
 						"infinity-api",
-						"user"
+						"users"
 					]
 				}
 			},
@@ -134,6 +143,35 @@
 						"infinity-api",
 						"user",
 						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/infinity-api/groups",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImV4cCI6MTYxNTYxMTMyMywicm9sZSI6IkdvZCJ9.YrC183pPhgReZ5SbUlwQMqdYUVizGihF6diVhZw-O1I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/infinity-api/groups",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"infinity-api",
+						"groups"
 					]
 				}
 			},
