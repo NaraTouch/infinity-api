@@ -19,6 +19,9 @@ class GroupsTable extends Table
 		$this->hasMany('Users', [
 			'foreignKey' => 'group_id',
 		]);
+		$this->hasMany('Roles', [
+			'foreignKey' => 'group_id',
+		]);
 	}
 
 	public function validationDefault(Validator $validator)

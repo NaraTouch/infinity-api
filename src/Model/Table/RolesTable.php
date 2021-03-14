@@ -16,9 +16,9 @@ class RolesTable extends Table
 		$this->addBehavior('Timestamp');
 		$this->setPrimaryKey('id');
 
-		$this->hasMany('Groups', [
-			'foreignKey' => 'group_id',
-		]);
+		$this->belongsTo('Groups')
+			->setForeignKey('group_id')
+			->setDependent(true);
 	}
 
 	public function validationDefault(Validator $validator)

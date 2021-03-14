@@ -52,7 +52,7 @@ class GroupsController extends AppController
 			if ($group) {
 				$http_code = 200;
 				$message = 'Success';
-				return $this->Response->Response($http_code, $message, $user);
+				return $this->Response->Response($http_code, $message, $group);
 			} else {
 				$http_code = 404;
 				$message = 'User not found.';

@@ -14,6 +14,9 @@ class RolesController extends AppController
 	public function index()
 	{
 		if ($this->request->is('post')) {
+			$this->paginate = [
+				'contain' => ['Groups'],
+			];
 			$roles = $this->paginate($this->Roles);
 			$data = [];
 			if ($roles) {
@@ -52,7 +55,7 @@ class RolesController extends AppController
 			if ($role) {
 				$http_code = 200;
 				$message = 'Success';
-				return $this->Response->Response($http_code, $message, $user);
+				return $this->Response->Response($http_code, $message, $role);
 			} else {
 				$http_code = 404;
 				$message = 'User not found.';

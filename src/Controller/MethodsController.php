@@ -14,6 +14,9 @@ class MethodsController extends AppController
 	public function index()
 	{
 		if ($this->request->is('post')) {
+			$this->paginate = [
+				'contain' => ['Modules'],
+			];
 			$methods = $this->paginate($this->Methods);
 			$data = [];
 			if ($methods) {
@@ -52,7 +55,7 @@ class MethodsController extends AppController
 			if ($method) {
 				$http_code = 200;
 				$message = 'Success';
-				return $this->Response->Response($http_code, $message, $user);
+				return $this->Response->Response($http_code, $message, $method);
 			} else {
 				$http_code = 404;
 				$message = 'User not found.';
