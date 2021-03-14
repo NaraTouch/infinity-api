@@ -1,24 +1,23 @@
 <?php
 namespace App\Model\Table;
-use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
-class GroupsTable extends Table
+class MethodsTable extends Table
 {
 
 	public function initialize(array $config)
 	{
 		parent::initialize($config);
 
-		$this->setTable('groups');
+		$this->setTable('methods');
 		$this->setDisplayField('name');
 		$this->addBehavior('Timestamp');
 		$this->setPrimaryKey('id');
 
-		$this->hasMany('Users', [
-			'foreignKey' => 'group_id',
-		]);
+		$this->belongsTo('Modules')
+			->setForeignKey('module_id')
+			->setDependent(true);
 	}
 
 	public function validationDefault(Validator $validator)
@@ -26,6 +25,11 @@ class GroupsTable extends Table
 		$validator
 			->nonNegativeInteger('id')
 			->allowEmptyString('id', null, 'create');
+
+		$validator
+			->scalar('module_id')
+			->requirePresence('module_id')
+			->notEmpty('module_id');
 
 		$validator
 			->scalar('name')
@@ -36,10 +40,19 @@ class GroupsTable extends Table
 			->scalar('display')
 			->maxLength('display', 180)
 			->notEmptyString('display');
+		
+		$validator
+			->scalar('symbol')
+			->maxLength('symbol', 180)
+			->notEmptyString('symbol');
 
 		$validator
-			->scalar('code')
-			->maxLength('code', 10);
+			->numeric('sort')
+			->notEmpty('sort');
+
+		$validator
+			->boolean('is_menu')
+			->allowEmptyString('is_menu');
 
 		$validator
 			->boolean('active')
@@ -47,12 +60,5 @@ class GroupsTable extends Table
 
 		return $validator;
 	}
-	
-	public function buildRules(RulesChecker $rules)
-	{
-		$rules->add($rules->isUnique(['name']));
-		$rules->add($rules->isUnique(['code']));
 
-		return $rules;
-	}
 }

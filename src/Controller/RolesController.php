@@ -2,7 +2,7 @@
 namespace App\Controller;
 use App\Controller\AppController;
 
-class GroupsController extends AppController
+class RolesController extends AppController
 {
 
 	public function initialize()
@@ -14,10 +14,10 @@ class GroupsController extends AppController
 	public function index()
 	{
 		if ($this->request->is('post')) {
-			$groups = $this->paginate($this->Groups);
+			$roles = $this->paginate($this->Roles);
 			$data = [];
-			if ($groups) {
-				$data = $groups;
+			if ($roles) {
+				$data = $roles;
 			}
 			$http_code = 200;
 			$message = 'Success';
@@ -28,11 +28,11 @@ class GroupsController extends AppController
 	public function add()
 	{
 		if ($this->request->is('post')) {
-			$group = $this->Groups->newEntity();
+			$role = $this->Roles->newEntity();
 			$request_body = $this->request->input('json_decode');
 			$data = (array)$request_body;
-			$entity = $this->Groups->patchEntity($group, $data);
-			if ($this->Groups->save($entity)) {
+			$entity = $this->Roles->patchEntity($role, $data);
+			if ($this->Roles->save($entity)) {
 				$http_code = 200;
 				$message = 'Success';
 				return $this->Response->Response($http_code, $message);
@@ -48,8 +48,8 @@ class GroupsController extends AppController
 	{
 		if ($this->request->is('post')) {
 			$request_body = $this->request->input('json_decode');
-			$group = $this->Groups->get($request_body->id);
-			if ($group) {
+			$role = $this->Roles->get($request_body->id);
+			if ($role) {
 				$http_code = 200;
 				$message = 'Success';
 				return $this->Response->Response($http_code, $message, $user);
@@ -67,10 +67,10 @@ class GroupsController extends AppController
 	{
 		if ($this->request->is(['patch', 'post', 'put'])) {
 			$request_body = $this->request->input('json_decode');
-			$group = $this->Groups->get($request_body->id);
+			$role = $this->Roles->get($request_body->id);
 			$data = (array)$request_body;
-			$entity = $this->Groups->patchEntity($group, $data);
-			if ($this->Groups->save($entity)) {
+			$entity = $this->Roles->patchEntity($role, $data);
+			if ($this->Roles->save($entity)) {
 				$http_code = 200;
 				$message = 'Success';
 				return $this->Response->Response($http_code, $message);
@@ -86,8 +86,8 @@ class GroupsController extends AppController
 	{
 		if ($this->request->is(['patch', 'post', 'put'])) {
 			$request_body = $this->request->input('json_decode');
-			$group = $this->Groups->get($request_body->id);
-			if ($this->Groups->delete($group)) {
+			$role = $this->Roles->get($request_body->id);
+			if ($this->Roles->delete($role)) {
 				$http_code = 200;
 				$message = 'Success';
 				return $this->Response->Response($http_code, $message);

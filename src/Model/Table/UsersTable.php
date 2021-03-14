@@ -21,6 +21,7 @@ class UsersTable extends Table
 			'foreignKey' => 'group_id',
 			'joinType' => 'INNER',
 		]);
+
 		$this->hasOne('Tokens')
 			->setForeignKey('user_id');
 	}
@@ -64,9 +65,9 @@ class UsersTable extends Table
 			->allowEmptyString('active');
 	
 		$validator
-			->requirePresence('role_id')
-			->maxLength('role_id', 255)
-			->notEmpty('role_id', 'Role'.MESSAGE_REQUIRED);
+			->requirePresence('group_id')
+			->maxLength('group_id', 255)
+			->notEmpty('group_id', 'Groups'.MESSAGE_REQUIRED);
 
 		return $validator;
 	}
@@ -74,7 +75,7 @@ class UsersTable extends Table
 	public function buildRules(RulesChecker $rules)
 	{
 		$rules->add($rules->isUnique(['email']));
-		$rules->add($rules->existsIn(['role_id'], 'Roles'));
+		$rules->add($rules->existsIn(['group_id'], 'Groups'));
 
 		return $rules;
 	}

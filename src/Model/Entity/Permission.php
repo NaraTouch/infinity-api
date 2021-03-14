@@ -2,7 +2,7 @@
 namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
-class Group extends Entity
+class Permission extends Entity
 {
 
 	protected $_accessible = [

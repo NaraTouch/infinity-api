@@ -4,19 +4,19 @@ use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
-class GroupsTable extends Table
+class RolesTable extends Table
 {
 
 	public function initialize(array $config)
 	{
 		parent::initialize($config);
 
-		$this->setTable('groups');
+		$this->setTable('roles');
 		$this->setDisplayField('name');
 		$this->addBehavior('Timestamp');
 		$this->setPrimaryKey('id');
 
-		$this->hasMany('Users', [
+		$this->hasMany('Groups', [
 			'foreignKey' => 'group_id',
 		]);
 	}
@@ -26,6 +26,11 @@ class GroupsTable extends Table
 		$validator
 			->nonNegativeInteger('id')
 			->allowEmptyString('id', null, 'create');
+
+		$validator
+			->scalar('group_id')
+			->requirePresence('group_id')
+			->notEmpty('group_id');
 
 		$validator
 			->scalar('name')
@@ -38,10 +43,6 @@ class GroupsTable extends Table
 			->notEmptyString('display');
 
 		$validator
-			->scalar('code')
-			->maxLength('code', 10);
-
-		$validator
 			->boolean('active')
 			->allowEmptyString('active');
 
@@ -51,7 +52,6 @@ class GroupsTable extends Table
 	public function buildRules(RulesChecker $rules)
 	{
 		$rules->add($rules->isUnique(['name']));
-		$rules->add($rules->isUnique(['code']));
 
 		return $rules;
 	}

@@ -61,19 +61,23 @@ class UsersController extends AppController
 		}
 	}
 
-	public function view($id = null)
+	public function view()
 	{
 		if ($this->request->is('post')) {
-			$user = $this->Users->get($id, [
+			$request_body = $this->request->input('json_decode');
+			$user = $this->Users->get($request_body->id, [
 				'contain' => ['Groups'],
 			]);
-			$data = [];
 			if ($user) {
-				$data = $user;
+				$http_code = 200;
+				$message = 'Success';
+				return $this->Response->Response($http_code, $message, $user);
+			} else {
+				$http_code = 404;
+				$message = 'User not found.';
+				return $this->Response->Response($http_code, $message, null, null);
 			}
-			$http_code = 200;
-			$message = 'Success';
-			return $this->Response->Response($http_code, $message, $data);
+			
 		}
 		
 	}
@@ -83,49 +87,56 @@ class UsersController extends AppController
 		if ($this->request->is('post')) {
 			$user = $this->Users->newEntity();
 			$request_body = $this->request->input('json_decode');
-			dump($request_body);
-//			$data = (array)$request_body;
-//			$entity = $this->Users->patchEntity($user, $data);
-//			if ($this->Users->save($entity)) {
-//				$http_code = 200;
-//				$message = 'Success';
-//				return $this->Response->Response($http_code, $message);
-//			} else {
-//				$http_code = 400;
-//				$message = 'Success';
-//				return $this->Response->Response($http_code, $message, null, $entity->errors());
-//			}
-		}
-	}
-
-	public function edit($id = null)
-	{
-		$user = $this->Users->get($id, [
-			'contain' => [],
-		]);
-		if ($this->request->is(['patch', 'post', 'put'])) {
-			$user = $this->Users->patchEntity($user, $this->request->getData());
-			if ($this->Users->save($user)) {
-				$this->Flash->success(__('The user has been saved.'));
-
-				return $this->redirect(['action' => 'index']);
+			$data = (array)$request_body;
+			$entity = $this->Users->patchEntity($user, $data);
+			if ($this->Users->save($entity)) {
+				$http_code = 200;
+				$message = 'Success';
+				return $this->Response->Response($http_code, $message);
+			} else {
+				$http_code = 400;
+				$message = 'Add not success';
+				return $this->Response->Response($http_code, $message, null, $entity->errors());
 			}
-			$this->Flash->error(__('The user could not be saved. Please, try again.'));
 		}
-		$roles = $this->Users->Roles->find('list', ['limit' => 200]);
-		$this->set(compact('user', 'roles'));
 	}
 
-	public function delete($id = null)
+	public function edit()
 	{
-		$this->request->allowMethod(['post', 'delete']);
-		$user = $this->Users->get($id);
-		if ($this->Users->delete($user)) {
-			$this->Flash->success(__('The user has been deleted.'));
-		} else {
-			$this->Flash->error(__('The user could not be deleted. Please, try again.'));
+		if ($this->request->is(['patch', 'post', 'put'])) {
+			$request_body = $this->request->input('json_decode');
+			$user = $this->Users->get($request_body->id);
+			$data = (array)$request_body;
+			if (empty($data['password'])) {
+				$data['password'] = $user->password;
+			}
+			$entity = $this->Users->patchEntity($user, $data);
+			if ($this->Users->save($entity)) {
+				$http_code = 200;
+				$message = 'Success';
+				return $this->Response->Response($http_code, $message);
+			} else {
+				$http_code = 400;
+				$message = 'Edit not success';
+				return $this->Response->Response($http_code, $message, null, $entity->errors());
+			}
 		}
+	}
 
-		return $this->redirect(['action' => 'index']);
+	public function delete()
+	{
+		if ($this->request->is(['patch', 'post', 'put'])) {
+			$request_body = $this->request->input('json_decode');
+			$user = $this->Users->get($request_body->id);
+			if ($this->Users->delete($user)) {
+				$http_code = 200;
+				$message = 'Success';
+				return $this->Response->Response($http_code, $message);
+			} else {
+				$http_code = 400;
+				$message = 'Delete not success';
+				return $this->Response->Response($http_code, $message, null, null);
+			}
+		}
 	}
 }

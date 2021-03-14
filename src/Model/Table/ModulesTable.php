@@ -4,20 +4,20 @@ use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
-class GroupsTable extends Table
+class ModulesTable extends Table
 {
 
 	public function initialize(array $config)
 	{
 		parent::initialize($config);
 
-		$this->setTable('groups');
+		$this->setTable('modules');
 		$this->setDisplayField('name');
 		$this->addBehavior('Timestamp');
 		$this->setPrimaryKey('id');
 
-		$this->hasMany('Users', [
-			'foreignKey' => 'group_id',
+		$this->hasMany('Methods', [
+			'foreignKey' => 'module_id',
 		]);
 	}
 
@@ -36,10 +36,15 @@ class GroupsTable extends Table
 			->scalar('display')
 			->maxLength('display', 180)
 			->notEmptyString('display');
+		
+		$validator
+			->scalar('symbol')
+			->maxLength('symbol', 180)
+			->notEmptyString('symbol');
 
 		$validator
-			->scalar('code')
-			->maxLength('code', 10);
+			->numeric('sort')
+			->notEmpty('sort');
 
 		$validator
 			->boolean('active')
@@ -50,8 +55,8 @@ class GroupsTable extends Table
 	
 	public function buildRules(RulesChecker $rules)
 	{
+		$rules->add($rules->isUnique(['sort']));
 		$rules->add($rules->isUnique(['name']));
-		$rules->add($rules->isUnique(['code']));
 
 		return $rules;
 	}

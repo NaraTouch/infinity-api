@@ -2,7 +2,7 @@
 namespace App\Controller;
 use App\Controller\AppController;
 
-class GroupsController extends AppController
+class ModulesController extends AppController
 {
 
 	public function initialize()
@@ -14,10 +14,10 @@ class GroupsController extends AppController
 	public function index()
 	{
 		if ($this->request->is('post')) {
-			$groups = $this->paginate($this->Groups);
+			$modules = $this->paginate($this->Modules);
 			$data = [];
-			if ($groups) {
-				$data = $groups;
+			if ($modules) {
+				$data = $modules;
 			}
 			$http_code = 200;
 			$message = 'Success';
@@ -28,11 +28,11 @@ class GroupsController extends AppController
 	public function add()
 	{
 		if ($this->request->is('post')) {
-			$group = $this->Groups->newEntity();
+			$module = $this->Modules->newEntity();
 			$request_body = $this->request->input('json_decode');
 			$data = (array)$request_body;
-			$entity = $this->Groups->patchEntity($group, $data);
-			if ($this->Groups->save($entity)) {
+			$entity = $this->Modules->patchEntity($module, $data);
+			if ($this->Modules->save($entity)) {
 				$http_code = 200;
 				$message = 'Success';
 				return $this->Response->Response($http_code, $message);
@@ -48,8 +48,8 @@ class GroupsController extends AppController
 	{
 		if ($this->request->is('post')) {
 			$request_body = $this->request->input('json_decode');
-			$group = $this->Groups->get($request_body->id);
-			if ($group) {
+			$module = $this->Modules->get($request_body->id);
+			if ($module) {
 				$http_code = 200;
 				$message = 'Success';
 				return $this->Response->Response($http_code, $message, $user);
@@ -67,10 +67,10 @@ class GroupsController extends AppController
 	{
 		if ($this->request->is(['patch', 'post', 'put'])) {
 			$request_body = $this->request->input('json_decode');
-			$group = $this->Groups->get($request_body->id);
+			$module = $this->Modules->get($request_body->id);
 			$data = (array)$request_body;
-			$entity = $this->Groups->patchEntity($group, $data);
-			if ($this->Groups->save($entity)) {
+			$entity = $this->Modules->patchEntity($module, $data);
+			if ($this->Modules->save($entity)) {
 				$http_code = 200;
 				$message = 'Success';
 				return $this->Response->Response($http_code, $message);
@@ -86,8 +86,8 @@ class GroupsController extends AppController
 	{
 		if ($this->request->is(['patch', 'post', 'put'])) {
 			$request_body = $this->request->input('json_decode');
-			$group = $this->Groups->get($request_body->id);
-			if ($this->Groups->delete($group)) {
+			$module = $this->Modules->get($request_body->id);
+			if ($this->Modules->delete($module)) {
 				$http_code = 200;
 				$message = 'Success';
 				return $this->Response->Response($http_code, $message);

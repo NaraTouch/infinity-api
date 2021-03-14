@@ -16,7 +16,8 @@ class TokensTable extends Table
 		$this->addBehavior('Timestamp');
 
 		$this->belongsTo('Users')
-			->setForeignKey('user_id');
+			->setForeignKey('user_id')
+			->setDependent(true);
 	}
 
 	public function saveToken($user_id = null, $token = null)
