@@ -99,6 +99,11 @@ Router::scope('/', function (RouteBuilder $routes) {
 			]);
 	
 	// Modules
+	$routes->connect('/modules/list',
+			[
+				'controller' => 'Modules',
+				'action' => 'getModuleList'
+			]);
 	$routes->connect('/modules',
 			[
 				'controller' => 'Modules',
@@ -152,6 +157,18 @@ Router::scope('/', function (RouteBuilder $routes) {
 			[
 				'controller' => 'Methods',
 				'action' => 'delete'
+			]);
+
+	// Permission
+	$routes->connect('/permissions/add',
+			[
+				'controller' => 'Permissions',
+				'action' => 'add'
+			]);
+	$routes->connect('/permissions/by_role',
+			[
+				'controller' => 'Permissions',
+				'action' => 'getPermissionByRole'
 			]);
 	$routes->fallbacks(DashedRoute::class);
 });

@@ -11,6 +11,22 @@ class ModulesController extends AppController
 		$this->loadComponent('Response');
 	}
 
+	public function getModuleList()
+	{
+		if ($this->request->is('post')) {
+			$query = $this->Modules->find()
+			->order(['Modules.sort', 'Modules.name'])
+			->contain(['Methods']);
+			$data = [];
+			if ($query) {
+				$data = $query;
+			}
+			$http_code = 200;
+			$message = 'Success';
+			return $this->Response->Response($http_code, $message, $data);
+		}
+	}
+
 	public function index()
 	{
 		if ($this->request->is('post')) {
