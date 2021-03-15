@@ -170,5 +170,11 @@ Router::scope('/', function (RouteBuilder $routes) {
 				'controller' => 'Permissions',
 				'action' => 'getPermissionByRole'
 			]);
+	// Security
+	$routes->connect('/securities/get_access_module',
+			[
+				'controller' => 'Securities',
+				'action' => 'getAccessUrl'
+			]);
 	$routes->fallbacks(DashedRoute::class);
 });

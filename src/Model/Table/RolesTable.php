@@ -19,6 +19,9 @@ class RolesTable extends Table
 		$this->belongsTo('Groups')
 			->setForeignKey('group_id')
 			->setDependent(true);
+		$this->hasMany('Permissions', [
+			'foreignKey' => 'role_id',
+		]);
 	}
 
 	public function validationDefault(Validator $validator)
@@ -49,6 +52,20 @@ class RolesTable extends Table
 		return $validator;
 	}
 	
+	public function getRoleByGroup($group_id = null)
+	{
+		$query = $this->find()
+				->where([
+					'group_id' => $group_id,
+					'active' => 1,
+				])
+				->first();
+		if ($query) {
+			return $query;
+		}
+		return false;
+	}
+
 	public function buildRules(RulesChecker $rules)
 	{
 		$rules->add($rules->isUnique(['name']));

@@ -18,6 +18,9 @@ class MethodsTable extends Table
 		$this->belongsTo('Modules')
 			->setForeignKey('module_id')
 			->setDependent(true);
+		$this->hasMany('Permissions', [
+			'foreignKey' => 'method_id',
+		]);
 	}
 
 	public function validationDefault(Validator $validator)
