@@ -28832,3 +28832,1457 @@ Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
 
 
 
+2021-03-15 13:48:35 Error: [Cake\Http\Exception\UnauthorizedException] Unauthorized (E:\xampp\htdocs\infinity-api\vendor\admad\cakephp-jwt-auth\src\Auth\JwtAuthenticate.php:109)
+#0 E:\xampp\htdocs\infinity-api\vendor\admad\cakephp-jwt-auth\src\Auth\JwtAuthenticate.php(86): ADmad\JwtAuth\Auth\JwtAuthenticate->getToken(Object(Cake\Http\ServerRequest))
+#1 E:\xampp\htdocs\infinity-api\vendor\admad\cakephp-jwt-auth\src\Auth\JwtAuthenticate.php(54): ADmad\JwtAuth\Auth\JwtAuthenticate->getPayload(Object(Cake\Http\ServerRequest))
+#2 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Component\AuthComponent.php(748): ADmad\JwtAuth\Auth\JwtAuthenticate->getUser(Object(Cake\Http\ServerRequest))
+#3 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Component\AuthComponent.php(311): Cake\Controller\Component\AuthComponent->_getUser()
+#4 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Event\EventManager.php(352): Cake\Controller\Component\AuthComponent->authCheck(Object(Cake\Event\Event))
+#5 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Event\EventManager.php(329): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#6 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Event\EventDispatcherTrait.php(113): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#7 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Controller.php(676): Cake\Controller\Controller->dispatchEvent('Controller.init...')
+#8 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(115): Cake\Controller\Controller->startupProcess()
+#9 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\SecuritiesController))
+#10 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\BaseApplication.php(234): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(162): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#14 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#16 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(96): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#17 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#18 E:\xampp\htdocs\infinity-api\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#19 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#20 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#21 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Server.php(97): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#22 E:\xampp\htdocs\infinity-api\webroot\index.php(40): Cake\Http\Server->run()
+#23 {main}
+Request URL: /securities/get_access_module
+
+
+2021-03-15 13:50:34 Error: [Cake\Http\Exception\UnauthorizedException] Unauthorized (E:\xampp\htdocs\infinity-api\vendor\admad\cakephp-jwt-auth\src\Auth\JwtAuthenticate.php:109)
+#0 E:\xampp\htdocs\infinity-api\vendor\admad\cakephp-jwt-auth\src\Auth\JwtAuthenticate.php(86): ADmad\JwtAuth\Auth\JwtAuthenticate->getToken(Object(Cake\Http\ServerRequest))
+#1 E:\xampp\htdocs\infinity-api\vendor\admad\cakephp-jwt-auth\src\Auth\JwtAuthenticate.php(54): ADmad\JwtAuth\Auth\JwtAuthenticate->getPayload(Object(Cake\Http\ServerRequest))
+#2 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Component\AuthComponent.php(748): ADmad\JwtAuth\Auth\JwtAuthenticate->getUser(Object(Cake\Http\ServerRequest))
+#3 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Component\AuthComponent.php(311): Cake\Controller\Component\AuthComponent->_getUser()
+#4 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Event\EventManager.php(352): Cake\Controller\Component\AuthComponent->authCheck(Object(Cake\Event\Event))
+#5 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Event\EventManager.php(329): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#6 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Event\EventDispatcherTrait.php(113): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#7 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Controller.php(676): Cake\Controller\Controller->dispatchEvent('Controller.init...')
+#8 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(115): Cake\Controller\Controller->startupProcess()
+#9 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\SecuritiesController))
+#10 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\BaseApplication.php(234): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(162): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#14 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#16 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(96): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#17 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#18 E:\xampp\htdocs\infinity-api\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#19 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#20 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#21 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Server.php(97): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#22 E:\xampp\htdocs\infinity-api\webroot\index.php(40): Cake\Http\Server->run()
+#23 {main}
+Request URL: /securities/get_access_module
+
+
+2021-03-15 13:51:09 Error: [Cake\Http\Exception\UnauthorizedException] Unauthorized (E:\xampp\htdocs\infinity-api\vendor\admad\cakephp-jwt-auth\src\Auth\JwtAuthenticate.php:109)
+#0 E:\xampp\htdocs\infinity-api\vendor\admad\cakephp-jwt-auth\src\Auth\JwtAuthenticate.php(86): ADmad\JwtAuth\Auth\JwtAuthenticate->getToken(Object(Cake\Http\ServerRequest))
+#1 E:\xampp\htdocs\infinity-api\vendor\admad\cakephp-jwt-auth\src\Auth\JwtAuthenticate.php(54): ADmad\JwtAuth\Auth\JwtAuthenticate->getPayload(Object(Cake\Http\ServerRequest))
+#2 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Component\AuthComponent.php(748): ADmad\JwtAuth\Auth\JwtAuthenticate->getUser(Object(Cake\Http\ServerRequest))
+#3 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Component\AuthComponent.php(311): Cake\Controller\Component\AuthComponent->_getUser()
+#4 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Event\EventManager.php(352): Cake\Controller\Component\AuthComponent->authCheck(Object(Cake\Event\Event))
+#5 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Event\EventManager.php(329): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#6 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Event\EventDispatcherTrait.php(113): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#7 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Controller.php(676): Cake\Controller\Controller->dispatchEvent('Controller.init...')
+#8 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(115): Cake\Controller\Controller->startupProcess()
+#9 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\SecuritiesController))
+#10 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\BaseApplication.php(234): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(162): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#14 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#16 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(96): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#17 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#18 E:\xampp\htdocs\infinity-api\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#19 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#20 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#21 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Server.php(97): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#22 E:\xampp\htdocs\infinity-api\webroot\index.php(40): Cake\Http\Server->run()
+#23 {main}
+Request URL: /securities/get_access_module
+
+
+2021-03-15 13:52:01 Error: [Cake\Http\Exception\UnauthorizedException] Unauthorized (E:\xampp\htdocs\infinity-api\vendor\admad\cakephp-jwt-auth\src\Auth\JwtAuthenticate.php:109)
+#0 E:\xampp\htdocs\infinity-api\vendor\admad\cakephp-jwt-auth\src\Auth\JwtAuthenticate.php(86): ADmad\JwtAuth\Auth\JwtAuthenticate->getToken(Object(Cake\Http\ServerRequest))
+#1 E:\xampp\htdocs\infinity-api\vendor\admad\cakephp-jwt-auth\src\Auth\JwtAuthenticate.php(54): ADmad\JwtAuth\Auth\JwtAuthenticate->getPayload(Object(Cake\Http\ServerRequest))
+#2 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Component\AuthComponent.php(748): ADmad\JwtAuth\Auth\JwtAuthenticate->getUser(Object(Cake\Http\ServerRequest))
+#3 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Component\AuthComponent.php(311): Cake\Controller\Component\AuthComponent->_getUser()
+#4 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Event\EventManager.php(352): Cake\Controller\Component\AuthComponent->authCheck(Object(Cake\Event\Event))
+#5 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Event\EventManager.php(329): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#6 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Event\EventDispatcherTrait.php(113): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#7 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Controller.php(676): Cake\Controller\Controller->dispatchEvent('Controller.init...')
+#8 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(115): Cake\Controller\Controller->startupProcess()
+#9 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\SecuritiesController))
+#10 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\BaseApplication.php(234): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(162): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#14 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#16 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(96): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#17 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#18 E:\xampp\htdocs\infinity-api\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#19 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#20 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#21 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Server.php(97): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#22 E:\xampp\htdocs\infinity-api\webroot\index.php(40): Cake\Http\Server->run()
+#23 {main}
+Request URL: /securities/get_access_module
+
+
+2021-03-15 13:52:26 Error: [Cake\Http\Exception\UnauthorizedException] Unauthorized (E:\xampp\htdocs\infinity-api\vendor\admad\cakephp-jwt-auth\src\Auth\JwtAuthenticate.php:109)
+#0 E:\xampp\htdocs\infinity-api\vendor\admad\cakephp-jwt-auth\src\Auth\JwtAuthenticate.php(86): ADmad\JwtAuth\Auth\JwtAuthenticate->getToken(Object(Cake\Http\ServerRequest))
+#1 E:\xampp\htdocs\infinity-api\vendor\admad\cakephp-jwt-auth\src\Auth\JwtAuthenticate.php(54): ADmad\JwtAuth\Auth\JwtAuthenticate->getPayload(Object(Cake\Http\ServerRequest))
+#2 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Component\AuthComponent.php(748): ADmad\JwtAuth\Auth\JwtAuthenticate->getUser(Object(Cake\Http\ServerRequest))
+#3 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Component\AuthComponent.php(311): Cake\Controller\Component\AuthComponent->_getUser()
+#4 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Event\EventManager.php(352): Cake\Controller\Component\AuthComponent->authCheck(Object(Cake\Event\Event))
+#5 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Event\EventManager.php(329): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#6 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Event\EventDispatcherTrait.php(113): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#7 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Controller.php(676): Cake\Controller\Controller->dispatchEvent('Controller.init...')
+#8 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(115): Cake\Controller\Controller->startupProcess()
+#9 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\SecuritiesController))
+#10 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\BaseApplication.php(234): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(162): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#14 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#16 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(96): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#17 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#18 E:\xampp\htdocs\infinity-api\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#19 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#20 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#21 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Server.php(97): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#22 E:\xampp\htdocs\infinity-api\webroot\index.php(40): Cake\Http\Server->run()
+#23 {main}
+Request URL: /securities/get_access_module
+
+
+2021-03-15 13:52:43 Error: [Cake\Http\Exception\UnauthorizedException] Unauthorized (E:\xampp\htdocs\infinity-api\vendor\admad\cakephp-jwt-auth\src\Auth\JwtAuthenticate.php:109)
+#0 E:\xampp\htdocs\infinity-api\vendor\admad\cakephp-jwt-auth\src\Auth\JwtAuthenticate.php(86): ADmad\JwtAuth\Auth\JwtAuthenticate->getToken(Object(Cake\Http\ServerRequest))
+#1 E:\xampp\htdocs\infinity-api\vendor\admad\cakephp-jwt-auth\src\Auth\JwtAuthenticate.php(54): ADmad\JwtAuth\Auth\JwtAuthenticate->getPayload(Object(Cake\Http\ServerRequest))
+#2 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Component\AuthComponent.php(748): ADmad\JwtAuth\Auth\JwtAuthenticate->getUser(Object(Cake\Http\ServerRequest))
+#3 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Component\AuthComponent.php(311): Cake\Controller\Component\AuthComponent->_getUser()
+#4 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Event\EventManager.php(352): Cake\Controller\Component\AuthComponent->authCheck(Object(Cake\Event\Event))
+#5 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Event\EventManager.php(329): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#6 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Event\EventDispatcherTrait.php(113): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#7 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Controller.php(676): Cake\Controller\Controller->dispatchEvent('Controller.init...')
+#8 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(115): Cake\Controller\Controller->startupProcess()
+#9 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\SecuritiesController))
+#10 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\BaseApplication.php(234): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(162): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#14 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#16 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(96): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#17 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#18 E:\xampp\htdocs\infinity-api\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#19 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#20 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#21 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Server.php(97): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#22 E:\xampp\htdocs\infinity-api\webroot\index.php(40): Cake\Http\Server->run()
+#23 {main}
+Request URL: /securities/get_access_module
+
+
+2021-03-16 14:42:03 Warning: Warning (512): Unable to emit headers. Headers sent in file=E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php line=176 in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 51]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 51
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 14:42:04 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 152]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitStatusLine() - CORE\src\Http\ResponseEmitter.php, line 152
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 57
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 14:42:05 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 14:42:07 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 14:44:08 Warning: Warning (512): Unable to emit headers. Headers sent in file=E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php line=176 in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 51]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 51
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 14:44:09 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 152]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitStatusLine() - CORE\src\Http\ResponseEmitter.php, line 152
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 57
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 14:44:09 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 14:44:10 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 15:24:08 Error: [PDOException] SQLSTATE[42703]: Undefined column: 7 ERROR:  column "keywords" does not exist
+LINE 1: ...d = (Methods.module_id) WHERE (module_id = $1 AND keywords =...
+                                                             ^ (E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php:173)
+#0 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(173): PDOStatement->execute(NULL)
+#1 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(173): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(55): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Connection.php(333): Cake\Database\Log\LoggingStatement->execute()
+#4 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Core\Retry\CommandRetry.php(67): Cake\Database\Connection->Cake\Database\{closure}()
+#5 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Connection.php(336): Cake\Core\Retry\CommandRetry->run(Object(Closure))
+#6 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Query.php(218): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#7 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\ORM\Query.php(1141): Cake\Database\Query->execute()
+#8 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(310): Cake\ORM\Query->_execute()
+#9 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\ORM\Query.php(1088): Cake\ORM\Query->_all()
+#10 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(327): Cake\ORM\Query->all()
+#11 E:\xampp\htdocs\infinity-api\src\Controller\MethodsController.php(34): Cake\ORM\Query->toArray()
+#12 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Controller.php(609): App\Controller\MethodsController->index()
+#13 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(120): Cake\Controller\Controller->invokeAction()
+#14 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\MethodsController))
+#15 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\BaseApplication.php(234): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#17 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(162): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#18 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#19 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#20 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#21 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(96): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#22 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#23 E:\xampp\htdocs\infinity-api\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#24 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#25 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#26 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Server.php(97): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#27 E:\xampp\htdocs\infinity-api\webroot\index.php(40): Cake\Http\Server->run()
+#28 {main}
+Request URL: /methods
+
+
+2021-03-16 15:24:09 Warning: Warning (512): Unable to emit headers. Headers sent in file=E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php line=176 in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 51]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 51
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 15:24:10 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 152]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitStatusLine() - CORE\src\Http\ResponseEmitter.php, line 152
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 57
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 15:24:11 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 15:24:12 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 15:28:20 Error: [PDOException] SQLSTATE[42702]: Ambiguous column: 7 ERROR:  column reference "display" is ambiguous
+LINE 1: ...d = (Methods.module_id) WHERE (module_id = $1 AND display li...
+                                                             ^ (E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php:173)
+#0 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(173): PDOStatement->execute(NULL)
+#1 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(173): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(55): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Connection.php(333): Cake\Database\Log\LoggingStatement->execute()
+#4 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Core\Retry\CommandRetry.php(67): Cake\Database\Connection->Cake\Database\{closure}()
+#5 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Connection.php(336): Cake\Core\Retry\CommandRetry->run(Object(Closure))
+#6 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Query.php(218): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#7 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\ORM\Query.php(1141): Cake\Database\Query->execute()
+#8 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(310): Cake\ORM\Query->_execute()
+#9 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\ORM\Query.php(1088): Cake\ORM\Query->_all()
+#10 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(327): Cake\ORM\Query->all()
+#11 E:\xampp\htdocs\infinity-api\src\Controller\MethodsController.php(35): Cake\ORM\Query->toArray()
+#12 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Controller.php(609): App\Controller\MethodsController->index()
+#13 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(120): Cake\Controller\Controller->invokeAction()
+#14 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\MethodsController))
+#15 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\BaseApplication.php(234): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#17 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(162): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#18 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#19 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#20 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#21 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(96): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#22 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#23 E:\xampp\htdocs\infinity-api\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#24 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#25 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#26 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Server.php(97): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#27 E:\xampp\htdocs\infinity-api\webroot\index.php(40): Cake\Http\Server->run()
+#28 {main}
+Request URL: /methods
+
+
+2021-03-16 15:28:21 Warning: Warning (512): Unable to emit headers. Headers sent in file=E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php line=176 in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 51]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 51
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 15:28:22 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 152]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitStatusLine() - CORE\src\Http\ResponseEmitter.php, line 152
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 57
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 15:28:23 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 15:28:24 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 15:29:12 Error: [PDOException] SQLSTATE[42702]: Ambiguous column: 7 ERROR:  column reference "display" is ambiguous
+LINE 1: ...d = (Methods.module_id) WHERE (module_id = $1 AND display li...
+                                                             ^ (E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php:173)
+#0 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(173): PDOStatement->execute(NULL)
+#1 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(173): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(55): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Connection.php(333): Cake\Database\Log\LoggingStatement->execute()
+#4 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Core\Retry\CommandRetry.php(67): Cake\Database\Connection->Cake\Database\{closure}()
+#5 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Connection.php(336): Cake\Core\Retry\CommandRetry->run(Object(Closure))
+#6 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Query.php(218): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#7 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\ORM\Query.php(1141): Cake\Database\Query->execute()
+#8 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(310): Cake\ORM\Query->_execute()
+#9 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\ORM\Query.php(1088): Cake\ORM\Query->_all()
+#10 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(327): Cake\ORM\Query->all()
+#11 E:\xampp\htdocs\infinity-api\src\Controller\MethodsController.php(34): Cake\ORM\Query->toArray()
+#12 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Controller.php(609): App\Controller\MethodsController->index()
+#13 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(120): Cake\Controller\Controller->invokeAction()
+#14 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\MethodsController))
+#15 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\BaseApplication.php(234): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#17 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(162): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#18 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#19 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#20 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#21 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(96): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#22 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#23 E:\xampp\htdocs\infinity-api\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#24 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#25 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#26 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Server.php(97): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#27 E:\xampp\htdocs\infinity-api\webroot\index.php(40): Cake\Http\Server->run()
+#28 {main}
+Request URL: /methods
+
+
+2021-03-16 15:29:39 Error: [PDOException] SQLSTATE[42702]: Ambiguous column: 7 ERROR:  column reference "display" is ambiguous
+LINE 1: ...d = (Methods.module_id) WHERE (module_id = $1 AND display li...
+                                                             ^ (E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php:173)
+#0 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(173): PDOStatement->execute(NULL)
+#1 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(173): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(55): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Connection.php(333): Cake\Database\Log\LoggingStatement->execute()
+#4 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Core\Retry\CommandRetry.php(67): Cake\Database\Connection->Cake\Database\{closure}()
+#5 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Connection.php(336): Cake\Core\Retry\CommandRetry->run(Object(Closure))
+#6 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Query.php(218): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#7 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\ORM\Query.php(1141): Cake\Database\Query->execute()
+#8 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(310): Cake\ORM\Query->_execute()
+#9 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\ORM\Query.php(1088): Cake\ORM\Query->_all()
+#10 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(327): Cake\ORM\Query->all()
+#11 E:\xampp\htdocs\infinity-api\src\Controller\MethodsController.php(34): Cake\ORM\Query->toArray()
+#12 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Controller.php(609): App\Controller\MethodsController->index()
+#13 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(120): Cake\Controller\Controller->invokeAction()
+#14 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\MethodsController))
+#15 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\BaseApplication.php(234): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#17 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(162): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#18 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#19 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#20 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#21 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(96): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#22 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#23 E:\xampp\htdocs\infinity-api\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#24 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#25 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#26 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Server.php(97): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#27 E:\xampp\htdocs\infinity-api\webroot\index.php(40): Cake\Http\Server->run()
+#28 {main}
+Request URL: /methods
+
+
+2021-03-16 15:35:04 Error: [PDOException] SQLSTATE[42702]: Ambiguous column: 7 ERROR:  column reference "display" is ambiguous
+LINE 1: ...d = (Methods.module_id) WHERE (module_id = $1 AND display li...
+                                                             ^ (E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php:173)
+#0 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(173): PDOStatement->execute(NULL)
+#1 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(173): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(55): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Connection.php(333): Cake\Database\Log\LoggingStatement->execute()
+#4 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Core\Retry\CommandRetry.php(67): Cake\Database\Connection->Cake\Database\{closure}()
+#5 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Connection.php(336): Cake\Core\Retry\CommandRetry->run(Object(Closure))
+#6 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Query.php(218): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#7 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\ORM\Query.php(1141): Cake\Database\Query->execute()
+#8 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(310): Cake\ORM\Query->_execute()
+#9 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\ORM\Query.php(1088): Cake\ORM\Query->_all()
+#10 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(327): Cake\ORM\Query->all()
+#11 E:\xampp\htdocs\infinity-api\src\Controller\MethodsController.php(34): Cake\ORM\Query->toArray()
+#12 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Controller.php(609): App\Controller\MethodsController->index()
+#13 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(120): Cake\Controller\Controller->invokeAction()
+#14 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\MethodsController))
+#15 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\BaseApplication.php(234): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#17 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(162): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#18 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#19 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#20 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#21 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(96): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#22 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#23 E:\xampp\htdocs\infinity-api\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#24 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#25 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#26 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Server.php(97): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#27 E:\xampp\htdocs\infinity-api\webroot\index.php(40): Cake\Http\Server->run()
+#28 {main}
+Request URL: /methods
+
+
+2021-03-16 15:35:32 Error: [PDOException] SQLSTATE[42702]: Ambiguous column: 7 ERROR:  column reference "display" is ambiguous
+LINE 1: ...d = (Methods.module_id) WHERE (module_id = $1 AND display li...
+                                                             ^ (E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php:173)
+#0 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(173): PDOStatement->execute(NULL)
+#1 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(173): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(55): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Connection.php(333): Cake\Database\Log\LoggingStatement->execute()
+#4 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Core\Retry\CommandRetry.php(67): Cake\Database\Connection->Cake\Database\{closure}()
+#5 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Connection.php(336): Cake\Core\Retry\CommandRetry->run(Object(Closure))
+#6 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Query.php(218): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#7 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\ORM\Query.php(1141): Cake\Database\Query->execute()
+#8 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(310): Cake\ORM\Query->_execute()
+#9 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\ORM\Query.php(1088): Cake\ORM\Query->_all()
+#10 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(327): Cake\ORM\Query->all()
+#11 E:\xampp\htdocs\infinity-api\src\Controller\MethodsController.php(35): Cake\ORM\Query->toArray()
+#12 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Controller.php(609): App\Controller\MethodsController->index()
+#13 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(120): Cake\Controller\Controller->invokeAction()
+#14 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\MethodsController))
+#15 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\BaseApplication.php(234): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#17 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(162): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#18 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#19 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#20 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#21 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(96): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#22 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#23 E:\xampp\htdocs\infinity-api\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#24 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#25 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#26 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Server.php(97): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#27 E:\xampp\htdocs\infinity-api\webroot\index.php(40): Cake\Http\Server->run()
+#28 {main}
+Request URL: /methods
+
+
+2021-03-16 15:35:32 Warning: Warning (512): Unable to emit headers. Headers sent in file=E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php line=176 in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 51]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 51
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 15:35:33 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 152]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitStatusLine() - CORE\src\Http\ResponseEmitter.php, line 152
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 57
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 15:35:34 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 15:35:35 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 15:36:02 Error: [PDOException] SQLSTATE[42702]: Ambiguous column: 7 ERROR:  column reference "display" is ambiguous
+LINE 1: ...Modules ON Modules.id = (Methods.module_id) WHERE display li...
+                                                             ^ (E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php:173)
+#0 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(173): PDOStatement->execute(NULL)
+#1 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(173): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(55): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Connection.php(333): Cake\Database\Log\LoggingStatement->execute()
+#4 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Core\Retry\CommandRetry.php(67): Cake\Database\Connection->Cake\Database\{closure}()
+#5 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Connection.php(336): Cake\Core\Retry\CommandRetry->run(Object(Closure))
+#6 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Query.php(218): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#7 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\ORM\Query.php(1141): Cake\Database\Query->execute()
+#8 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(310): Cake\ORM\Query->_execute()
+#9 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\ORM\Query.php(1088): Cake\ORM\Query->_all()
+#10 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(327): Cake\ORM\Query->all()
+#11 E:\xampp\htdocs\infinity-api\src\Controller\MethodsController.php(35): Cake\ORM\Query->toArray()
+#12 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Controller.php(609): App\Controller\MethodsController->index()
+#13 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(120): Cake\Controller\Controller->invokeAction()
+#14 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\MethodsController))
+#15 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\BaseApplication.php(234): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#17 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(162): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#18 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#19 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#20 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#21 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(96): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#22 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#23 E:\xampp\htdocs\infinity-api\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#24 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#25 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#26 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Server.php(97): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#27 E:\xampp\htdocs\infinity-api\webroot\index.php(40): Cake\Http\Server->run()
+#28 {main}
+Request URL: /methods
+
+
+2021-03-16 15:36:02 Warning: Warning (512): Unable to emit headers. Headers sent in file=E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php line=176 in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 51]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 51
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 15:36:03 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 152]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitStatusLine() - CORE\src\Http\ResponseEmitter.php, line 152
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 57
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 15:36:04 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 15:36:04 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 15:40:11 Error: [PDOException] SQLSTATE[42702]: Ambiguous column: 7 ERROR:  column reference "display" is ambiguous
+LINE 1: ...Modules ON Modules.id = (Methods.module_id) WHERE display li...
+                                                             ^ (E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php:173)
+#0 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(173): PDOStatement->execute(NULL)
+#1 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(173): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(55): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Connection.php(333): Cake\Database\Log\LoggingStatement->execute()
+#4 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Core\Retry\CommandRetry.php(67): Cake\Database\Connection->Cake\Database\{closure}()
+#5 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Connection.php(336): Cake\Core\Retry\CommandRetry->run(Object(Closure))
+#6 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Query.php(218): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#7 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\ORM\Query.php(1141): Cake\Database\Query->execute()
+#8 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(310): Cake\ORM\Query->_execute()
+#9 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\ORM\Query.php(1088): Cake\ORM\Query->_all()
+#10 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(327): Cake\ORM\Query->all()
+#11 E:\xampp\htdocs\infinity-api\src\Controller\MethodsController.php(35): Cake\ORM\Query->toArray()
+#12 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Controller.php(609): App\Controller\MethodsController->index()
+#13 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(120): Cake\Controller\Controller->invokeAction()
+#14 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\MethodsController))
+#15 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\BaseApplication.php(234): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#17 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(162): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#18 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#19 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#20 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#21 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(96): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#22 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#23 E:\xampp\htdocs\infinity-api\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#24 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#25 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#26 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Server.php(97): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#27 E:\xampp\htdocs\infinity-api\webroot\index.php(40): Cake\Http\Server->run()
+#28 {main}
+Request URL: /methods
+
+
+2021-03-16 15:40:12 Warning: Warning (512): Unable to emit headers. Headers sent in file=E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php line=176 in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 51]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 51
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 15:40:13 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 152]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitStatusLine() - CORE\src\Http\ResponseEmitter.php, line 152
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 57
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 15:40:13 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 15:40:14 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 15:47:27 Error: [Firebase\JWT\ExpiredException] Expired token (E:\xampp\htdocs\infinity-api\vendor\firebase\php-jwt\src\JWT.php:134)
+#0 E:\xampp\htdocs\infinity-api\vendor\admad\cakephp-jwt-auth\src\Auth\JwtAuthenticate.php(131): Firebase\JWT\JWT::decode('eyJ0eXAiOiJKV1Q...', '071073b595af189...', Array)
+#1 E:\xampp\htdocs\infinity-api\vendor\admad\cakephp-jwt-auth\src\Auth\JwtAuthenticate.php(88): ADmad\JwtAuth\Auth\JwtAuthenticate->_decode('eyJ0eXAiOiJKV1Q...')
+#2 E:\xampp\htdocs\infinity-api\vendor\admad\cakephp-jwt-auth\src\Auth\JwtAuthenticate.php(54): ADmad\JwtAuth\Auth\JwtAuthenticate->getPayload(Object(Cake\Http\ServerRequest))
+#3 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Component\AuthComponent.php(748): ADmad\JwtAuth\Auth\JwtAuthenticate->getUser(Object(Cake\Http\ServerRequest))
+#4 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Component\AuthComponent.php(311): Cake\Controller\Component\AuthComponent->_getUser()
+#5 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Event\EventManager.php(352): Cake\Controller\Component\AuthComponent->authCheck(Object(Cake\Event\Event))
+#6 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Event\EventManager.php(329): Cake\Event\EventManager->_callListener(Array, Object(Cake\Event\Event))
+#7 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Event\EventDispatcherTrait.php(113): Cake\Event\EventManager->dispatch(Object(Cake\Event\Event))
+#8 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Controller.php(676): Cake\Controller\Controller->dispatchEvent('Controller.init...')
+#9 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(115): Cake\Controller\Controller->startupProcess()
+#10 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\MethodsController))
+#11 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\BaseApplication.php(234): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#12 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#13 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(162): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#14 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#15 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#17 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(96): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#18 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#19 E:\xampp\htdocs\infinity-api\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#20 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#21 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#22 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Server.php(97): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#23 E:\xampp\htdocs\infinity-api\webroot\index.php(40): Cake\Http\Server->run()
+#24 {main}
+Request URL: /methods
+
+
+2021-03-16 15:47:50 Error: [PDOException] SQLSTATE[42702]: Ambiguous column: 7 ERROR:  column reference "display" is ambiguous
+LINE 1: ...Modules ON Modules.id = (Methods.module_id) WHERE display il...
+                                                             ^ (E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php:173)
+#0 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(173): PDOStatement->execute(NULL)
+#1 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(173): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(55): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Connection.php(333): Cake\Database\Log\LoggingStatement->execute()
+#4 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Core\Retry\CommandRetry.php(67): Cake\Database\Connection->Cake\Database\{closure}()
+#5 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Connection.php(336): Cake\Core\Retry\CommandRetry->run(Object(Closure))
+#6 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Query.php(218): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#7 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\ORM\Query.php(1141): Cake\Database\Query->execute()
+#8 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(310): Cake\ORM\Query->_execute()
+#9 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\ORM\Query.php(1088): Cake\ORM\Query->_all()
+#10 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(327): Cake\ORM\Query->all()
+#11 E:\xampp\htdocs\infinity-api\src\Controller\MethodsController.php(35): Cake\ORM\Query->toArray()
+#12 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Controller.php(609): App\Controller\MethodsController->index()
+#13 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(120): Cake\Controller\Controller->invokeAction()
+#14 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\MethodsController))
+#15 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\BaseApplication.php(234): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#17 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(162): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#18 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#19 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#20 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#21 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(96): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#22 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#23 E:\xampp\htdocs\infinity-api\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#24 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#25 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#26 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Server.php(97): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#27 E:\xampp\htdocs\infinity-api\webroot\index.php(40): Cake\Http\Server->run()
+#28 {main}
+Request URL: /methods
+
+
+2021-03-16 15:47:51 Warning: Warning (512): Unable to emit headers. Headers sent in file=E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php line=176 in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 51]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 51
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 15:47:52 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 152]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitStatusLine() - CORE\src\Http\ResponseEmitter.php, line 152
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 57
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 15:47:52 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 15:47:53 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 15:48:51 Error: [PDOException] SQLSTATE[42702]: Ambiguous column: 7 ERROR:  column reference "display" is ambiguous
+LINE 1: ...Modules ON Modules.id = (Methods.module_id) WHERE display il...
+                                                             ^ (E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php:173)
+#0 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(173): PDOStatement->execute(NULL)
+#1 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(173): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(55): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Connection.php(333): Cake\Database\Log\LoggingStatement->execute()
+#4 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Core\Retry\CommandRetry.php(67): Cake\Database\Connection->Cake\Database\{closure}()
+#5 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Connection.php(336): Cake\Core\Retry\CommandRetry->run(Object(Closure))
+#6 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Query.php(218): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#7 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\ORM\Query.php(1141): Cake\Database\Query->execute()
+#8 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(310): Cake\ORM\Query->_execute()
+#9 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\ORM\Query.php(1088): Cake\ORM\Query->_all()
+#10 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(327): Cake\ORM\Query->all()
+#11 E:\xampp\htdocs\infinity-api\src\Controller\MethodsController.php(35): Cake\ORM\Query->toArray()
+#12 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Controller.php(609): App\Controller\MethodsController->index()
+#13 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(120): Cake\Controller\Controller->invokeAction()
+#14 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\MethodsController))
+#15 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\BaseApplication.php(234): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#17 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(162): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#18 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#19 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#20 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#21 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(96): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#22 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#23 E:\xampp\htdocs\infinity-api\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#24 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#25 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#26 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Server.php(97): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#27 E:\xampp\htdocs\infinity-api\webroot\index.php(40): Cake\Http\Server->run()
+#28 {main}
+Request URL: /methods
+
+
+2021-03-16 15:48:51 Warning: Warning (512): Unable to emit headers. Headers sent in file=E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php line=176 in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 51]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 51
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 15:48:52 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 152]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitStatusLine() - CORE\src\Http\ResponseEmitter.php, line 152
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 57
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 15:48:53 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 15:48:53 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 15:49:30 Error: [PDOException] SQLSTATE[42702]: Ambiguous column: 7 ERROR:  column reference "display" is ambiguous
+LINE 1: ...Modules ON Modules.id = (Methods.module_id) WHERE display il...
+                                                             ^ (E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php:173)
+#0 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(173): PDOStatement->execute(NULL)
+#1 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Statement\StatementDecorator.php(173): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#2 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Log\LoggingStatement.php(55): Cake\Database\Statement\StatementDecorator->execute(NULL)
+#3 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Connection.php(333): Cake\Database\Log\LoggingStatement->execute()
+#4 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Core\Retry\CommandRetry.php(67): Cake\Database\Connection->Cake\Database\{closure}()
+#5 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Connection.php(336): Cake\Core\Retry\CommandRetry->run(Object(Closure))
+#6 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Query.php(218): Cake\Database\Connection->run(Object(Cake\ORM\Query))
+#7 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\ORM\Query.php(1141): Cake\Database\Query->execute()
+#8 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(310): Cake\ORM\Query->_execute()
+#9 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\ORM\Query.php(1088): Cake\ORM\Query->_all()
+#10 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Datasource\QueryTrait.php(327): Cake\ORM\Query->all()
+#11 E:\xampp\htdocs\infinity-api\src\Controller\MethodsController.php(35): Cake\ORM\Query->toArray()
+#12 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Controller.php(609): App\Controller\MethodsController->index()
+#13 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(120): Cake\Controller\Controller->invokeAction()
+#14 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\MethodsController))
+#15 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\BaseApplication.php(234): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#17 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(162): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#18 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#19 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#20 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#21 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(96): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#22 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#23 E:\xampp\htdocs\infinity-api\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#24 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#25 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#26 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Server.php(97): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#27 E:\xampp\htdocs\infinity-api\webroot\index.php(40): Cake\Http\Server->run()
+#28 {main}
+Request URL: /methods
+
+
+2021-03-16 15:49:30 Warning: Warning (512): Unable to emit headers. Headers sent in file=E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php line=176 in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 51]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 51
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 15:49:31 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 152]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitStatusLine() - CORE\src\Http\ResponseEmitter.php, line 152
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 57
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 15:49:32 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 15:49:32 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 15:51:08 Warning: Warning (512): Unable to emit headers. Headers sent in file=E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php line=176 in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 51]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 51
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 15:51:09 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 152]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitStatusLine() - CORE\src\Http\ResponseEmitter.php, line 152
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 57
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 15:51:09 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 15:51:10 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 15:56:53 Error: [TypeError] Argument 1 passed to App\Controller\MethodsController::App\Controller\{closure}() must be an instance of App\Controller\QueryExpression, instance of Cake\Database\Expression\QueryExpression given, called in E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Query.php on line 2246 (E:\xampp\htdocs\infinity-api\src\Controller\MethodsController.php:30)
+#0 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Query.php(2246): App\Controller\MethodsController->App\Controller\{closure}(Object(Cake\Database\Expression\QueryExpression), Object(Cake\ORM\Query))
+#1 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Query.php(882): Cake\Database\Query->_conjugate('where', Object(Closure), 'AND', Array)
+#2 E:\xampp\htdocs\infinity-api\src\Controller\MethodsController.php(32): Cake\Database\Query->where(Object(Closure))
+#3 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Controller.php(609): App\Controller\MethodsController->index()
+#4 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(120): Cake\Controller\Controller->invokeAction()
+#5 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\MethodsController))
+#6 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\BaseApplication.php(234): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(162): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(96): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#14 E:\xampp\htdocs\infinity-api\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#16 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#17 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Server.php(97): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#18 E:\xampp\htdocs\infinity-api\webroot\index.php(40): Cake\Http\Server->run()
+#19 {main}
+Request URL: /methods
+
+
+2021-03-16 15:56:57 Error: [TypeError] Argument 1 passed to App\Controller\MethodsController::App\Controller\{closure}() must be an instance of App\Controller\QueryExpression, instance of Cake\Database\Expression\QueryExpression given, called in E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Query.php on line 2246 (E:\xampp\htdocs\infinity-api\src\Controller\MethodsController.php:30)
+#0 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Query.php(2246): App\Controller\MethodsController->App\Controller\{closure}(Object(Cake\Database\Expression\QueryExpression), Object(Cake\ORM\Query))
+#1 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Query.php(882): Cake\Database\Query->_conjugate('where', Object(Closure), 'AND', Array)
+#2 E:\xampp\htdocs\infinity-api\src\Controller\MethodsController.php(32): Cake\Database\Query->where(Object(Closure))
+#3 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Controller.php(609): App\Controller\MethodsController->index()
+#4 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(120): Cake\Controller\Controller->invokeAction()
+#5 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\MethodsController))
+#6 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\BaseApplication.php(234): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(162): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(96): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#14 E:\xampp\htdocs\infinity-api\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#16 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#17 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Server.php(97): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#18 E:\xampp\htdocs\infinity-api\webroot\index.php(40): Cake\Http\Server->run()
+#19 {main}
+Request URL: /methods
+
+
+2021-03-16 15:57:36 Error: [TypeError] Argument 2 passed to App\Controller\MethodsController::App\Controller\{closure}() must be an instance of App\Controller\Query, instance of Cake\ORM\Query given, called in E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Query.php on line 2246 (E:\xampp\htdocs\infinity-api\src\Controller\MethodsController.php:31)
+#0 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Query.php(2246): App\Controller\MethodsController->App\Controller\{closure}(Object(Cake\Database\Expression\QueryExpression), Object(Cake\ORM\Query))
+#1 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Query.php(882): Cake\Database\Query->_conjugate('where', Object(Closure), 'AND', Array)
+#2 E:\xampp\htdocs\infinity-api\src\Controller\MethodsController.php(33): Cake\Database\Query->where(Object(Closure))
+#3 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Controller.php(609): App\Controller\MethodsController->index()
+#4 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(120): Cake\Controller\Controller->invokeAction()
+#5 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\MethodsController))
+#6 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\BaseApplication.php(234): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(162): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(96): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#14 E:\xampp\htdocs\infinity-api\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#16 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#17 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Server.php(97): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#18 E:\xampp\htdocs\infinity-api\webroot\index.php(40): Cake\Http\Server->run()
+#19 {main}
+Request URL: /methods
+
+
+2021-03-16 15:58:09 Warning: Warning (512): Unable to emit headers. Headers sent in file=E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php line=176 in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 51]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 51
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 15:58:10 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 152]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitStatusLine() - CORE\src\Http\ResponseEmitter.php, line 152
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 57
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 15:58:10 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 15:58:11 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 15:58:40 Warning: Warning (512): Unable to emit headers. Headers sent in file=E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php line=176 in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 51]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 51
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 15:58:40 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 152]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitStatusLine() - CORE\src\Http\ResponseEmitter.php, line 152
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 57
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 15:58:41 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 15:58:42 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 16:01:30 Error: [ArgumentCountError] Too few arguments to function Cake\Database\Expression\QueryExpression::like(), 1 passed in E:\xampp\htdocs\infinity-api\src\Controller\MethodsController.php on line 31 and at least 2 expected (E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Expression\QueryExpression.php:324)
+#0 E:\xampp\htdocs\infinity-api\src\Controller\MethodsController.php(31): Cake\Database\Expression\QueryExpression->like(NULL)
+#1 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Query.php(2246): App\Controller\MethodsController->App\Controller\{closure}(Object(Cake\Database\Expression\QueryExpression), Object(Cake\ORM\Query))
+#2 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Query.php(882): Cake\Database\Query->_conjugate('where', Object(Closure), 'AND', Array)
+#3 E:\xampp\htdocs\infinity-api\src\Controller\MethodsController.php(32): Cake\Database\Query->where(Object(Closure))
+#4 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Controller.php(609): App\Controller\MethodsController->index()
+#5 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(120): Cake\Controller\Controller->invokeAction()
+#6 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\MethodsController))
+#7 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\BaseApplication.php(234): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#8 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#9 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(162): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#10 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#11 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#12 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#13 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(96): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#14 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#15 E:\xampp\htdocs\infinity-api\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#17 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#18 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Server.php(97): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#19 E:\xampp\htdocs\infinity-api\webroot\index.php(40): Cake\Http\Server->run()
+#20 {main}
+Request URL: /methods
+
+
+2021-03-16 16:01:31 Warning: Warning (512): Unable to emit headers. Headers sent in file=E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Error\Debugger.php line=856 in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 51]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 51
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 16:01:32 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Error\Debugger.php:856) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 152]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitStatusLine() - CORE\src\Http\ResponseEmitter.php, line 152
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 57
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 16:01:32 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Error\Debugger.php:856) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 16:01:33 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Error\Debugger.php:856) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 16:01:59 Error: [ArgumentCountError] Too few arguments to function Cake\Database\Expression\QueryExpression::like(), 1 passed in E:\xampp\htdocs\infinity-api\src\Controller\MethodsController.php on line 31 and at least 2 expected (E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Expression\QueryExpression.php:324)
+#0 E:\xampp\htdocs\infinity-api\src\Controller\MethodsController.php(31): Cake\Database\Expression\QueryExpression->like(NULL)
+#1 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Query.php(2246): App\Controller\MethodsController->App\Controller\{closure}(Object(Cake\Database\Expression\QueryExpression), Object(Cake\ORM\Query))
+#2 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Database\Query.php(882): Cake\Database\Query->_conjugate('where', Object(Closure), 'AND', Array)
+#3 E:\xampp\htdocs\infinity-api\src\Controller\MethodsController.php(32): Cake\Database\Query->where(Object(Closure))
+#4 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Controller.php(609): App\Controller\MethodsController->index()
+#5 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(120): Cake\Controller\Controller->invokeAction()
+#6 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\MethodsController))
+#7 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\BaseApplication.php(234): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#8 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#9 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(162): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#10 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#11 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#12 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#13 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(96): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#14 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#15 E:\xampp\htdocs\infinity-api\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#17 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#18 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Server.php(97): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#19 E:\xampp\htdocs\infinity-api\webroot\index.php(40): Cake\Http\Server->run()
+#20 {main}
+Request URL: /methods
+
+
+2021-03-16 16:02:00 Warning: Warning (512): Unable to emit headers. Headers sent in file=E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Error\Debugger.php line=856 in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 51]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 51
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 16:02:01 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Error\Debugger.php:856) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 152]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitStatusLine() - CORE\src\Http\ResponseEmitter.php, line 152
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 57
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 16:02:01 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Error\Debugger.php:856) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-16 16:02:02 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Error\Debugger.php:856) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /methods
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+

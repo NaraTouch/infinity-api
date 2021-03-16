@@ -14,13 +14,24 @@ class MethodsController extends AppController
 	public function index()
 	{
 		if ($this->request->is('post')) {
-			$this->paginate = [
-				'contain' => ['Modules'],
-			];
-			$methods = $this->paginate($this->Methods);
+			$request_body = $this->request->input('json_decode');
+			$data = (array)$request_body;
+			$condition = [];
+			if (!empty($data)) {
+				if (!empty($data['module_id'])) {
+					$condition['module_id'] = $data['module_id'];
+				}
+//				if (!empty($data['keywords'])) {
+//					$keywords = $data['keywords'];
+//					$condition['display '] = '%A%';
+//				}
+			}
+			$methods = $this->Methods->find()
+						->contain(['Modules'])
+						->where($condition);
 			$data = [];
 			if ($methods) {
-				$data = $methods;
+				$data = $methods->toArray();
 			}
 			$http_code = 200;
 			$message = 'Success';
