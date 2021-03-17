@@ -176,5 +176,12 @@ Router::scope('/', function (RouteBuilder $routes) {
 				'controller' => 'Securities',
 				'action' => 'getAccessUrl'
 			]);
+	
+	//pcloud
+	$routes->connect('/pclouds/login',
+			[
+				'controller' => 'PClouds',
+				'action' => 'login'
+			]);
 	$routes->fallbacks(DashedRoute::class);
 });

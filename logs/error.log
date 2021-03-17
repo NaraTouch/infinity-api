@@ -30471,3 +30471,1528 @@ Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
 
 
 
+2021-03-17 15:36:07 Error: [Cake\View\Exception\MissingTemplateException] Template file "PClouds\login.ctp" is missing. (E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\View\View.php:1583)
+Exception Attributes: array (
+  'file' => 'PClouds\\login.ctp',
+)
+#0 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\View\View.php(875): Cake\View\View->_getViewFileName('PClouds\\login')
+#1 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Controller.php(795): Cake\View\View->render(NULL, NULL)
+#2 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(126): Cake\Controller\Controller->render()
+#3 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PCloudsController))
+#4 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\BaseApplication.php(234): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(162): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(96): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 E:\xampp\htdocs\infinity-api\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#14 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Server.php(97): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 E:\xampp\htdocs\infinity-api\webroot\index.php(40): Cake\Http\Server->run()
+#17 {main}
+Request URL: /pclouds/login
+
+
+2021-03-17 15:36:07 Warning: Warning (512): Unable to emit headers. Headers sent in file=E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php line=176 in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 51]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 51
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:36:08 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 152]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitStatusLine() - CORE\src\Http\ResponseEmitter.php, line 152
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 57
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:36:08 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:36:09 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:36:54 Error: [Cake\View\Exception\MissingTemplateException] Template file "PClouds\login.ctp" is missing. (E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\View\View.php:1583)
+Exception Attributes: array (
+  'file' => 'PClouds\\login.ctp',
+)
+#0 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\View\View.php(875): Cake\View\View->_getViewFileName('PClouds\\login')
+#1 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Controller.php(795): Cake\View\View->render(NULL, NULL)
+#2 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(126): Cake\Controller\Controller->render()
+#3 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PCloudsController))
+#4 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\BaseApplication.php(234): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(162): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(96): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 E:\xampp\htdocs\infinity-api\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#14 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Server.php(97): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 E:\xampp\htdocs\infinity-api\webroot\index.php(40): Cake\Http\Server->run()
+#17 {main}
+Request URL: /pclouds/login
+
+
+2021-03-17 15:36:54 Warning: Warning (512): Unable to emit headers. Headers sent in file=E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php line=176 in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 51]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 51
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:36:55 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 152]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitStatusLine() - CORE\src\Http\ResponseEmitter.php, line 152
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 57
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:36:56 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:36:57 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:37:41 Error: [Cake\View\Exception\MissingTemplateException] Template file "PClouds\login.ctp" is missing. (E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\View\View.php:1583)
+Exception Attributes: array (
+  'file' => 'PClouds\\login.ctp',
+)
+#0 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\View\View.php(875): Cake\View\View->_getViewFileName('PClouds\\login')
+#1 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Controller.php(795): Cake\View\View->render(NULL, NULL)
+#2 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(126): Cake\Controller\Controller->render()
+#3 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PCloudsController))
+#4 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\BaseApplication.php(234): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(162): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(96): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 E:\xampp\htdocs\infinity-api\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#14 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Server.php(97): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 E:\xampp\htdocs\infinity-api\webroot\index.php(40): Cake\Http\Server->run()
+#17 {main}
+Request URL: /pclouds/login
+
+
+2021-03-17 15:37:41 Warning: Warning (512): Unable to emit headers. Headers sent in file=E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php line=176 in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 51]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 51
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:37:42 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 152]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitStatusLine() - CORE\src\Http\ResponseEmitter.php, line 152
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 57
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:37:43 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:37:43 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:38:09 Error: [Cake\View\Exception\MissingTemplateException] Template file "PClouds\login.ctp" is missing. (E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\View\View.php:1583)
+Exception Attributes: array (
+  'file' => 'PClouds\\login.ctp',
+)
+#0 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\View\View.php(875): Cake\View\View->_getViewFileName('PClouds\\login')
+#1 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Controller.php(795): Cake\View\View->render(NULL, NULL)
+#2 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(126): Cake\Controller\Controller->render()
+#3 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PCloudsController))
+#4 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\BaseApplication.php(234): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(162): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(96): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 E:\xampp\htdocs\infinity-api\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#14 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Server.php(97): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 E:\xampp\htdocs\infinity-api\webroot\index.php(40): Cake\Http\Server->run()
+#17 {main}
+Request URL: /pclouds/login
+
+
+2021-03-17 15:38:09 Warning: Warning (512): Unable to emit headers. Headers sent in file=E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php line=176 in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 51]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 51
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:38:10 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 152]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitStatusLine() - CORE\src\Http\ResponseEmitter.php, line 152
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 57
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:38:11 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:38:11 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:38:33 Error: [Cake\View\Exception\MissingTemplateException] Template file "PClouds\login.ctp" is missing. (E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\View\View.php:1583)
+Exception Attributes: array (
+  'file' => 'PClouds\\login.ctp',
+)
+#0 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\View\View.php(875): Cake\View\View->_getViewFileName('PClouds\\login')
+#1 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Controller.php(795): Cake\View\View->render(NULL, NULL)
+#2 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(126): Cake\Controller\Controller->render()
+#3 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PCloudsController))
+#4 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\BaseApplication.php(234): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(162): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(96): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 E:\xampp\htdocs\infinity-api\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#14 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Server.php(97): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 E:\xampp\htdocs\infinity-api\webroot\index.php(40): Cake\Http\Server->run()
+#17 {main}
+Request URL: /pclouds/login
+
+
+2021-03-17 15:38:34 Warning: Warning (512): Unable to emit headers. Headers sent in file=E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php line=176 in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 51]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 51
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:38:34 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 152]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitStatusLine() - CORE\src\Http\ResponseEmitter.php, line 152
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 57
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:38:35 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:38:35 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:39:43 Error: [Cake\View\Exception\MissingTemplateException] Template file "PClouds\login.ctp" is missing. (E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\View\View.php:1583)
+Exception Attributes: array (
+  'file' => 'PClouds\\login.ctp',
+)
+#0 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\View\View.php(875): Cake\View\View->_getViewFileName('PClouds\\login')
+#1 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Controller.php(795): Cake\View\View->render(NULL, NULL)
+#2 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(126): Cake\Controller\Controller->render()
+#3 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PCloudsController))
+#4 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\BaseApplication.php(234): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(162): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(96): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 E:\xampp\htdocs\infinity-api\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#14 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Server.php(97): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 E:\xampp\htdocs\infinity-api\webroot\index.php(40): Cake\Http\Server->run()
+#17 {main}
+Request URL: /pclouds/login
+
+
+2021-03-17 15:39:44 Warning: Warning (512): Unable to emit headers. Headers sent in file=E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php line=176 in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 51]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 51
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:39:45 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 152]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitStatusLine() - CORE\src\Http\ResponseEmitter.php, line 152
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 57
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:39:45 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:39:46 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:40:46 Error: [Cake\View\Exception\MissingTemplateException] Template file "PClouds\login.ctp" is missing. (E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\View\View.php:1583)
+Exception Attributes: array (
+  'file' => 'PClouds\\login.ctp',
+)
+#0 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\View\View.php(875): Cake\View\View->_getViewFileName('PClouds\\login')
+#1 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Controller.php(795): Cake\View\View->render(NULL, NULL)
+#2 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(126): Cake\Controller\Controller->render()
+#3 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PCloudsController))
+#4 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\BaseApplication.php(234): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(162): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(96): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 E:\xampp\htdocs\infinity-api\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#14 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Server.php(97): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 E:\xampp\htdocs\infinity-api\webroot\index.php(40): Cake\Http\Server->run()
+#17 {main}
+Request URL: /pclouds/login
+
+
+2021-03-17 15:40:47 Warning: Warning (512): Unable to emit headers. Headers sent in file=E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php line=176 in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 51]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 51
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:40:48 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 152]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitStatusLine() - CORE\src\Http\ResponseEmitter.php, line 152
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 57
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:40:49 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:40:50 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:41:57 Error: [Cake\View\Exception\MissingTemplateException] Template file "PClouds\login.ctp" is missing. (E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\View\View.php:1583)
+Exception Attributes: array (
+  'file' => 'PClouds\\login.ctp',
+)
+#0 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\View\View.php(875): Cake\View\View->_getViewFileName('PClouds\\login')
+#1 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Controller.php(795): Cake\View\View->render(NULL, NULL)
+#2 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(126): Cake\Controller\Controller->render()
+#3 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PCloudsController))
+#4 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\BaseApplication.php(234): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(162): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(96): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 E:\xampp\htdocs\infinity-api\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#14 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Server.php(97): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 E:\xampp\htdocs\infinity-api\webroot\index.php(40): Cake\Http\Server->run()
+#17 {main}
+Request URL: /pclouds/login
+
+
+2021-03-17 15:41:58 Warning: Warning (512): Unable to emit headers. Headers sent in file=E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php line=176 in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 51]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 51
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:41:58 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 152]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitStatusLine() - CORE\src\Http\ResponseEmitter.php, line 152
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 57
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:41:59 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:42:00 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:42:26 Error: [Cake\View\Exception\MissingTemplateException] Template file "PClouds\login.ctp" is missing. (E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\View\View.php:1583)
+Exception Attributes: array (
+  'file' => 'PClouds\\login.ctp',
+)
+#0 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\View\View.php(875): Cake\View\View->_getViewFileName('PClouds\\login')
+#1 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Controller.php(795): Cake\View\View->render(NULL, NULL)
+#2 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(126): Cake\Controller\Controller->render()
+#3 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PCloudsController))
+#4 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\BaseApplication.php(234): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(162): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(96): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 E:\xampp\htdocs\infinity-api\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#14 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Server.php(97): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 E:\xampp\htdocs\infinity-api\webroot\index.php(40): Cake\Http\Server->run()
+#17 {main}
+Request URL: /pclouds/login
+
+
+2021-03-17 15:42:26 Warning: Warning (512): Unable to emit headers. Headers sent in file=E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php line=176 in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 51]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 51
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:42:27 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 152]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitStatusLine() - CORE\src\Http\ResponseEmitter.php, line 152
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 57
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:42:28 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:42:28 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:42:50 Error: [Cake\View\Exception\MissingTemplateException] Template file "PClouds\login.ctp" is missing. (E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\View\View.php:1583)
+Exception Attributes: array (
+  'file' => 'PClouds\\login.ctp',
+)
+#0 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\View\View.php(875): Cake\View\View->_getViewFileName('PClouds\\login')
+#1 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Controller.php(795): Cake\View\View->render(NULL, NULL)
+#2 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(126): Cake\Controller\Controller->render()
+#3 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PCloudsController))
+#4 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\BaseApplication.php(234): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(162): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(96): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 E:\xampp\htdocs\infinity-api\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#14 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Server.php(97): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 E:\xampp\htdocs\infinity-api\webroot\index.php(40): Cake\Http\Server->run()
+#17 {main}
+Request URL: /pclouds/login
+
+
+2021-03-17 15:42:51 Warning: Warning (512): Unable to emit headers. Headers sent in file=E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php line=176 in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 51]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 51
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:42:51 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 152]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitStatusLine() - CORE\src\Http\ResponseEmitter.php, line 152
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 57
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:42:52 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:42:53 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:43:14 Error: [Cake\View\Exception\MissingTemplateException] Template file "PClouds\login.ctp" is missing. (E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\View\View.php:1583)
+Exception Attributes: array (
+  'file' => 'PClouds\\login.ctp',
+)
+#0 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\View\View.php(875): Cake\View\View->_getViewFileName('PClouds\\login')
+#1 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Controller.php(795): Cake\View\View->render(NULL, NULL)
+#2 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(126): Cake\Controller\Controller->render()
+#3 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PCloudsController))
+#4 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\BaseApplication.php(234): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(162): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(96): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 E:\xampp\htdocs\infinity-api\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#14 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Server.php(97): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 E:\xampp\htdocs\infinity-api\webroot\index.php(40): Cake\Http\Server->run()
+#17 {main}
+Request URL: /pclouds/login
+
+
+2021-03-17 15:43:15 Warning: Warning (512): Unable to emit headers. Headers sent in file=E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php line=176 in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 51]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 51
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:43:15 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 152]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitStatusLine() - CORE\src\Http\ResponseEmitter.php, line 152
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 57
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:43:16 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:43:16 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:44:12 Error: [Cake\View\Exception\MissingTemplateException] Template file "PClouds\login.ctp" is missing. (E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\View\View.php:1583)
+Exception Attributes: array (
+  'file' => 'PClouds\\login.ctp',
+)
+#0 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\View\View.php(875): Cake\View\View->_getViewFileName('PClouds\\login')
+#1 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Controller.php(795): Cake\View\View->render(NULL, NULL)
+#2 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(126): Cake\Controller\Controller->render()
+#3 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PCloudsController))
+#4 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\BaseApplication.php(234): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(162): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(96): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 E:\xampp\htdocs\infinity-api\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#14 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Server.php(97): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 E:\xampp\htdocs\infinity-api\webroot\index.php(40): Cake\Http\Server->run()
+#17 {main}
+Request URL: /pclouds/login
+
+
+2021-03-17 15:44:13 Warning: Warning (512): Unable to emit headers. Headers sent in file=E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php line=176 in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 51]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 51
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:44:14 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 152]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitStatusLine() - CORE\src\Http\ResponseEmitter.php, line 152
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 57
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:44:14 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:44:15 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:45:13 Error: [Cake\View\Exception\MissingTemplateException] Template file "PClouds\login.ctp" is missing. (E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\View\View.php:1583)
+Exception Attributes: array (
+  'file' => 'PClouds\\login.ctp',
+)
+#0 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\View\View.php(875): Cake\View\View->_getViewFileName('PClouds\\login')
+#1 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Controller.php(795): Cake\View\View->render(NULL, NULL)
+#2 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(126): Cake\Controller\Controller->render()
+#3 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PCloudsController))
+#4 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\BaseApplication.php(234): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(162): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(96): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 E:\xampp\htdocs\infinity-api\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#14 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Server.php(97): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 E:\xampp\htdocs\infinity-api\webroot\index.php(40): Cake\Http\Server->run()
+#17 {main}
+Request URL: /pclouds/login
+
+
+2021-03-17 15:45:14 Warning: Warning (512): Unable to emit headers. Headers sent in file=E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php line=176 in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 51]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 51
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:45:15 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 152]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitStatusLine() - CORE\src\Http\ResponseEmitter.php, line 152
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 57
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:45:15 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:45:16 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:55:02 Error: [Cake\View\Exception\MissingTemplateException] Template file "PClouds\login.ctp" is missing. (E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\View\View.php:1583)
+Exception Attributes: array (
+  'file' => 'PClouds\\login.ctp',
+)
+#0 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\View\View.php(875): Cake\View\View->_getViewFileName('PClouds\\login')
+#1 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Controller.php(795): Cake\View\View->render(NULL, NULL)
+#2 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(126): Cake\Controller\Controller->render()
+#3 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PCloudsController))
+#4 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\BaseApplication.php(234): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(162): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(96): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 E:\xampp\htdocs\infinity-api\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#14 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Server.php(97): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 E:\xampp\htdocs\infinity-api\webroot\index.php(40): Cake\Http\Server->run()
+#17 {main}
+Request URL: /pclouds/login
+
+
+2021-03-17 15:55:38 Error: [Cake\View\Exception\MissingTemplateException] Template file "PClouds\login.ctp" is missing. (E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\View\View.php:1583)
+Exception Attributes: array (
+  'file' => 'PClouds\\login.ctp',
+)
+#0 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\View\View.php(875): Cake\View\View->_getViewFileName('PClouds\\login')
+#1 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Controller.php(795): Cake\View\View->render(NULL, NULL)
+#2 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(126): Cake\Controller\Controller->render()
+#3 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PCloudsController))
+#4 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\BaseApplication.php(234): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(162): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(96): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 E:\xampp\htdocs\infinity-api\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#14 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Server.php(97): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 E:\xampp\htdocs\infinity-api\webroot\index.php(40): Cake\Http\Server->run()
+#17 {main}
+Request URL: /pclouds/login
+
+
+2021-03-17 15:55:39 Warning: Warning (512): Unable to emit headers. Headers sent in file=E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php line=176 in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 51]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 51
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:55:39 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 152]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitStatusLine() - CORE\src\Http\ResponseEmitter.php, line 152
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 57
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:55:40 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:55:41 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:56:16 Error: [Cake\View\Exception\MissingTemplateException] Template file "PClouds\login.ctp" is missing. (E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\View\View.php:1583)
+Exception Attributes: array (
+  'file' => 'PClouds\\login.ctp',
+)
+#0 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\View\View.php(875): Cake\View\View->_getViewFileName('PClouds\\login')
+#1 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Controller.php(795): Cake\View\View->render(NULL, NULL)
+#2 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(126): Cake\Controller\Controller->render()
+#3 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PCloudsController))
+#4 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\BaseApplication.php(234): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(162): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(96): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 E:\xampp\htdocs\infinity-api\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#14 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Server.php(97): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 E:\xampp\htdocs\infinity-api\webroot\index.php(40): Cake\Http\Server->run()
+#17 {main}
+Request URL: /pclouds/login
+
+
+2021-03-17 15:56:16 Warning: Warning (512): Unable to emit headers. Headers sent in file=E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php line=176 in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 51]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 51
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:56:17 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 152]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitStatusLine() - CORE\src\Http\ResponseEmitter.php, line 152
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 57
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:56:18 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:56:18 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:57:23 Error: [Cake\View\Exception\MissingTemplateException] Template file "PClouds\login.ctp" is missing. (E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\View\View.php:1583)
+Exception Attributes: array (
+  'file' => 'PClouds\\login.ctp',
+)
+#0 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\View\View.php(875): Cake\View\View->_getViewFileName('PClouds\\login')
+#1 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Controller.php(795): Cake\View\View->render(NULL, NULL)
+#2 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(126): Cake\Controller\Controller->render()
+#3 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PCloudsController))
+#4 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\BaseApplication.php(234): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(162): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(96): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 E:\xampp\htdocs\infinity-api\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#14 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Server.php(97): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 E:\xampp\htdocs\infinity-api\webroot\index.php(40): Cake\Http\Server->run()
+#17 {main}
+Request URL: /pclouds/login
+
+
+2021-03-17 15:57:24 Warning: Warning (512): Unable to emit headers. Headers sent in file=E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php line=176 in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 51]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 51
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:57:25 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 152]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitStatusLine() - CORE\src\Http\ResponseEmitter.php, line 152
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 57
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:57:25 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:57:26 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:57:49 Error: [Cake\View\Exception\MissingTemplateException] Template file "PClouds\login.ctp" is missing. (E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\View\View.php:1583)
+Exception Attributes: array (
+  'file' => 'PClouds\\login.ctp',
+)
+#0 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\View\View.php(875): Cake\View\View->_getViewFileName('PClouds\\login')
+#1 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Controller.php(795): Cake\View\View->render(NULL, NULL)
+#2 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(126): Cake\Controller\Controller->render()
+#3 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PCloudsController))
+#4 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\BaseApplication.php(234): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(162): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(96): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 E:\xampp\htdocs\infinity-api\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#14 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Server.php(97): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 E:\xampp\htdocs\infinity-api\webroot\index.php(40): Cake\Http\Server->run()
+#17 {main}
+Request URL: /pclouds/login
+
+
+2021-03-17 15:57:50 Warning: Warning (512): Unable to emit headers. Headers sent in file=E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php line=176 in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 51]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 51
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:57:50 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 152]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitStatusLine() - CORE\src\Http\ResponseEmitter.php, line 152
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 57
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:57:51 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 15:57:52 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 16:03:47 Error: [Cake\View\Exception\MissingTemplateException] Template file "PClouds\login.ctp" is missing. (E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\View\View.php:1583)
+Exception Attributes: array (
+  'file' => 'PClouds\\login.ctp',
+)
+#0 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\View\View.php(875): Cake\View\View->_getViewFileName('PClouds\\login')
+#1 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Controller.php(795): Cake\View\View->render(NULL, NULL)
+#2 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(126): Cake\Controller\Controller->render()
+#3 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PCloudsController))
+#4 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\BaseApplication.php(234): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(162): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(96): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 E:\xampp\htdocs\infinity-api\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#14 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Server.php(97): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 E:\xampp\htdocs\infinity-api\webroot\index.php(40): Cake\Http\Server->run()
+#17 {main}
+Request URL: /pclouds/login
+
+
+2021-03-17 16:03:48 Warning: Warning (512): Unable to emit headers. Headers sent in file=E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php line=176 in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 51]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 51
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 16:03:48 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 152]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitStatusLine() - CORE\src\Http\ResponseEmitter.php, line 152
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 57
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 16:03:49 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 16:03:49 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 16:05:38 Error: [Cake\View\Exception\MissingTemplateException] Template file "PClouds\login.ctp" is missing. (E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\View\View.php:1583)
+Exception Attributes: array (
+  'file' => 'PClouds\\login.ctp',
+)
+#0 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\View\View.php(875): Cake\View\View->_getViewFileName('PClouds\\login')
+#1 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Controller.php(795): Cake\View\View->render(NULL, NULL)
+#2 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(126): Cake\Controller\Controller->render()
+#3 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PCloudsController))
+#4 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\BaseApplication.php(234): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(162): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(96): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 E:\xampp\htdocs\infinity-api\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#14 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Server.php(97): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 E:\xampp\htdocs\infinity-api\webroot\index.php(40): Cake\Http\Server->run()
+#17 {main}
+Request URL: /pclouds/login
+
+
+2021-03-17 16:05:39 Warning: Warning (512): Unable to emit headers. Headers sent in file=E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php line=176 in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 51]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 51
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 16:05:40 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 152]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitStatusLine() - CORE\src\Http\ResponseEmitter.php, line 152
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 57
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 16:05:41 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 16:05:42 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 16:07:45 Error: [Cake\View\Exception\MissingTemplateException] Template file "PClouds\login.ctp" is missing. (E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\View\View.php:1583)
+Exception Attributes: array (
+  'file' => 'PClouds\\login.ctp',
+)
+#0 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\View\View.php(875): Cake\View\View->_getViewFileName('PClouds\\login')
+#1 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Controller\Controller.php(795): Cake\View\View->render(NULL, NULL)
+#2 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(126): Cake\Controller\Controller->render()
+#3 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ActionDispatcher.php(94): Cake\Http\ActionDispatcher->_invoke(Object(App\Controller\PCloudsController))
+#4 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\BaseApplication.php(234): Cake\Http\ActionDispatcher->dispatch(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#5 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Http\BaseApplication->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#6 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\RoutingMiddleware.php(162): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#7 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\RoutingMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#8 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Routing\Middleware\AssetMiddleware.php(88): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#9 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Routing\Middleware\AssetMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#10 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Error\Middleware\ErrorHandlerMiddleware.php(96): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#11 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): Cake\Error\Middleware\ErrorHandlerMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#12 E:\xampp\htdocs\infinity-api\vendor\cakephp\debug_kit\src\Middleware\DebugKitMiddleware.php(53): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#13 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(65): DebugKit\Middleware\DebugKitMiddleware->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response), Object(Cake\Http\Runner))
+#14 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Runner.php(51): Cake\Http\Runner->__invoke(Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#15 E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\Server.php(97): Cake\Http\Runner->run(Object(Cake\Http\MiddlewareQueue), Object(Cake\Http\ServerRequest), Object(Cake\Http\Response))
+#16 E:\xampp\htdocs\infinity-api\webroot\index.php(40): Cake\Http\Server->run()
+#17 {main}
+Request URL: /pclouds/login
+
+
+2021-03-17 16:07:45 Warning: Warning (512): Unable to emit headers. Headers sent in file=E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php line=176 in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 51]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 51
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 16:07:46 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 152]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitStatusLine() - CORE\src\Http\ResponseEmitter.php, line 152
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 57
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 16:07:47 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
+2021-03-17 16:07:48 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at E:\xampp\htdocs\infinity-api\vendor\symfony\var-dumper\Dumper\AbstractDumper.php:176) in [E:\xampp\htdocs\infinity-api\vendor\cakephp\cakephp\src\Http\ResponseEmitter.php, line 181]
+Request URL: /pclouds/login
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE\src\Error\BaseErrorHandler.php, line 168
+Cake\Core\BasePlugin::{closure}() - ROOT\vendor\cakephp\debug_kit\config\bootstrap.php, line 43
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE\src\Http\ResponseEmitter.php, line 181
+Cake\Http\ResponseEmitter::emit() - CORE\src\Http\ResponseEmitter.php, line 58
+Cake\Http\Server::emit() - CORE\src\Http\Server.php, line 140
+[main] - ROOT\webroot\index.php, line 40
+
+
+
