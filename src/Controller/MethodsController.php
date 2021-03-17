@@ -19,12 +19,12 @@ class MethodsController extends AppController
 			$condition = [];
 			if (!empty($data)) {
 				if (!empty($data['module_id'])) {
-					$condition['module_id'] = $data['module_id'];
+					$condition['Methods.module_id'] = $data['module_id'];
 				}
-//				if (!empty($data['keywords'])) {
-//					$keywords = $data['keywords'];
-//					$condition['display '] = '%A%';
-//				}
+				if (!empty($data['keywords'])) {
+					$keywords = $data['keywords'];
+					$condition['Methods.display ILIKE '] = "%$keywords%";
+				}
 			}
 			$methods = $this->Methods->find()
 						->contain(['Modules'])

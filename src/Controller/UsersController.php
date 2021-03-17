@@ -47,10 +47,21 @@ class UsersController extends AppController
 	public function index()
 	{
 		if ($this->request->is('post')) {
-			$this->paginate = [
-				'contain' => ['Groups'],
-			];
-			$users = $this->paginate($this->Users);
+			$request_body = $this->request->input('json_decode');
+			$data = (array)$request_body;
+			$condition = [];
+			if (!empty($data)) {
+				if (!empty($data['group_id'])) {
+					$condition['Users.group_id'] = $data['group_id'];
+				}
+				if (!empty($data['keywords'])) {
+					$keywords = $data['keywords'];
+					$condition['Users.name ILIKE '] = "%$keywords%";
+				}
+			}
+			$users = $this->Users->find()
+						->contain(['Groups'])
+						->where($condition);
 			$data = [];
 			if ($users) {
 				$data = $users;

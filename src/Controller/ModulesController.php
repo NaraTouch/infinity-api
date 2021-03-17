@@ -30,10 +30,18 @@ class ModulesController extends AppController
 	public function index()
 	{
 		if ($this->request->is('post')) {
-			$this->paginate = [
-				'contain' => ['Methods'],
-			];
-			$modules = $this->paginate($this->Modules);
+			$request_body = $this->request->input('json_decode');
+			$data = (array)$request_body;
+			$condition = [];
+			if (!empty($data)) {
+				if (!empty($data['keywords'])) {
+					$keywords = $data['keywords'];
+					$condition['Modules.name ILIKE '] = "%$keywords%";
+				}
+			}
+			$modules = $this->Modules->find()
+						->contain(['Methods'])
+						->where($condition);
 			$data = [];
 			if ($modules) {
 				$data = $modules;

@@ -14,7 +14,17 @@ class GroupsController extends AppController
 	public function index()
 	{
 		if ($this->request->is('post')) {
-			$groups = $this->paginate($this->Groups);
+			$request_body = $this->request->input('json_decode');
+			$data = (array)$request_body;
+			$condition = [];
+			if (!empty($data)) {
+				if (!empty($data['keywords'])) {
+					$keywords = $data['keywords'];
+					$condition['Groups.display ILIKE '] = "%$keywords%";
+				}
+			}
+			$groups = $this->Groups->find()
+						->where($condition);
 			$data = [];
 			if ($groups) {
 				$data = $groups;

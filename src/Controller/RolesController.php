@@ -14,10 +14,21 @@ class RolesController extends AppController
 	public function index()
 	{
 		if ($this->request->is('post')) {
-			$this->paginate = [
-				'contain' => ['Groups'],
-			];
-			$roles = $this->paginate($this->Roles);
+			$request_body = $this->request->input('json_decode');
+			$data = (array)$request_body;
+			$condition = [];
+			if (!empty($data)) {
+				if (!empty($data['group_id'])) {
+					$condition['Roles.group_id'] = $data['group_id'];
+				}
+				if (!empty($data['keywords'])) {
+					$keywords = $data['keywords'];
+					$condition['Roles.display ILIKE '] = "%$keywords%";
+				}
+			}
+			$roles = $this->Roles->find()
+						->contain(['Groups'])
+						->where($condition);
 			$data = [];
 			if ($roles) {
 				$data = $roles;
