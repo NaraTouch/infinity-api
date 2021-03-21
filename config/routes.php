@@ -178,10 +178,10 @@ Router::scope('/', function (RouteBuilder $routes) {
 			]);
 	
 	//pcloud
-	$routes->connect('/pclouds/login',
+	$routes->connect('/pclouds/listfolder',
 			[
 				'controller' => 'PClouds',
-				'action' => 'login'
+				'action' => 'listFolder'
 			]);
 	$routes->fallbacks(DashedRoute::class);
 });

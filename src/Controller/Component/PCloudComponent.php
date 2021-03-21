@@ -16,9 +16,10 @@ class PCloudComponent extends Component
 		$this->pcloud_url = 'https://api.pcloud.com';
 	}
 
-	public function login($request = [])
+	public function login()
 	{
 		$url = $this->pcloud_url.'/userinfo';
+		$data = [];
 		$request = [
 			'getauth' => 1,
 			'logout' => 1,
@@ -26,21 +27,30 @@ class PCloudComponent extends Component
 			'password' => $this->password
 		];
 		$http_method = 'POST';
-		return $this->openUrl($url, $request, $http_method);
+		$response = $this->openUrl($url, $request, $http_method);
+		if ($response) {
+			$data = json_decode($response);
+		}
+		return $data;
 	}
 
 	public function listDirectory($path = null)
 	{
-		$response = [];
+		$data = [];
 		$login = $this->login();
-		dump($login);
 		if ($login) {
 			$url = $this->pcloud_url.'/listfolder';
-			$path = 'path='.'/Documents';
+			$request = [
+				'path' => $path,
+				'auth' => $login->auth,
+			];
 			$http_method = 'POST';
-			$response = $this->openUrlWithNoCovertParam($url, $path, $http_method);
+			$response = $this->openUrl($url, $request, $http_method);
+			if ($response) {
+				$data = json_decode($response, true);
+			}
 		}
-		return $response;
+		return $data;
 	}
 
 	private function openUrl($url = null, $param = [], $http_method = null)
@@ -60,29 +70,4 @@ class PCloudComponent extends Component
 		return $output;
 	}
 	
-	private function openUrlWithNoCovertParam($url = null, $param = null, $http_method = null)
-	{
-		if (!$url || !$param) {
-			return [];
-		}
-		dump($url.'?'.$param);
-		$curl = curl_init();
-
-		curl_setopt_array($curl, array(
-			CURLOPT_URL => 'https://api.pcloud.com/listfolder?path=/Documents',
-			CURLOPT_RETURNTRANSFER => true,
-			CURLOPT_ENCODING => '',
-			CURLOPT_MAXREDIRS => 10,
-			CURLOPT_TIMEOUT => 0,
-			CURLOPT_FOLLOWLOCATION => true,
-			CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-			CURLOPT_CUSTOMREQUEST => 'POST',
-		));
-
-		$response = curl_exec($curl);
-
-		curl_close($curl);
-		echo $response;
-	}
-
 }

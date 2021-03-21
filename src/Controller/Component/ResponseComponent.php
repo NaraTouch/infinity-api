@@ -61,4 +61,16 @@ class ResponseComponent extends Component
 			->withStatus($http_status)
 			->withStringBody(json_encode($response));
 	}
+
+	public function PcloudMessage($error = null, $message = null)
+	{
+		$http_status = 404;
+		$response = [
+			'ErrorCode' => $error,
+			'Message' => $message,
+		];
+		return $this->response->withType('application/json')
+			->withStatus($http_status)
+			->withStringBody(json_encode($response));
+	}
 }
