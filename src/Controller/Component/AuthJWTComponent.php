@@ -22,7 +22,7 @@ class AuthJWTComponent extends Component
 			'Auth' => 'Bearer',
 			'token' => JWT::encode([
 				'sub' => $user['id'],
-				'exp' =>  time() + 3600, // 1 hour
+				'exp' =>  time() + 86400, // 1 day
 				'role' => $user['group']['name']
 			],
 			Security::salt())

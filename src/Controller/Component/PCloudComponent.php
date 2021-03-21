@@ -40,19 +40,69 @@ class PCloudComponent extends Component
 		$login = $this->login();
 		if ($login) {
 			$url = $this->pcloud_url.'/listfolder';
+			$auth = $login->auth;
 			$request = [
 				'path' => $path,
-				'auth' => $login->auth,
+				'auth' => $auth,
 			];
 			$http_method = 'POST';
 			$response = $this->openUrl($url, $request, $http_method);
 			if ($response) {
-				$data = json_decode($response, true);
+				$response = json_decode($response, true);
+				foreach ($response as $key => $value) {
+					if ($key != 'metadata') {
+						$data[$key] = $value;
+					}
+					foreach ($response['metadata'] as $meta_key => $meta_value) {
+						if ($meta_key != 'contents') {
+							$data[$meta_key] = $meta_value;
+						}
+					}
+					$contents = [];
+					if ($response['metadata']['contents'] && count($response['metadata']['contents']) > 0) {
+						foreach ($response['metadata']['contents'] as $con_key => $con_value) {
+							if(strtolower($con_value['icon']) == 'image') {
+								$image = [];
+								foreach($con_value as $m_key => $m_value) {
+									$image[$m_key] = $m_value;
+								}
+								$file_link = $this->getFilePublink($con_value['fileid'], $auth);
+								$image['link'] = $file_link;
+								$image['example_public_url'] = $this->pcloud_url.
+										'/getpubthumb?fileid='
+										.$con_value['fileid'].'&code='
+										.$file_link['code']
+										.'&size=1024x1024';
+								$image['public_url'] = $this->pcloud_url.'/getpubthumb';
+								$contents[$con_key] = $image;
+							} else {
+								$contents[$con_key] = $con_value;
+							}
+						}
+					}
+				}
+				
+				$data['contents'] = $contents;
 			}
 		}
 		return $data;
 	}
-
+	public function getFilePublink($file_id = null, $auth = null)
+	{
+		$data = [];
+		$request = [
+				'auth' => $auth,
+				'fileid' => $file_id,
+			];
+		$url = $this->pcloud_url.'/getfilepublink';
+		$http_method = 'POST';
+		$response = $this->openUrl($url, $request, $http_method);
+		if ($response) {
+			$data = json_decode($response, true);
+		}
+		return $data;
+	}
+	 
 	private function openUrl($url = null, $param = [], $http_method = null)
 	{
 		if (!$url || !$param) {
