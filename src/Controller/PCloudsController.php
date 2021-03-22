@@ -39,7 +39,34 @@ class PCloudsController extends AppController
 				$message = 'User not found.';
 				return $this->Response->Response($http_code, $message, null, null);
 			}
-			
+		}
+	}
+
+	public function createFolderIfNotExists()
+	{
+		if ($this->request->is('post')) {
+			$request_body = $this->request->input('json_decode');
+			$request = [
+					'path' => $request_body->path,
+					'folder_id' => $request_body->folder_id,
+					'name' => $request_body->name,
+				];
+			$response = $this->PCloud->createFolderIfNotExists($request);
+			if ($response) {
+					if ($response['result'] === 0) {
+						$http_code = 200;
+						$message = 'Success';
+						return $this->Response->Response($http_code, $message, $response);
+					} else {
+						$http_code = $response['result'];
+						$message = $response['error'];
+						return $this->Response->PcloudMessage($http_code, $message);
+					}
+			} else {
+				$http_code = 500;
+				$message = 'Internal Server Error';
+				return $this->Response->Response($http_code, $message);
+			}
 		}
 	}
 

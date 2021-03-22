@@ -64,6 +64,7 @@ class PCloudComponent extends Component
 				$data['metadata']['pub_example'] = $this->pcloud_url.
 										'/getpubthumb?fileid=fileid'
 										.'&code=code'
+										.'&type=type'
 										.'&size=widthxheight';
 				$data['metadata']['pub_url'] = $this->pcloud_url.'/getpubthumb';
 			}
@@ -71,19 +72,26 @@ class PCloudComponent extends Component
 		return $data;
 	}
 
-	public function getFilePublink($file_id = null, $auth = null)
+	public function createFolderIfNotExists($request = null)
 	{
-		$data = [];
-		$request = [
-				'auth' => $auth,
-				'fileid' => $file_id,
-			];
-		$url = $this->pcloud_url.'/getfilepublink';
-		$http_method = 'POST';
-		$response = $this->openUrl($url, $request, $http_method);
-		if ($response) {
-			$data = json_decode($response, true);
+		$login = $this->login();
+		if ($login) {
+			$auth = $login->auth;
+			$data = [];
+			$request = [
+					'auth' => $auth,
+					'path' => $request['path'],
+					'folderid' => $request['folder_id'],
+					'name' => $request['name'],
+				];
+			$url = $this->pcloud_url.'/createfolderifnotexists';
+			$http_method = 'POST';
+			$response = $this->openUrl($url, $request, $http_method);
+			if ($response) {
+				$data = json_decode($response, true);
+			}
 		}
+		
 		return $data;
 	}
 
