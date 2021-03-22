@@ -183,5 +183,11 @@ Router::scope('/', function (RouteBuilder $routes) {
 				'controller' => 'PClouds',
 				'action' => 'listFolder'
 			]);
+
+	$routes->connect('/pclouds/createfolderifnotexists',
+			[
+				'controller' => 'PClouds',
+				'action' => 'createFolderIfNotExists'
+			]);
 	$routes->fallbacks(DashedRoute::class);
 });
