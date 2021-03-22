@@ -49,44 +49,28 @@ class PCloudComponent extends Component
 			$response = $this->openUrl($url, $request, $http_method);
 			if ($response) {
 				$response = json_decode($response, true);
-				foreach ($response as $key => $value) {
-					if ($key != 'metadata') {
-						$data[$key] = $value;
-					}
-					foreach ($response['metadata'] as $meta_key => $meta_value) {
-						if ($meta_key != 'contents') {
-							$data[$meta_key] = $meta_value;
-						}
-					}
-					$contents = [];
-					if ($response['metadata']['contents'] && count($response['metadata']['contents']) > 0) {
-						foreach ($response['metadata']['contents'] as $con_key => $con_value) {
-							if(strtolower($con_value['icon']) == 'image') {
-								$image = [];
-								foreach($con_value as $m_key => $m_value) {
-									$image[$m_key] = $m_value;
-								}
-								$file_link = $this->getFilePublink($con_value['fileid'], $auth);
-								$image['link'] = $file_link;
-								$image['example_public_url'] = $this->pcloud_url.
-										'/getpubthumb?fileid='
-										.$con_value['fileid'].'&code='
-										.$file_link['code']
-										.'&size=1024x1024';
-								$image['public_url'] = $this->pcloud_url.'/getpubthumb';
-								$contents[$con_key] = $image;
-							} else {
-								$contents[$con_key] = $con_value;
-							}
+				$data = $response;
+				$auth_dir = [];
+				if ($response['metadata']['contents'] && count($response['metadata']['contents']) > 0) {
+					$folder_pub = $this->getFolderPublink($response['metadata']['folderid'], $auth);
+					if ($folder_pub) {
+						$folder_auth = json_decode($folder_pub, true);
+						if ($folder_auth['result'] == 0) {
+							$auth_dir = $folder_auth;
 						}
 					}
 				}
-				
-				$data['contents'] = $contents;
+				$data['metadata']['auth'] = $auth_dir;
+				$data['metadata']['pub_example'] = $this->pcloud_url.
+										'/getpubthumb?fileid=fileid'
+										.'&code=code'
+										.'&size=widthxheight';
+				$data['metadata']['pub_url'] = $this->pcloud_url.'/getpubthumb';
 			}
 		}
 		return $data;
 	}
+
 	public function getFilePublink($file_id = null, $auth = null)
 	{
 		$data = [];
@@ -99,6 +83,22 @@ class PCloudComponent extends Component
 		$response = $this->openUrl($url, $request, $http_method);
 		if ($response) {
 			$data = json_decode($response, true);
+		}
+		return $data;
+	}
+
+	public function getFolderPublink($folder_id = null, $auth = null)
+	{
+		$data = [];
+		$request = [
+				'auth' => $auth,
+				'folderid' => $folder_id,
+			];
+		$url = $this->pcloud_url.'/getfolderpublink';
+		$http_method = 'POST';
+		$response = $this->openUrl($url, $request, $http_method);
+		if ($response) {
+			$data = $response;
 		}
 		return $data;
 	}
