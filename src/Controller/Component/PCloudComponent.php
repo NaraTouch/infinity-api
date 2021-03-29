@@ -94,6 +94,90 @@ class PCloudComponent extends Component
 		
 		return $data;
 	}
+	
+	public function renameFolder($request = null)
+	{
+		$login = $this->login();
+		if ($login) {
+			$auth = $login->auth;
+			$data = [];
+			$request = [
+					'auth' => $auth,
+					'folderid' => $request['folder_id'],
+					'toname' => $request['name'],
+				];
+			$url = $this->pcloud_url.'/renamefolder';
+			$http_method = 'POST';
+			$response = $this->openUrl($url, $request, $http_method);
+			if ($response) {
+				$data = json_decode($response, true);
+			}
+		}
+		return $data;
+	}
+
+	public function deleteFolder($request = null)
+	{
+		$login = $this->login();
+		if ($login) {
+			$auth = $login->auth;
+			$data = [];
+			$request = [
+					'auth' => $auth,
+					'folderid' => $request['folder_id'],
+					'path' => $request['path'],
+				];
+			$url = $this->pcloud_url.'/deletefolder';
+			$http_method = 'POST';
+			$response = $this->openUrl($url, $request, $http_method);
+			if ($response) {
+				$data = json_decode($response, true);
+			}
+		}
+		return $data;
+	}
+
+	public function renameFile($request = null)
+	{
+		$login = $this->login();
+		if ($login) {
+			$auth = $login->auth;
+			$data = [];
+			$request = [
+					'auth' => $auth,
+					'fileid' => $request['file_id'],
+					'toname' => $request['name'],
+				];
+			$url = $this->pcloud_url.'/renamefile';
+			$http_method = 'POST';
+			$response = $this->openUrl($url, $request, $http_method);
+			if ($response) {
+				$data = json_decode($response, true);
+			}
+		}
+		return $data;
+	}
+
+	public function deleteFile($request = null)
+	{
+		$login = $this->login();
+		if ($login) {
+			$auth = $login->auth;
+			$data = [];
+			$request = [
+					'auth' => $auth,
+					'fileid' => $request['file_id'],
+					'path' => $request['path'],
+				];
+			$url = $this->pcloud_url.'/deletefile';
+			$http_method = 'POST';
+			$response = $this->openUrl($url, $request, $http_method);
+			if ($response) {
+				$data = json_decode($response, true);
+			}
+		}
+		return $data;
+	}
 
 	public function getFolderPublink($folder_id = null, $auth = null)
 	{

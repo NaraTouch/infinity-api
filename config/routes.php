@@ -189,5 +189,25 @@ Router::scope('/', function (RouteBuilder $routes) {
 				'controller' => 'PClouds',
 				'action' => 'createFolderIfNotExists'
 			]);
+	$routes->connect('/pclouds/renamefolder',
+			[
+				'controller' => 'PClouds',
+				'action' => 'renameFolder'
+			]);
+	$routes->connect('/pclouds/deletefolder',
+			[
+				'controller' => 'PClouds',
+				'action' => 'deleteFolder'
+			]);
+	$routes->connect('/pclouds/renamefile',
+			[
+				'controller' => 'PClouds',
+				'action' => 'renameFile'
+			]);
+	$routes->connect('/pclouds/deletefile',
+			[
+				'controller' => 'PClouds',
+				'action' => 'deleteFile'
+			]);
 	$routes->fallbacks(DashedRoute::class);
 });
