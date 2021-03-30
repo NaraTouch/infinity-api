@@ -209,5 +209,15 @@ Router::scope('/', function (RouteBuilder $routes) {
 				'controller' => 'PClouds',
 				'action' => 'deleteFile'
 			]);
+	$routes->connect('/pclouds/uploadfile',
+			[
+				'controller' => 'PClouds',
+				'action' => 'uploadFile'
+			]);
+	$routes->connect('/pclouds/uploadprogress',
+			[
+				'controller' => 'PClouds',
+				'action' => 'uploadFileProgress'
+			]);
 	$routes->fallbacks(DashedRoute::class);
 });

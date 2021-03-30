@@ -194,7 +194,44 @@ class PCloudComponent extends Component
 		}
 		return $data;
 	}
-	 
+
+	public function uploadFileProgress($request = null)
+	{
+		$login = $this->login();
+		if ($login) {
+			$auth = $login->auth;
+			$data = [];
+			$request = [
+					'auth' => $auth,
+					'progresshash' => $request['progresshash'],
+				];
+			$url = $this->pcloud_url.'/uploadprogress';
+			$http_method = 'POST';
+			$response = $this->openUrl($url, $request, $http_method);
+			if ($response) {
+				$data = json_decode($response, true);
+			}
+		}
+		return $data;
+	}
+
+	public function uploadFile($request = null, $file = [])
+	{
+		$login = $this->login();
+		if ($login) {
+			$auth = $login->auth;
+			$request['auth'] = $auth;
+			$data = [];
+			$url = $this->pcloud_url.'/uploadfile';
+			$http_method = 'POST';
+			$response = $this->openFileUrl($url, $request, $file, $http_method);
+			if ($response) {
+				$data = json_decode($response, true);
+			}
+		}
+		return $data;
+	}
+
 	private function openUrl($url = null, $param = [], $http_method = null)
 	{
 		if (!$url || !$param) {
@@ -212,4 +249,36 @@ class PCloudComponent extends Component
 		return $output;
 	}
 	
+	private function openFileUrl($url = null, $param = [], $file = [], $http_method = null)
+	{
+		if (!$url || !$param) {
+			return [];
+		}
+		$str_param = http_build_query($param);
+		$header = [
+			'Content-Type: multipart/form-data',
+		];
+		//CURLFile for php >= 5.5
+		$cfile = ['file' => new \CURLFile(
+				$file['file']['tmp_name'],
+				$file['file']['type'],
+				$file['file']['name'])
+			];
+		$curl = curl_init();
+		curl_setopt_array($curl, [
+			CURLOPT_URL => $url.'?'.$str_param,
+			CURLOPT_RETURNTRANSFER => true,
+			CURLOPT_ENCODING => '',
+			CURLOPT_MAXREDIRS => 10,
+			CURLOPT_TIMEOUT => 0,
+			CURLOPT_FOLLOWLOCATION => true,
+			CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+			CURLOPT_CUSTOMREQUEST => $http_method,
+			CURLOPT_HTTPHEADER => $header,
+			CURLOPT_POSTFIELDS => $cfile,
+		]);
+		$response = curl_exec($curl);
+		curl_close($curl);
+		return $response;
+	}
 }
