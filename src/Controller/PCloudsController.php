@@ -70,4 +70,161 @@ class PCloudsController extends AppController
 		}
 	}
 
+	public function renameFolder()
+	{
+		if ($this->request->is('post')) {
+			$request_body = $this->request->input('json_decode');
+			$request = [
+					'folder_id' => $request_body->folder_id,
+					'name' => $request_body->name,
+				];
+			$response = $this->PCloud->renameFolder($request);
+			if ($response) {
+					if ($response['result'] === 0) {
+						$http_code = 200;
+						$message = 'Success';
+						return $this->Response->Response($http_code, $message, $response);
+					} else {
+						$http_code = $response['result'];
+						$message = $response['error'];
+						return $this->Response->PcloudMessage($http_code, $message);
+					}
+			} else {
+				$http_code = 500;
+				$message = 'Internal Server Error';
+				return $this->Response->Response($http_code, $message);
+			}
+		}
+	}
+
+	public function deleteFolder()
+	{
+		if ($this->request->is('post')) {
+			$request_body = $this->request->input('json_decode');
+			$request = [
+					'folder_id' => $request_body->folder_id,
+					'path' => $request_body->path,
+				];
+			$response = $this->PCloud->deleteFolder($request);
+			if ($response) {
+					if ($response['result'] === 0) {
+						$http_code = 200;
+						$message = 'Success';
+						return $this->Response->Response($http_code, $message, $response);
+					} else {
+						$http_code = $response['result'];
+						$message = $response['error'];
+						return $this->Response->PcloudMessage($http_code, $message);
+					}
+			} else {
+				$http_code = 500;
+				$message = 'Internal Server Error';
+				return $this->Response->Response($http_code, $message);
+			}
+		}
+	}
+
+	public function renameFile()
+	{
+		if ($this->request->is('post')) {
+			$request_body = $this->request->input('json_decode');
+			$request = [
+					'file_id' => $request_body->file_id,
+					'name' => $request_body->name,
+				];
+			$response = $this->PCloud->renameFile($request);
+			if ($response) {
+					if ($response['result'] === 0) {
+						$http_code = 200;
+						$message = 'Success';
+						return $this->Response->Response($http_code, $message, $response);
+					} else {
+						$http_code = $response['result'];
+						$message = $response['error'];
+						return $this->Response->PcloudMessage($http_code, $message);
+					}
+			} else {
+				$http_code = 500;
+				$message = 'Internal Server Error';
+				return $this->Response->Response($http_code, $message);
+			}
+		}
+	}
+
+	public function deleteFile()
+	{
+		if ($this->request->is('post')) {
+			$request_body = $this->request->input('json_decode');
+			$request = [
+					'file_id' => $request_body->file_id,
+					'path' => $request_body->path,
+				];
+			$response = $this->PCloud->deleteFile($request);
+			if ($response) {
+					if ($response['result'] === 0) {
+						$http_code = 200;
+						$message = 'Success';
+						return $this->Response->Response($http_code, $message, $response);
+					} else {
+						$http_code = $response['result'];
+						$message = $response['error'];
+						return $this->Response->PcloudMessage($http_code, $message);
+					}
+			} else {
+				$http_code = 500;
+				$message = 'Internal Server Error';
+				return $this->Response->Response($http_code, $message);
+			}
+		}
+	}
+	
+	public function uploadFileProgress()
+	{
+		if ($this->request->is('post')) {
+			$request_body = $this->request->input('json_decode');
+			$request = [
+					'progresshash' => $request_body->progresshash,
+				];
+			$response = $this->PCloud->uploadFileProgress($request);
+			if ($response) {
+					if ($response['result'] === 0) {
+						$http_code = 200;
+						$message = 'Success';
+						return $this->Response->Response($http_code, $message, $response);
+					} else {
+						$http_code = $response['result'];
+						$message = $response['error'];
+						return $this->Response->PcloudMessage($http_code, $message);
+					}
+			} else {
+				$http_code = 500;
+				$message = 'Internal Server Error';
+				return $this->Response->Response($http_code, $message);
+			}
+		}
+	}
+
+	public function uploadFile()
+	{
+		if ($this->request->is('post')) {
+			$request_body = $this->request->getQuery();
+			$file = $this->request->getData();
+			$response = $this->PCloud->uploadFile($request_body, $file);
+			if ($response) {
+					if ($response['result'] === 0) {
+						$http_code = 200;
+						$message = 'Success';
+						return $this->Response->Response($http_code, $message, $response);
+					} else {
+						$http_code = $response['result'];
+						$message = $response['error'];
+						return $this->Response->PcloudMessage($http_code, $message);
+					}
+			} else {
+				$http_code = 500;
+				$message = 'Internal Server Error';
+				return $this->Response->Response($http_code, $message);
+			}
+		}
+	}
 }
