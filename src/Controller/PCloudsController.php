@@ -183,8 +183,8 @@ class PCloudsController extends AppController
 		if ($this->request->is('post')) {
 			$request_body = $this->request->input('json_decode');
 			$request = [
-					'progresshash' => $request_body->progresshash,
-				];
+				'progresshash' => $request_body->progresshash,
+			];
 			$response = $this->PCloud->uploadFileProgress($request);
 			if ($response) {
 					if ($response['result'] === 0) {
