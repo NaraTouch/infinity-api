@@ -89,3 +89,5 @@ define('MASTER_CODE', 'NARA');
 
 //Define Message Area
 define('MESSAGE_REQUIRED', ' is required.');
+define('IMAGE_EXTENTION', ['gif', 'png', 'jpg', 'jpeg']);
+define('MESSAGE_INVALIDE_FILE', 'Your file is not allowed.');
