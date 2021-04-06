@@ -93,11 +93,31 @@ class ValidationComponent extends Component
 	{
 		$this->validator
 			->requirePresence('path')
-			->notEmptyString('path');
+			->notEmptyString('path')
+			->add('path', 'custom', [
+				'rule' => function($value) {
+					if ($value == '/') {
+						return false;
+					} else {
+						return true;
+					}
+				},
+				'message' => MESSAGE_INVALIDE_DIRECTTORY,
+			]);
 	
 		$this->validator
 			->requirePresence('folderid')
-			->notEmptyString('folderid');
+			->notEmptyString('folderid')
+			->add('folderid', 'custom', [
+				'rule' => function($value) {
+					if ($value == '0') {
+						return false;
+					} else {
+						return true;
+					}
+				},
+				'message' => MESSAGE_INVALIDE_DIRECTTORY,
+			]);
 	
 		$this->validator
 			->requirePresence('filename')

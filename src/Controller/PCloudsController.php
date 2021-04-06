@@ -285,7 +285,7 @@ class PCloudsController extends AppController
 					return $this->Response->Response($http_code, $message);
 				}
 			} else {
-				$http_code = 400;
+				$http_code = 201;
 				$message = 'Upload Failed!!!';
 				return $this->Response->Response($http_code, $message, null, $validate);
 			}

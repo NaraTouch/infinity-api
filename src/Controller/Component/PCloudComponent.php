@@ -57,6 +57,8 @@ class PCloudComponent extends Component
 						$folder_auth = json_decode($folder_pub, true);
 						if ($folder_auth['result'] == 0) {
 							$auth_dir = $folder_auth;
+						} else {
+							$auth_dir = $folder_auth;
 						}
 					}
 				}
