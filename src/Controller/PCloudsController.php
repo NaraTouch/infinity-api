@@ -13,7 +13,7 @@ class PCloudsController extends AppController
 		$this->loadComponent('Validation');
 	}
 
-	public function listFolder()
+	public function index()
 	{
 		if ($this->request->is('post')) {
 			$request_body = $this->request->input('json_decode');

@@ -99,10 +99,10 @@ Router::scope('/', function (RouteBuilder $routes) {
 			]);
 	
 	// Modules
-	$routes->connect('/modules/list',
+	$routes->connect('/modules/lists',
 			[
 				'controller' => 'Modules',
-				'action' => 'getModuleList'
+				'action' => 'lists'
 			]);
 	$routes->connect('/modules',
 			[
@@ -176,12 +176,11 @@ Router::scope('/', function (RouteBuilder $routes) {
 				'controller' => 'Securities',
 				'action' => 'getAccessUrl'
 			]);
-	
 	//pcloud
-	$routes->connect('/pclouds/listfolder',
+	$routes->connect('/pclouds',
 			[
 				'controller' => 'PClouds',
-				'action' => 'listFolder'
+				'action' => 'index'
 			]);
 
 	$routes->connect('/pclouds/createfolderifnotexists',

@@ -28,7 +28,8 @@ class MethodsController extends AppController
 			}
 			$methods = $this->Methods->find()
 						->contain(['Modules'])
-						->where($condition);
+						->where($condition)
+						->order(['Methods.sort' => 'asc']);
 			$data = [];
 			if ($methods) {
 				$data = $methods->toArray();

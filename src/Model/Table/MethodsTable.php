@@ -50,8 +50,15 @@ class MethodsTable extends Table
 			->notEmptyString('symbol');
 
 		$validator
+			->nonNegativeInteger('sort')
 			->numeric('sort')
-			->notEmpty('sort');
+			->notEmpty('sort')
+			->add('sort', [
+				'unique' => [
+					'rule' => ['validateUnique', ['scope' => 'id']],
+					'provider' => 'table'
+				]
+			]);
 
 		$validator
 			->boolean('is_menu')

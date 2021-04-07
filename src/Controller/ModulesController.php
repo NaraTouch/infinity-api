@@ -11,7 +11,7 @@ class ModulesController extends AppController
 		$this->loadComponent('Response');
 	}
 
-	public function getModuleList()
+	public function lists()
 	{
 		if ($this->request->is('post')) {
 			$query = $this->Modules->find()
@@ -41,7 +41,8 @@ class ModulesController extends AppController
 			}
 			$modules = $this->Modules->find()
 						->contain(['Methods'])
-						->where($condition);
+						->where($condition)
+						->order(['Modules.sort' => 'asc']);
 			$data = [];
 			if ($modules) {
 				$data = $modules;
