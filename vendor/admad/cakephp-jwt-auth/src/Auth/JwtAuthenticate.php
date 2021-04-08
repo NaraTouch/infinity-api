@@ -98,18 +98,19 @@ class JwtAuthenticate extends BaseAuthenticate
 		if ($request === null) {
 			return $this->_token;
 		}
-
 		$header = $request->getHeaderLine($config['header']);
+		$controller = $request->getParam('controller');
+		$action = $request->getParam('action');
 		if ($header && stripos($header, $config['prefix']) === 0) {
 			$this->_token = str_ireplace($config['prefix'] . ' ', '', $header);
-			$get_token = $this->_token_table->getUserByToken($this->_token);
+			$get_token = $this->_token_table->getUserByToken($this->_token, $controller, $action);
+//			dump($get_token);
 			if ($get_token) {
 				return $this->_token = str_ireplace($config['prefix'] . ' ', '', $header);
 			} else {
 				throw new UnauthorizedException('Unauthorized');
 			}
 		}
-
 		if (!empty($this->_config['parameter'])) {
 			$token = $request->getQuery($this->_config['parameter']);
 			if ($token !== null) {

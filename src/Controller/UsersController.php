@@ -1,7 +1,6 @@
 <?php
 namespace App\Controller;
 use App\Controller\AppController;
-use Cake\Event\EventInterface;
 
 class UsersController extends AppController
 {
@@ -12,13 +11,6 @@ class UsersController extends AppController
 		$this->loadComponent('Response');
 		$this->loadComponent('AuthJWT');
 		$this->Auth->allow(['login']);
-	}
-	
-	public function getProfile()
-	{
-		if ($this->request->is('post')) {
-			$test = 'jjj';
-		}
 	}
 
 	public function login()

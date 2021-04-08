@@ -2,14 +2,20 @@
 namespace App\Model\Table;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
+use Cake\ORM\TableRegistry;
 
 class TokensTable extends Table
 {
 
+	private $Modules;
+	private $Methods;
+
 	public function initialize(array $config)
 	{
 		parent::initialize($config);
-
+		$this->Modules = TableRegistry::get('Modules');
+		$this->Methods = TableRegistry::get('Methods');
+		
 		$this->setTable('tokens');
 		$this->setPrimaryKey('id');
 
@@ -32,22 +38,6 @@ class TokensTable extends Table
 			return true;
 		}
 		return false;
-		
-	}
-	
-	public function getUserByToken($token = null)
-	{
-		if (!$token){
-			return false;
-		}
-		$user =  $this->find()
-				->where(['token' => $token])
-				->contain(['Users'])
-				->first();
-		if ($user) {
-			return $user;
-		}
-		return false;
 	}
 
 	public function buildRules(RulesChecker $rules)
@@ -56,5 +46,45 @@ class TokensTable extends Table
 
 		return $rules;
 	}
+
+	public function getUserByToken($token = null, $controller = null, $action = null)
+	{
+
+		if (!$token){
+			return false;
+		}
+		$user =  $this->find()
+				->where(['token' => $token])
+				->contain(['Users'])
+				->first();
+		if ($user) {
+			dump($user);
+//			$get_access_url = $this->checkAccessUrl($controller, $action);
+//			dump($get_access_url);
+			return $user;
+		}
+		return false;
+	}
 	
+	public function checkAccessUrl($module_name = null, $method_name = null)
+	{
+		if (!$module_name || !$method_name)
+		{
+			return false;
+		}
+		$data = [];
+		$module = $this->Modules->getModuleByName($module_name);
+		if ($module) {
+			$data['module'] = $module;
+			$method = $this->Methods->getMethodByName($method_name);
+			if ($method) {
+				$data['method'] = $method;
+				return $data;
+			} else {
+				return false;
+			}
+		} else {
+			return false;
+		}
+	}
 }

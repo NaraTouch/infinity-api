@@ -6,11 +6,6 @@ Router::defaultRouteClass(DashedRoute::class);
 
 Router::scope('/', function (RouteBuilder $routes) {
 	// Routes for users.
-	$routes->connect('/users/get_profile',
-			[
-				'controller' => 'Users',
-				'action' => 'getProfile'
-			]);
 	$routes->connect('/users/login',
 			[
 				'controller' => 'Users',

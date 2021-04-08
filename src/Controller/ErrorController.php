@@ -32,8 +32,6 @@ class ErrorController extends AppController
 	{
 	}
 
-	
-
 	public function afterFilter(Event $event)
 	{
 	}
