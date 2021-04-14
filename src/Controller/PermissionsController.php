@@ -39,7 +39,8 @@ class PermissionsController extends AppController
 			foreach ($data['permissions'] as $key => $value) {
 				$permission_data[] = [
 					'role_id' => $value->role_id,
-					'method_id' => $value->method_id
+					'method_id' => $value->method_id,
+					'module_id' => $value->module_id,
 				];
 			}
 			$conditions = ['role_id' => $role_id];

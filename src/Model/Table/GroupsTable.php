@@ -47,10 +47,28 @@ class GroupsTable extends Table
 		$validator
 			->boolean('active')
 			->allowEmptyString('active');
+	
+		$validator
+			->boolean('super_user')
+			->allowEmptyString('super_user');
 
 		return $validator;
 	}
-	
+
+	public function getGroupById($id = null)
+	{
+		if (!$id) {
+			return $id;
+		}
+		$query = $this->find()
+				->where(['id' => $id])
+				->first();
+		if ($query) {
+			return $query;
+		}
+		return false;
+	}
+
 	public function buildRules(RulesChecker $rules)
 	{
 		$rules->add($rules->isUnique(['name']));

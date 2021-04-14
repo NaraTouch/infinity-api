@@ -104,7 +104,6 @@ class JwtAuthenticate extends BaseAuthenticate
 		if ($header && stripos($header, $config['prefix']) === 0) {
 			$this->_token = str_ireplace($config['prefix'] . ' ', '', $header);
 			$get_token = $this->_token_table->getUserByToken($this->_token, $controller, $action);
-//			dump($get_token);
 			if ($get_token) {
 				return $this->_token = str_ireplace($config['prefix'] . ' ', '', $header);
 			} else {

@@ -71,10 +71,14 @@ class MethodsTable extends Table
 		return $validator;
 	}
 
-	public function getMethodByName($name = null)
+	public function getMethodByName($name = null, $module_id = null)
 	{
+		if (!$name || !$module_id) {
+			return false;
+		}
 		$query = $this->find()
 				->where([
+					'module_id' => $module_id,
 					'name' => $name,
 					'active' => 1
 				])

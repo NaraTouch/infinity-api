@@ -9,12 +9,18 @@ class TokensTable extends Table
 
 	private $Modules;
 	private $Methods;
+	private $Groups;
+	private $Roles;
+	private $Permissions;
 
 	public function initialize(array $config)
 	{
 		parent::initialize($config);
 		$this->Modules = TableRegistry::get('Modules');
 		$this->Methods = TableRegistry::get('Methods');
+		$this->Groups = TableRegistry::get('Groups');
+		$this->Roles = TableRegistry::get('Roles');
+		$this->Permissions = TableRegistry::get('Permissions');
 		
 		$this->setTable('tokens');
 		$this->setPrimaryKey('id');
@@ -43,7 +49,6 @@ class TokensTable extends Table
 	public function buildRules(RulesChecker $rules)
 	{
 		$rules->add($rules->isUnique(['user_id']));
-
 		return $rules;
 	}
 
@@ -58,9 +63,33 @@ class TokensTable extends Table
 				->contain(['Users'])
 				->first();
 		if ($user) {
-			dump($user);
-//			$get_access_url = $this->checkAccessUrl($controller, $action);
-//			dump($get_access_url);
+			$access_url = $this->checkAccessUrl($controller, $action);
+			$role = $this->Roles->getRoleByGroup($user->user->group_id);
+			if ($access_url && $role) {
+				$permission = $this->AuthenticatorJudgement($role, $access_url);
+				if ($permission) {
+					return $user;
+				} else {
+					return false;
+				}
+			} else {
+				return false;
+			}
+			
+		}
+		return false;
+	}
+
+	public function getUserByTokenOnly($token = null)
+	{
+		if (!$token){
+			return false;
+		}
+		$user =  $this->find()
+				->where(['token' => $token])
+				->contain(['Users'])
+				->first();
+		if ($user) {
 			return $user;
 		}
 		return false;
@@ -72,12 +101,11 @@ class TokensTable extends Table
 		{
 			return false;
 		}
-		$data = [];
 		$module = $this->Modules->getModuleByName($module_name);
 		if ($module) {
-			$data['module'] = $module;
-			$method = $this->Methods->getMethodByName($method_name);
+			$method = $this->Methods->getMethodByName($method_name, $module->id);
 			if ($method) {
+				$data['module'] = $module;
 				$data['method'] = $method;
 				return $data;
 			} else {
@@ -86,5 +114,17 @@ class TokensTable extends Table
 		} else {
 			return false;
 		}
+	}
+	
+	public function AuthenticatorJudgement($role = null, $access_url = null)
+	{
+		if (!$access_url || !$role) {
+			return false;
+		}
+		$permission = $this->Permissions->checkPermission($role, $access_url);
+		if ($permission) {
+			return $permission;
+		}
+		return false;
 	}
 }

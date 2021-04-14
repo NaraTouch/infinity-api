@@ -51,7 +51,7 @@ class RolesTable extends Table
 
 		return $validator;
 	}
-	
+
 	public function getRoleByGroup($group_id = null)
 	{
 		$query = $this->find()

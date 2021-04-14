@@ -22,7 +22,7 @@ class SecuritiesController extends AppController
 			$header = $this->request->getHeaders();
 			$token = str_replace("Bearer ","",$header['Authorization'][0]);
 			if ($token && !empty($auth)) {
-				$user = $this->Tokens->getUserByToken($token);
+				$user = $this->Tokens->getUserByTokenOnly($token);
 				if ($user->user_id == $auth['id']) {
 					$role = $this->Roles->getRoleByGroup($auth['group_id']);
 					if ($role) {
