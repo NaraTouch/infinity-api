@@ -15,23 +15,44 @@ class PermissionsController extends AppController
 	{
 		if ($this->request->is('post')) {
 			$request_body = $this->request->input('json_decode');
+			$auth = $this->Auth->user();
+			$filter = $this->Response->getFilterByGroup($auth['group_id']);
 			$conditions = [
 				'role_id' => $request_body->role_id,
 			];
-			$query = $this->getPermission($conditions);
-			$data = [];
-			if (isset($query)) {
-				$data = $query;
+			if (!empty($filter)) {
+				$role = $this->Response->getFilterRole($request_body->role_id);
+				if (!empty($role)) {
+					$validate = $this->Response->validateTheSameValue($filter['group_id'], $role['group_id']);
+					if (!$validate) {
+						$conditions = [];
+					}
+				} else {
+					$conditions = [];
+				}
 			}
-			$http_code = 200;
-			$message = 'Success';
-			return $this->Response->Response($http_code, $message, $data);
+			if (!empty($conditions)) {
+				$query = $this->getPermission($conditions);
+				$data = [];
+				if (isset($query)) {
+					$data = $query;
+				}
+				$http_code = 200;
+				$message = 'Success';
+				return $this->Response->Response($http_code, $message, $data);
+			} else {
+				$http_code = 404;
+				$message = 'Permission not found.';
+				return $this->Response->Response($http_code, $message, null, null);
+			}
 		}
 	}
 
 	public function add()
 	{
 		if ($this->request->is('post')) {
+			$auth = $this->Auth->user();
+			$filter = $this->Response->getFilterByGroup($auth['group_id']);
 			$request_body = $this->request->input('json_decode');
 			$data = (array)$request_body;
 			$permission_data = [];
@@ -44,18 +65,34 @@ class PermissionsController extends AppController
 				];
 			}
 			$conditions = ['role_id' => $role_id];
-			$query = $this->getPermission($conditions);
-			if (!empty($query)) {
-				if ($this->deletAllPermissionsByRole($conditions)) {
-					return $this->addPermission($permission_data);
+			if (!empty($filter)) {
+				$role = $this->Response->getFilterRole($request_body->role_id);
+				if (!empty($role)) {
+					$validate = $this->Response->validateTheSameValue($filter['group_id'], $role['group_id']);
+					if (!$validate) {
+						$conditions = [];
+					}
 				} else {
-					$http_code = 400;
-					$message = 'Permission Error.';
-					return $this->Response->Response($http_code, $message, null, null);
+					$conditions = [];
 				}
-			} else {
-				return $this->addPermission($permission_data);
 			}
+			return $this->updatePermission($conditions, $permission_data);
+		}
+	}
+	
+	public function updatePermission($conditions = null, $permission_data = null)
+	{
+		$query = $this->getPermission($conditions);
+		if (!empty($query)) {
+			if ($this->deletAllPermissionsByRole($conditions)) {
+				return $this->addPermission($permission_data);
+			} else {
+				$http_code = 400;
+				$message = 'Permission Error.';
+				return $this->Response->Response($http_code, $message, null, null);
+			}
+		} else {
+			return $this->addPermission($permission_data);
 		}
 	}
 
@@ -77,6 +114,9 @@ class PermissionsController extends AppController
 
 	public function getPermission($conditions)
 	{
+		if (empty($conditions)) {
+			return false;
+		}
 		$query = $this->Permissions->find()
 				->where($conditions);
 		if ($query) {

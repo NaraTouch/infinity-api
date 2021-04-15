@@ -39,9 +39,11 @@ class UsersController extends AppController
 	public function index()
 	{
 		if ($this->request->is('post')) {
+			$condition = [];
+			$auth = $this->Auth->user();
+			$filter = $this->Response->getFilterByGroup($auth['group_id']);
 			$request_body = $this->request->input('json_decode');
 			$data = (array)$request_body;
-			$condition = [];
 			if (!empty($data)) {
 				if (!empty($data['group_id'])) {
 					$condition['Users.group_id'] = $data['group_id'];
@@ -51,12 +53,15 @@ class UsersController extends AppController
 					$condition['Users.name ILIKE '] = "%$keywords%";
 				}
 			}
-			$users = $this->Users->find()
+			if (!empty($filter)) {
+				$condition['Users.group_id'] = $filter['group_id'];
+			}
+			$query = $this->Users->find()
 						->contain(['Groups'])
 						->where($condition);
 			$data = [];
-			if ($users) {
-				$data = $users;
+			if ($query) {
+				$data = $query;
 			}
 			$http_code = 200;
 			$message = 'Success';
@@ -67,10 +72,23 @@ class UsersController extends AppController
 	public function view()
 	{
 		if ($this->request->is('post')) {
+			$condition = [];
+			$auth = $this->Auth->user();
+			$filter = $this->Response->getFilterByGroup($auth['group_id']);
 			$request_body = $this->request->input('json_decode');
-			$user = $this->Users->get($request_body->id, [
-				'contain' => ['Groups'],
-			]);
+			$data = (array)$request_body;
+			if (!empty($data)) {
+				if (!empty($data['id'])) {
+					$condition['Users.id'] = $data['id'];
+				}
+			}
+			if (!empty($filter)) {
+				$condition['Users.group_id'] = $filter['group_id'];
+			}
+			$user = $this->Users->find()
+						->contain(['Groups'])
+						->where($condition)
+						->first();
 			if ($user) {
 				$http_code = 200;
 				$message = 'Success';
@@ -80,7 +98,6 @@ class UsersController extends AppController
 				$message = 'User not found.';
 				return $this->Response->Response($http_code, $message, null, null);
 			}
-			
 		}
 		
 	}
@@ -88,9 +105,14 @@ class UsersController extends AppController
 	public function add()
 	{
 		if ($this->request->is('post')) {
+			$auth = $this->Auth->user();
+			$filter = $this->Response->getFilterByGroup($auth['group_id']);
 			$user = $this->Users->newEntity();
 			$request_body = $this->request->input('json_decode');
 			$data = (array)$request_body;
+			if (!empty($filter)) {
+				$data['group_id'] = $filter['group_id'];
+			}
 			$entity = $this->Users->patchEntity($user, $data);
 			if ($this->Users->save($entity)) {
 				$http_code = 200;
@@ -107,9 +129,14 @@ class UsersController extends AppController
 	public function edit()
 	{
 		if ($this->request->is(['patch', 'post', 'put'])) {
+			$auth = $this->Auth->user();
+			$filter = $this->Response->getFilterByGroup($auth['group_id']);
 			$request_body = $this->request->input('json_decode');
 			$user = $this->Users->get($request_body->id);
 			$data = (array)$request_body;
+			if (!empty($filter)) {
+				$data['group_id'] = $filter['group_id'];
+			}
 			if (empty($data['password'])) {
 				$data['password'] = $user->password;
 			}
@@ -131,15 +158,33 @@ class UsersController extends AppController
 		if ($this->request->is(['patch', 'post', 'put'])) {
 			$request_body = $this->request->input('json_decode');
 			$user = $this->Users->get($request_body->id);
-			if ($this->Users->delete($user)) {
-				$http_code = 200;
-				$message = 'Success';
-				return $this->Response->Response($http_code, $message);
+			$auth = $this->Auth->user();
+			$filter = $this->Response->getFilterByGroup($auth['group_id']);
+			if (!empty($filter)) {
+				$validate = $this->Response->validateTheSameValue($filter['group_id'], $user->group_id);
+				if ($validate) {
+					return $this->deleteUser($user);
+				} else {
+					$http_code = 400;
+					$message = 'Delete not success';
+					return $this->Response->Response($http_code, $message, null, null);
+				}
 			} else {
-				$http_code = 400;
-				$message = 'Delete not success';
-				return $this->Response->Response($http_code, $message, null, null);
+				return $this->deleteUser($user);
 			}
+		}
+	}
+	
+	public function deleteUser($user = null)
+	{
+		if ($this->Users->delete($user)) {
+			$http_code = 200;
+			$message = 'Success';
+			return $this->Response->Response($http_code, $message);
+		} else {
+			$http_code = 400;
+			$message = 'Delete not success';
+			return $this->Response->Response($http_code, $message, null, null);
 		}
 	}
 }

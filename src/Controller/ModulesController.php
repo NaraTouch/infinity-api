@@ -39,13 +39,13 @@ class ModulesController extends AppController
 					$condition['Modules.name ILIKE '] = "%$keywords%";
 				}
 			}
-			$modules = $this->Modules->find()
+			$query = $this->Modules->find()
 						->contain(['Methods'])
 						->where($condition)
 						->order(['Modules.sort' => 'asc']);
 			$data = [];
-			if ($modules) {
-				$data = $modules;
+			if ($query) {
+				$data = $query;
 			}
 			$http_code = 200;
 			$message = 'Success';

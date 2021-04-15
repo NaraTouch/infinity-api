@@ -66,6 +66,20 @@ class RolesTable extends Table
 		return false;
 	}
 
+	public function getRoleById($id = null)
+	{
+		$query = $this->find()
+				->where([
+					'id' => $id,
+					'active' => 1,
+				])
+				->first();
+		if ($query) {
+			return $query;
+		}
+		return false;
+	}
+
 	public function buildRules(RulesChecker $rules)
 	{
 		$rules->add($rules->isUnique(['name']));

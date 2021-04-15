@@ -8,6 +8,8 @@ use Firebase\JWT\JWT;
 class AuthJWTComponent extends Component
 {
 
+	private $Tokens;
+	
 	public function initialize(array $config)
 	{
 		parent::initialize($config);

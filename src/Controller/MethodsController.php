@@ -26,13 +26,13 @@ class MethodsController extends AppController
 					$condition['Methods.display ILIKE '] = "%$keywords%";
 				}
 			}
-			$methods = $this->Methods->find()
+			$query = $this->Methods->find()
 						->contain(['Modules'])
 						->where($condition)
 						->order(['Methods.sort' => 'asc']);
 			$data = [];
-			if ($methods) {
-				$data = $methods->toArray();
+			if ($query) {
+				$data = $query->toArray();
 			}
 			$http_code = 200;
 			$message = 'Success';

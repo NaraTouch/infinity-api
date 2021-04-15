@@ -1,13 +1,110 @@
 <?php
 namespace App\Controller\Component;
 use Cake\Controller\Component;
+use Cake\ORM\TableRegistry;
 
 class ResponseComponent extends Component
 {
-
+	private $Groups;
+	private $Roles;
+	
 	public function initialize(array $config)
 	{
 		parent::initialize($config);
+		$this->Groups = TableRegistry::get('Groups');
+		$this->Roles = TableRegistry::get('Roles');
+	}
+
+	public function getFilterByWebsite($group_id = null)
+	{
+		if (!$group_id) {
+			return false;
+		}
+		$group = $this->Groups->getGroupById($group_id);
+		if ($group) {
+			if ($group->super_user) {
+				return [];
+			} else {
+				return ['website_id' => $group->website_id];
+			}
+		} else {
+			return false;
+		}
+	}
+
+	public function getFilterByGroup($group_id = null)
+	{
+		if (!$group_id) {
+			return false;
+		}
+		$group = $this->Groups->getGroupById($group_id);
+		if ($group) {
+			if ($group->super_user) {
+				return [];
+			} else {
+				return ['group_id' => $group->id];
+			}
+		} else {
+			return false;
+		}
+	}
+
+	public function getFilterRole($id = null)
+	{
+		if (!$id) {
+			return false;
+		}
+		$role = $this->Roles->getRoleById($id);
+		if ($role) {
+			return ['group_id' => $role->group_id];
+		} else {
+			return false;
+		}
+	}
+	
+	public function validateTheSameValue($valid_value = null, $value = null)
+	{
+		if (!$valid_value || !$value) {
+			return false;
+		}
+		if ($valid_value == $valid_value) {
+			return true;
+		}
+		return false;
+	}
+
+	public function checkSuperUser($group_id = null)
+	{
+		if (!$group_id) {
+			return false;
+		}
+		$group = $this->Groups->getGroupById($group_id);
+		if ($group) {
+			if ($group->super_user) {
+				return [];
+			} else {
+				return ['super_user' => false];
+			}
+		} else {
+			return false;
+		}
+	}
+
+	public function allowOnlySuperUser($group_id = null)
+	{
+		if (!$group_id) {
+			return false;
+		}
+		$group = $this->Groups->getGroupById($group_id);
+		if ($group) {
+			if ($group->super_user) {
+				return true;
+			} else {
+				return false;
+			}
+		} else {
+			return false;
+		}
 	}
 
 	public function Response($http_code = null, $message = null, $data = [], $error = [])

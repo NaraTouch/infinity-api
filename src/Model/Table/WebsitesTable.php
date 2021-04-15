@@ -4,27 +4,21 @@ use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
-class GroupsTable extends Table
+class WebsitesTable extends Table
 {
 
 	public function initialize(array $config)
 	{
 		parent::initialize($config);
 
-		$this->setTable('groups');
+		$this->setTable('websites');
 		$this->setDisplayField('name');
 		$this->addBehavior('Timestamp');
 		$this->setPrimaryKey('id');
 
-		$this->hasMany('Users', [
-			'foreignKey' => 'group_id',
+		$this->hasOne('Groups', [
+			'foreignKey' => 'website_id',
 		]);
-		$this->hasMany('Roles', [
-			'foreignKey' => 'group_id',
-		]);
-		$this->belongsTo('Websites')
-			->setForeignKey('website_id')
-			->setDependent(true);
 	}
 
 	public function validationDefault(Validator $validator)
@@ -39,6 +33,10 @@ class GroupsTable extends Table
 			->notEmptyString('name');
 
 		$validator
+			->scalar('domain')
+			->notEmptyString('domain');
+	
+		$validator
 			->scalar('display')
 			->maxLength('display', 180)
 			->notEmptyString('display');
@@ -51,35 +49,15 @@ class GroupsTable extends Table
 			->boolean('active')
 			->allowEmptyString('active');
 	
-		$validator
-			->boolean('super_user')
-			->allowEmptyString('super_user');
-
-		$validator
-			->nonNegativeInteger('website_id')
-			->allowEmptyString('website_id', null, 'create');
 		return $validator;
-	}
-
-	public function getGroupById($id = null)
-	{
-		if (!$id) {
-			return $id;
-		}
-		$query = $this->find()
-				->where(['id' => $id])
-				->first();
-		if ($query) {
-			return $query;
-		}
-		return false;
 	}
 
 	public function buildRules(RulesChecker $rules)
 	{
 		$rules->add($rules->isUnique(['name']));
+		$rules->add($rules->isUnique(['domain']));
+		$rules->add($rules->isUnique(['display']));
 		$rules->add($rules->isUnique(['code']));
-		$rules->add($rules->isUnique(['website_id']));
 
 		return $rules;
 	}

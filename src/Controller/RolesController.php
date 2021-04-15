@@ -14,6 +14,8 @@ class RolesController extends AppController
 	public function index()
 	{
 		if ($this->request->is('post')) {
+			$auth = $this->Auth->user();
+			$filter = $this->Response->getFilterByGroup($auth['group_id']);
 			$request_body = $this->request->input('json_decode');
 			$data = (array)$request_body;
 			$condition = [];
@@ -26,12 +28,15 @@ class RolesController extends AppController
 					$condition['Roles.display ILIKE '] = "%$keywords%";
 				}
 			}
-			$roles = $this->Roles->find()
+			if (!empty($filter)) {
+				$condition['Roles.group_id'] = $filter['group_id'];
+			}
+			$query = $this->Roles->find()
 						->contain(['Groups'])
 						->where($condition);
 			$data = [];
-			if ($roles) {
-				$data = $roles;
+			if ($query) {
+				$data = $query;
 			}
 			$http_code = 200;
 			$message = 'Success';
@@ -39,30 +44,25 @@ class RolesController extends AppController
 		}
 	}
 
-	public function add()
-	{
-		if ($this->request->is('post')) {
-			$role = $this->Roles->newEntity();
-			$request_body = $this->request->input('json_decode');
-			$data = (array)$request_body;
-			$entity = $this->Roles->patchEntity($role, $data);
-			if ($this->Roles->save($entity)) {
-				$http_code = 200;
-				$message = 'Success';
-				return $this->Response->Response($http_code, $message);
-			} else {
-				$http_code = 400;
-				$message = 'Add not success';
-				return $this->Response->Response($http_code, $message, null, $entity->errors());
-			}
-		}
-	}
-
 	public function view()
 	{
 		if ($this->request->is('post')) {
+			$condition = [];
+			$auth = $this->Auth->user();
+			$filter = $this->Response->getFilterByGroup($auth['group_id']);
 			$request_body = $this->request->input('json_decode');
-			$role = $this->Roles->get($request_body->id);
+			$data = (array)$request_body;
+			if (!empty($data)) {
+				if (!empty($data['id'])) {
+					$condition['Roles.id'] = $data['id'];
+				}
+			}
+			if (!empty($filter)) {
+				$condition['Roles.group_id'] = $filter['group_id'];
+			}
+			$role = $this->Roles->find()
+						->where($condition)
+						->first();
 			if ($role) {
 				$http_code = 200;
 				$message = 'Success';
@@ -77,12 +77,41 @@ class RolesController extends AppController
 		
 	}
 
+	public function add()
+	{
+		if ($this->request->is('post')) {
+			$auth = $this->Auth->user();
+			$filter = $this->Response->getFilterByGroup($auth['group_id']);
+			$role = $this->Roles->newEntity();
+			$request_body = $this->request->input('json_decode');
+			$data = (array)$request_body;
+			if (!empty($filter)) {
+				$data['group_id'] = $filter['group_id'];
+			}
+			$entity = $this->Roles->patchEntity($role, $data);
+			if ($this->Roles->save($entity)) {
+				$http_code = 200;
+				$message = 'Success';
+				return $this->Response->Response($http_code, $message);
+			} else {
+				$http_code = 400;
+				$message = 'Add not success';
+				return $this->Response->Response($http_code, $message, null, $entity->errors());
+			}
+		}
+	}
+
 	public function edit()
 	{
 		if ($this->request->is(['patch', 'post', 'put'])) {
+			$auth = $this->Auth->user();
+			$filter = $this->Response->getFilterByGroup($auth['group_id']);
 			$request_body = $this->request->input('json_decode');
 			$role = $this->Roles->get($request_body->id);
 			$data = (array)$request_body;
+			if (!empty($filter)) {
+				$data['group_id'] = $filter['group_id'];
+			}
 			$entity = $this->Roles->patchEntity($role, $data);
 			if ($this->Roles->save($entity)) {
 				$http_code = 200;
@@ -101,7 +130,26 @@ class RolesController extends AppController
 		if ($this->request->is(['patch', 'post', 'put'])) {
 			$request_body = $this->request->input('json_decode');
 			$role = $this->Roles->get($request_body->id);
-			if ($this->Roles->delete($role)) {
+			$auth = $this->Auth->user();
+			$filter = $this->Response->getFilterByGroup($auth['group_id']);
+			if (!empty($filter)) {
+				$validate = $this->Response->validateTheSameValue($filter['group_id'], $role->group_id);
+				if ($validate) {
+					return $this->deleteRole($role);
+				} else {
+					$http_code = 400;
+					$message = 'Delete not success';
+					return $this->Response->Response($http_code, $message, null, null);
+				}
+			} else {
+				return $this->deleteRole($role);
+			}
+		}
+	}
+	
+	public function deleteRole($role = null)
+	{
+		if ($this->Roles->delete($role)) {
 				$http_code = 200;
 				$message = 'Success';
 				return $this->Response->Response($http_code, $message);
@@ -110,6 +158,5 @@ class RolesController extends AppController
 				$message = 'Delete not success';
 				return $this->Response->Response($http_code, $message, null, null);
 			}
-		}
 	}
 }

@@ -65,6 +65,34 @@ Router::scope('/', function (RouteBuilder $routes) {
 				'action' => 'delete'
 			]);
 	
+	// Websites
+	$routes->connect('/websites',
+			[
+				'controller' => 'Websites',
+				'action' => 'index'
+			]);
+
+	$routes->connect('/websites/add',
+			[
+				'controller' => 'Websites',
+				'action' => 'add'
+			]);
+	$routes->connect('/websites/view',
+			[
+				'controller' => 'Websites',
+				'action' => 'view'
+			]);
+	$routes->connect('/websites/edit',
+			[
+				'controller' => 'Websites',
+				'action' => 'edit'
+			]);
+	$routes->connect('/websites/delete',
+			[
+				'controller' => 'Websites',
+				'action' => 'delete'
+			]);
+	
 	// Roles
 	$routes->connect('/roles',
 			[
