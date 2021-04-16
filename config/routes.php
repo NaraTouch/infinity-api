@@ -193,19 +193,40 @@ Router::scope('/', function (RouteBuilder $routes) {
 				'controller' => 'Permissions',
 				'action' => 'getPermissionByRole'
 			]);
+
 	// Security
 	$routes->connect('/securities/get_access_module',
 			[
 				'controller' => 'Securities',
 				'action' => 'getAccessUrl'
 			]);
+
 	//pcloud
 	$routes->connect('/pclouds',
 			[
 				'controller' => 'PClouds',
 				'action' => 'index'
 			]);
-
+	$routes->connect('/pclouds/add',
+			[
+				'controller' => 'PClouds',
+				'action' => 'add'
+			]);
+	$routes->connect('/pclouds/edit',
+			[
+				'controller' => 'PClouds',
+				'action' => 'edit'
+			]);
+	$routes->connect('/pclouds/view',
+			[
+				'controller' => 'PClouds',
+				'action' => 'view'
+			]);
+	$routes->connect('/pclouds/accounts',
+			[
+				'controller' => 'PClouds',
+				'action' => 'accounts'
+			]);
 	$routes->connect('/pclouds/createfolderifnotexists',
 			[
 				'controller' => 'PClouds',

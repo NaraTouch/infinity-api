@@ -19,6 +19,9 @@ class WebsitesTable extends Table
 		$this->hasOne('Groups', [
 			'foreignKey' => 'website_id',
 		]);
+		$this->hasOne('PClounds', [
+			'foreignKey' => 'website_id',
+		]);
 	}
 
 	public function validationDefault(Validator $validator)

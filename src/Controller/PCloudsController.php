@@ -8,9 +8,127 @@ class PCloudsController extends AppController
 	public function initialize()
 	{
 		parent::initialize();
+		$this->loadModel('Pclouds');
 		$this->loadComponent('PCloud');
 		$this->loadComponent('Response');
 		$this->loadComponent('Validation');
+	}
+
+	public function accounts()
+	{
+		if ($this->request->is('post')) {
+			$auth = $this->Auth->user();
+			$filter = $this->Response->getFilterByWebsite($auth['group_id']);
+			$request_body = $this->request->input('json_decode');
+			$data = (array)$request_body;
+			$condition = [];
+			if (!empty($data)) {
+				if (!empty($data['website_id'])) {
+					$condition['Pclouds.website_id'] = $data['website_id'];
+				}
+			}
+			$query = $this->Pclouds->find();
+			if (!empty($filter)) {
+				$query->innerJoinWith('Websites', function($website) use ($filter) {
+						return $website
+							->where([
+								'Websites.id' => $filter['website_id'],
+							]);
+					})
+					->contain(['Websites']);
+			} else {
+				$query
+					->contain(['Websites'])
+					->where($condition);
+			}
+			$data = [];
+			if ($query) {
+				$data = $query;
+			}
+			$http_code = 200;
+			$message = 'Success';
+			return $this->Response->Response($http_code, $message, $data);
+		}
+	}
+
+	public function add()
+	{
+		if ($this->request->is('post')) {
+			$auth = $this->Auth->user();
+			$filter = $this->Response->getFilterByWebsite($auth['group_id']);
+			$p_cloud = $this->Pclouds->newEntity();
+			$request_body = $this->request->input('json_decode');
+			$data = (array)$request_body;
+			if (!empty($filter)) {
+				$data['website_id'] = $filter['website_id'];
+			}
+			$entity = $this->Pclouds->patchEntity($p_cloud, $data);
+			if ($this->Pclouds->save($entity)) {
+				$http_code = 200;
+				$message = 'Success';
+				return $this->Response->Response($http_code, $message);
+			} else {
+				$http_code = 400;
+				$message = 'Add not success';
+				return $this->Response->Response($http_code, $message, null, $entity->errors());
+			}
+		}
+	}
+
+	public function edit()
+	{
+		if ($this->request->is(['patch', 'post', 'put'])) {
+			$auth = $this->Auth->user();
+			$filter = $this->Response->getFilterByWebsite($auth['group_id']);
+			$request_body = $this->request->input('json_decode');
+			$p_cloud = $this->Pclouds->get($request_body->id);
+			$data = (array)$request_body;
+			if (!empty($filter)) {
+				$data['website_id'] = $filter['website_id'];
+			}
+			$entity = $this->Pclouds->patchEntity($p_cloud, $data);
+			if ($this->Pclouds->save($entity)) {
+				$http_code = 200;
+				$message = 'Success';
+				return $this->Response->Response($http_code, $message);
+			} else {
+				$http_code = 400;
+				$message = 'Edit not success';
+				return $this->Response->Response($http_code, $message, null, $entity->errors());
+			}
+		}
+	}
+
+	public function view()
+	{
+		if ($this->request->is('post')) {
+			$condition = [];
+			$auth = $this->Auth->user();
+			$filter = $this->Response->getFilterByWebsite($auth['group_id']);
+			$request_body = $this->request->input('json_decode');
+			$data = (array)$request_body;
+			if (!empty($data)) {
+				if (!empty($data['id'])) {
+					$condition['Pclouds.id'] = $data['id'];
+				}
+			}
+			if (!empty($filter)) {
+				$condition['Pclouds.website_id'] = $filter['website_id'];
+			}
+			$query = $this->Pclouds->find()
+						->where($condition)
+						->first();
+			if ($query) {
+				$http_code = 200;
+				$message = 'Success';
+				return $this->Response->Response($http_code, $message, $query);
+			} else {
+				$http_code = 404;
+				$message = 'Account not found.';
+				return $this->Response->Response($http_code, $message, null, null);
+			}
+			
+		}
 	}
 
 	public function index()

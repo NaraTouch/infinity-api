@@ -77,7 +77,6 @@ class GroupsController extends AppController
 			}
 			
 		}
-		
 	}
 
 	public function add()
