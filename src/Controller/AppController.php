@@ -32,7 +32,7 @@ class AppController extends Controller
 				]
 			],
 			'authError' => ['controller' => 'Error', 'action' => 'Message', 402],
-			'unauthorizedRedirect' => ['controller' => 'Error', 'action' => 'Message', 401],
+			'unauthorizedRedirect' => ['controller' => 'Error', 'action' => 'Message', 402],
 			'checkAuthIn' => 'Controller.initialize'
 		]);
 	}

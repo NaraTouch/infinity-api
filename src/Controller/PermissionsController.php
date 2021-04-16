@@ -16,20 +16,24 @@ class PermissionsController extends AppController
 		if ($this->request->is('post')) {
 			$request_body = $this->request->input('json_decode');
 			$auth = $this->Auth->user();
-			$filter = $this->Response->getFilterByGroup($auth['group_id']);
-			$conditions = [
-				'role_id' => $request_body->role_id,
-			];
+			$filter = $this->Response->getFilterByWebsite($auth['group_id']);
+			$conditions = [];
 			if (!empty($filter)) {
 				$role = $this->Response->getFilterRole($request_body->role_id);
 				if (!empty($role)) {
-					$validate = $this->Response->validateTheSameValue($filter['group_id'], $role['group_id']);
-					if (!$validate) {
-						$conditions = [];
+					$group = $this->Response->getFilterByWebsite($role['group_id']);
+					if (!empty($group)) {
+						if ($this->Response->validateTheSameValue($filter['website_id'], $group['website_id'])) {
+							$conditions = [
+								'role_id' => $request_body->role_id,
+							];
+						}
 					}
-				} else {
-					$conditions = [];
 				}
+			} else {
+				$conditions = [
+					'role_id' => $request_body->role_id,
+				];
 			}
 			if (!empty($conditions)) {
 				$query = $this->getPermission($conditions);
@@ -52,7 +56,7 @@ class PermissionsController extends AppController
 	{
 		if ($this->request->is('post')) {
 			$auth = $this->Auth->user();
-			$filter = $this->Response->getFilterByGroup($auth['group_id']);
+			$filter = $this->Response->getFilterByWebsite($auth['group_id']);
 			$request_body = $this->request->input('json_decode');
 			$data = (array)$request_body;
 			$permission_data = [];
@@ -64,17 +68,19 @@ class PermissionsController extends AppController
 					'module_id' => $value->module_id,
 				];
 			}
-			$conditions = ['role_id' => $role_id];
+			$conditions = [];
 			if (!empty($filter)) {
 				$role = $this->Response->getFilterRole($request_body->role_id);
 				if (!empty($role)) {
-					$validate = $this->Response->validateTheSameValue($filter['group_id'], $role['group_id']);
-					if (!$validate) {
-						$conditions = [];
+					$group = $this->Response->getFilterByWebsite($role['group_id']);
+					if (!empty($group)) {
+						if ($this->Response->validateTheSameValue($filter['website_id'], $group['website_id'])) {
+							$conditions = ['role_id' => $role_id];
+						}
 					}
-				} else {
-					$conditions = [];
 				}
+			} else {
+				$conditions = ['role_id' => $role_id];
 			}
 			return $this->updatePermission($conditions, $permission_data);
 		}

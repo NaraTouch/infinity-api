@@ -54,7 +54,6 @@ class TokensTable extends Table
 
 	public function getUserByToken($token = null, $controller = null, $action = null)
 	{
-
 		if (!$token){
 			return false;
 		}

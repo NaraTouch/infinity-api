@@ -31,17 +31,17 @@ class SecuritiesController extends AppController
 						$message = 'Success';
 						return $this->Response->Response($http_code, $message, $permission);
 					} else {
-						$http_code = 401;
+						$http_code = 402;
 						$message = 'Unauthorized';
 						return $this->Response->Response($http_code, $message);
 					}
 				} else {
-					$http_code = 401;
+					$http_code = 402;
 					$message = 'Unauthorized';
 					return $this->Response->Response($http_code, $message);
 				}
 			} else {
-				$http_code = 401;
+				$http_code = 402;
 				$message = 'Unauthorized';
 				return $this->Response->Response($http_code, $message);
 			}

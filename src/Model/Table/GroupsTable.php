@@ -79,7 +79,6 @@ class GroupsTable extends Table
 	{
 		$rules->add($rules->isUnique(['name']));
 		$rules->add($rules->isUnique(['code']));
-		$rules->add($rules->isUnique(['website_id']));
 
 		return $rules;
 	}

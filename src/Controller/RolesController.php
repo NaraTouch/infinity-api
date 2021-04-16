@@ -15,7 +15,7 @@ class RolesController extends AppController
 	{
 		if ($this->request->is('post')) {
 			$auth = $this->Auth->user();
-			$filter = $this->Response->getFilterByGroup($auth['group_id']);
+			$filter = $this->Response->getFilterByWebsite($auth['group_id']);
 			$request_body = $this->request->input('json_decode');
 			$data = (array)$request_body;
 			$condition = [];
@@ -28,12 +28,21 @@ class RolesController extends AppController
 					$condition['Roles.display ILIKE '] = "%$keywords%";
 				}
 			}
+			$query = $this->Roles->find();
 			if (!empty($filter)) {
-				$condition['Roles.group_id'] = $filter['group_id'];
+				$query->innerJoinWith('Groups', function($qroup) use ($filter) {
+						return $qroup
+							->where([
+								'Groups.website_id' => $filter['website_id'],
+							]);
+					})
+					->contain(['Groups'])
+					->where($condition);
+			} else {
+				$query
+					->contain(['Groups'])
+					->where($condition);
 			}
-			$query = $this->Roles->find()
-						->contain(['Groups'])
-						->where($condition);
 			$data = [];
 			if ($query) {
 				$data = $query;
@@ -49,7 +58,7 @@ class RolesController extends AppController
 		if ($this->request->is('post')) {
 			$condition = [];
 			$auth = $this->Auth->user();
-			$filter = $this->Response->getFilterByGroup($auth['group_id']);
+			$filter = $this->Response->getFilterByWebsite($auth['group_id']);
 			$request_body = $this->request->input('json_decode');
 			$data = (array)$request_body;
 			if (!empty($data)) {
@@ -57,16 +66,22 @@ class RolesController extends AppController
 					$condition['Roles.id'] = $data['id'];
 				}
 			}
+			$query = $this->Roles->find();
 			if (!empty($filter)) {
-				$condition['Roles.group_id'] = $filter['group_id'];
+				$query->innerJoinWith('Groups', function($qroup) use ($filter) {
+						return $qroup
+							->where([
+								'Groups.website_id' => $filter['website_id'],
+							]);
+					});
 			}
-			$role = $this->Roles->find()
-						->where($condition)
-						->first();
-			if ($role) {
+			$query
+				->where($condition)
+				->first();
+			if ($query) {
 				$http_code = 200;
 				$message = 'Success';
-				return $this->Response->Response($http_code, $message, $role);
+				return $this->Response->Response($http_code, $message, $query);
 			} else {
 				$http_code = 404;
 				$message = 'User not found.';
@@ -81,60 +96,85 @@ class RolesController extends AppController
 	{
 		if ($this->request->is('post')) {
 			$auth = $this->Auth->user();
-			$filter = $this->Response->getFilterByGroup($auth['group_id']);
-			$role = $this->Roles->newEntity();
+			$filter = $this->Response->getFilterByWebsite($auth['group_id']);
 			$request_body = $this->request->input('json_decode');
 			$data = (array)$request_body;
 			if (!empty($filter)) {
-				$data['group_id'] = $filter['group_id'];
-			}
-			$entity = $this->Roles->patchEntity($role, $data);
-			if ($this->Roles->save($entity)) {
-				$http_code = 200;
-				$message = 'Success';
-				return $this->Response->Response($http_code, $message);
+				$requester_web = $this->Response->getFilterByWebsite($data['group_id']);
+				if ($this->Response->validateTheSameValue($filter['website_id'], $requester_web['website_id'])) {
+					return $this->addRole($data);
+				} else {
+					$http_code = 403;
+					$message = 'Unauthorized';
+					return $this->Response->Response($http_code, $message, null, null);
+				}
 			} else {
-				$http_code = 400;
-				$message = 'Add not success';
-				return $this->Response->Response($http_code, $message, null, $entity->errors());
+				return $this->addRole($data);
 			}
 		}
 	}
 
+	public function addRole($data = null)
+	{
+		$role = $this->Roles->newEntity();
+		$entity = $this->Roles->patchEntity($role, $data);
+		if ($this->Roles->save($entity)) {
+			$http_code = 200;
+			$message = 'Success';
+			return $this->Response->Response($http_code, $message);
+		} else {
+			$http_code = 400;
+			$message = 'Add not success';
+			return $this->Response->Response($http_code, $message, null, $entity->errors());
+		}
+	}
 	public function edit()
 	{
 		if ($this->request->is(['patch', 'post', 'put'])) {
 			$auth = $this->Auth->user();
-			$filter = $this->Response->getFilterByGroup($auth['group_id']);
+			$filter = $this->Response->getFilterByWebsite($auth['group_id']);
 			$request_body = $this->request->input('json_decode');
 			$role = $this->Roles->get($request_body->id);
 			$data = (array)$request_body;
 			if (!empty($filter)) {
-				$data['group_id'] = $filter['group_id'];
-			}
-			$entity = $this->Roles->patchEntity($role, $data);
-			if ($this->Roles->save($entity)) {
-				$http_code = 200;
-				$message = 'Success';
-				return $this->Response->Response($http_code, $message);
+				$requester_web = $this->Response->getFilterByWebsite($role->group_id);
+				if ($this->Response->validateTheSameValue($filter['website_id'], $requester_web['website_id'])) {
+					return $this->editRole($role, $data);
+				} else {
+					$http_code = 403;
+					$message = 'Unauthorized';
+					return $this->Response->Response($http_code, $message, null, null);
+				}
 			} else {
-				$http_code = 400;
-				$message = 'Edit not success';
-				return $this->Response->Response($http_code, $message, null, $entity->errors());
+				return $this->editRole($role, $data);
 			}
 		}
 	}
 
+	public function editRole($role = null, $data = null)
+	{
+		$entity = $this->Roles->patchEntity($role, $data);
+		if ($this->Roles->save($entity)) {
+			$http_code = 200;
+			$message = 'Success';
+			return $this->Response->Response($http_code, $message);
+		} else {
+			$http_code = 400;
+			$message = 'Edit not success';
+			return $this->Response->Response($http_code, $message, null, $entity->errors());
+		}
+	}
+	
 	public function delete()
 	{
 		if ($this->request->is(['patch', 'post', 'put'])) {
 			$request_body = $this->request->input('json_decode');
 			$role = $this->Roles->get($request_body->id);
 			$auth = $this->Auth->user();
-			$filter = $this->Response->getFilterByGroup($auth['group_id']);
+			$filter = $this->Response->getFilterByWebsite($auth['group_id']);
 			if (!empty($filter)) {
-				$validate = $this->Response->validateTheSameValue($filter['group_id'], $role->group_id);
-				if ($validate) {
+				$requester_web = $this->Response->getFilterByWebsite($role->group_id);
+				if ($this->Response->validateTheSameValue($filter['website_id'], $requester_web['website_id'])) {
 					return $this->deleteRole($role);
 				} else {
 					$http_code = 400;

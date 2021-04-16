@@ -19,6 +19,9 @@ class ModulesTable extends Table
 		$this->hasMany('Methods', [
 			'foreignKey' => 'module_id',
 		]);
+		$this->hasMany('Permissions', [
+			'foreignKey' => 'module_id',
+		]);
 	}
 
 	public function validationDefault(Validator $validator)

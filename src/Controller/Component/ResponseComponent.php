@@ -61,7 +61,20 @@ class ResponseComponent extends Component
 			return false;
 		}
 	}
-	
+
+	public function getFilterRoleByGroup($group_id = null)
+	{
+		if (!$group_id) {
+			return false;
+		}
+		$role = $this->Roles->getRoleByGroup($group_id);
+		if ($role) {
+			return ['role_id' => $role->id];
+		} else {
+			return false;
+		}
+	}
+
 	public function validateTheSameValue($valid_value = null, $value = null)
 	{
 		if (!$valid_value || !$value) {
@@ -127,10 +140,8 @@ class ResponseComponent extends Component
 		$message = '';
 		if ($http_status == 400) {
 			$message = 'Bad Request';
-		} else if ($http_status == 401) {
-			$message = 'Your session has been logout from data center. Please logout and login again.';
-		} else if ($http_status == 402) {
-			$message = 'Unauthorized';
+		} else if ($http_status == 401 || $http_status == 402) {
+			$message = 'Unauthorized.';
 		} else if ($http_status == 403) {
 			$message = 'Forbidden';
 		} else if ($http_status == 404) {
