@@ -20,6 +20,9 @@ class ValidationComponent extends Component
 		$this->validator
 			->requirePresence('path')
 			->notEmptyString('path');
+		$this->validator
+			->requirePresence('website_id')
+			->notEmptyString('website_id');
 		return $this->validator->errors($data);
 	}
 
@@ -34,6 +37,9 @@ class ValidationComponent extends Component
 		$this->validator
 			->requirePresence('name')
 			->notEmptyString('name');
+		$this->validator
+			->requirePresence('website_id')
+			->notEmptyString('website_id');
 		return $this->validator->errors($data);
 	}
 
@@ -45,6 +51,9 @@ class ValidationComponent extends Component
 		$this->validator
 			->requirePresence('path')
 			->notEmptyString('path');
+		$this->validator
+			->requirePresence('website_id')
+			->notEmptyString('website_id');
 		return $this->validator->errors($data);
 	}
 
@@ -56,6 +65,9 @@ class ValidationComponent extends Component
 		$this->validator
 			->requirePresence('name')
 			->notEmptyString('name');
+		$this->validator
+			->requirePresence('website_id')
+			->notEmptyString('website_id');
 		return $this->validator->errors($data);
 	}
 
@@ -67,6 +79,9 @@ class ValidationComponent extends Component
 		$this->validator
 			->requirePresence('name')
 			->notEmptyString('name');
+		$this->validator
+			->requirePresence('website_id')
+			->notEmptyString('website_id');
 		return $this->validator->errors($data);
 	}
 
@@ -78,6 +93,9 @@ class ValidationComponent extends Component
 		$this->validator
 			->requirePresence('path')
 			->notEmptyString('path');
+		$this->validator
+			->requirePresence('website_id')
+			->notEmptyString('website_id');
 		return $this->validator->errors($data);
 	}
 	
@@ -86,11 +104,18 @@ class ValidationComponent extends Component
 		$this->validator
 			->requirePresence('progresshash')
 			->notEmptyString('progresshash');
+		$this->validator
+			->requirePresence('website_id')
+			->notEmptyString('website_id');
 		return $this->validator->errors($data);
 	}
 
 	public function validateUploadFile($data = [])
 	{
+		$this->validator
+			->requirePresence('website_id')
+			->notEmptyString('website_id');
+	
 		$this->validator
 			->requirePresence('path')
 			->notEmptyString('path')

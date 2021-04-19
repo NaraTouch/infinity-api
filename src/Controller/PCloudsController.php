@@ -134,26 +134,24 @@ class PCloudsController extends AppController
 	public function index()
 	{
 		if ($this->request->is('post')) {
+			$auth = $this->Auth->user();
 			$request_body = $this->request->input('json_decode');
 			$validate = $this->Validation->validateListDirectory((array) $request_body);
 			if (empty($validate)) {
 				if ($request_body) {
 					$path = $request_body->path;
-					$dir = $this->PCloud->listDirectory($path);
-					if ($dir) {
-						if ($dir['result'] === 0) {
-							$http_code = 200;
-							$message = 'Success';
-							return $this->Response->Response($http_code, $message, $dir);
+					$website_id = $request_body->website_id;
+					$filter = $this->Response->getFilterByWebsite($auth['group_id']);
+					if (!empty($filter)) {
+						if ($filter['website_id'] == $website_id) {
+							return $this->listDirectory($path);
 						} else {
-							$http_code = $dir['result'];
-							$message = $dir['error'];
-							return $this->Response->PcloudMessage($http_code, $message);
+							$http_code = 403;
+							$message = 'Unauthorized';
+							return $this->Response->Response($http_code, $message, null, null);
 						}
 					} else {
-						$http_code = 500;
-						$message = 'Internal Server Error';
-						return $this->Response->Response($http_code, $message);
+						return $this->listDirectory($path);
 					}
 				} else {
 					$http_code = 404;
@@ -167,10 +165,31 @@ class PCloudsController extends AppController
 			}
 		}
 	}
+	
+	public function listDirectory($path = null)
+	{
+		$dir = $this->PCloud->listDirectory($path);
+		if ($dir) {
+			if ($dir['result'] === 0) {
+				$http_code = 200;
+				$message = 'Success';
+				return $this->Response->Response($http_code, $message, $dir);
+			} else {
+				$http_code = $dir['result'];
+				$message = $dir['error'];
+				return $this->Response->PcloudMessage($http_code, $message);
+			}
+		} else {
+			$http_code = 500;
+			$message = 'Internal Server Error';
+			return $this->Response->Response($http_code, $message);
+		}
+	}
 
 	public function createFolderIfNotExists()
 	{
 		if ($this->request->is('post')) {
+			$auth = $this->Auth->user();
 			$request_body = $this->request->input('json_decode');
 			$validate = $this->Validation->validateCreateFolderIfNotExists((array) $request_body);
 			if (empty($validate)) {
@@ -179,21 +198,18 @@ class PCloudsController extends AppController
 					'folder_id' => $request_body->folder_id,
 					'name' => $request_body->name,
 				];
-				$response = $this->PCloud->createFolderIfNotExists($request);
-				if ($response) {
-						if ($response['result'] === 0) {
-							$http_code = 200;
-							$message = 'Success';
-							return $this->Response->Response($http_code, $message, $response);
-						} else {
-							$http_code = $response['result'];
-							$message = $response['error'];
-							return $this->Response->PcloudMessage($http_code, $message);
-						}
+				$website_id = $request_body->website_id;
+				$filter = $this->Response->getFilterByWebsite($auth['group_id']);
+				if (!empty($filter)) {
+					if ($filter['website_id'] == $website_id) {
+						return $this->createFolder($request);
+					} else {
+						$http_code = 403;
+						$message = 'Unauthorized';
+						return $this->Response->Response($http_code, $message, null, null);
+					}
 				} else {
-					$http_code = 500;
-					$message = 'Internal Server Error';
-					return $this->Response->Response($http_code, $message);
+					return $this->createFolder($request);
 				}
 			} else {
 				$http_code = 400;
@@ -203,9 +219,30 @@ class PCloudsController extends AppController
 		}
 	}
 
+	public function createFolder($request = null)
+	{
+		$response = $this->PCloud->createFolderIfNotExists($request);
+		if ($response) {
+				if ($response['result'] === 0) {
+					$http_code = 200;
+					$message = 'Success';
+					return $this->Response->Response($http_code, $message, $response);
+				} else {
+					$http_code = $response['result'];
+					$message = $response['error'];
+					return $this->Response->PcloudMessage($http_code, $message);
+				}
+		} else {
+			$http_code = 500;
+			$message = 'Internal Server Error';
+			return $this->Response->Response($http_code, $message);
+		}
+	}
+
 	public function renameFolder()
 	{
 		if ($this->request->is('post')) {
+			$auth = $this->Auth->user();
 			$request_body = $this->request->input('json_decode');
 			$validate = $this->Validation->validateRenameFolder((array) $request_body);
 			if (empty($validate)) {
@@ -213,21 +250,18 @@ class PCloudsController extends AppController
 					'folder_id' => $request_body->folder_id,
 					'name' => $request_body->name,
 				];
-				$response = $this->PCloud->renameFolder($request);
-				if ($response) {
-						if ($response['result'] === 0) {
-							$http_code = 200;
-							$message = 'Success';
-							return $this->Response->Response($http_code, $message, $response);
-						} else {
-							$http_code = $response['result'];
-							$message = $response['error'];
-							return $this->Response->PcloudMessage($http_code, $message);
-						}
+				$website_id = $request_body->website_id;
+				$filter = $this->Response->getFilterByWebsite($auth['group_id']);
+				if (!empty($filter)) {
+					if ($filter['website_id'] == $website_id) {
+						return $this->editFolder($request);
+					} else {
+						$http_code = 403;
+						$message = 'Unauthorized';
+						return $this->Response->Response($http_code, $message, null, null);
+					}
 				} else {
-					$http_code = 500;
-					$message = 'Internal Server Error';
-					return $this->Response->Response($http_code, $message);
+					return $this->editFolder($request);
 				}
 			} else {
 				$http_code = 400;
@@ -238,9 +272,30 @@ class PCloudsController extends AppController
 		}
 	}
 
+	public function editFolder($request = null)
+	{
+		$response = $this->PCloud->renameFolder($request);
+		if ($response) {
+			if ($response['result'] === 0) {
+				$http_code = 200;
+				$message = 'Success';
+				return $this->Response->Response($http_code, $message, $response);
+			} else {
+				$http_code = $response['result'];
+				$message = $response['error'];
+				return $this->Response->PcloudMessage($http_code, $message);
+			}
+		} else {
+			$http_code = 500;
+			$message = 'Internal Server Error';
+			return $this->Response->Response($http_code, $message);
+		}
+	}
+
 	public function deleteFolder()
 	{
 		if ($this->request->is('post')) {
+			$auth = $this->Auth->user();
 			$request_body = $this->request->input('json_decode');
 			$validate = $this->Validation->validateDeleteFolder((array) $request_body);
 			if (empty($validate)) {
@@ -248,21 +303,18 @@ class PCloudsController extends AppController
 					'folder_id' => $request_body->folder_id,
 					'path' => $request_body->path,
 				];
-				$response = $this->PCloud->deleteFolder($request);
-				if ($response) {
-						if ($response['result'] === 0) {
-							$http_code = 200;
-							$message = 'Success';
-							return $this->Response->Response($http_code, $message, $response);
-						} else {
-							$http_code = $response['result'];
-							$message = $response['error'];
-							return $this->Response->PcloudMessage($http_code, $message);
-						}
+				$website_id = $request_body->website_id;
+				$filter = $this->Response->getFilterByWebsite($auth['group_id']);
+				if (!empty($filter)) {
+					if ($filter['website_id'] == $website_id) {
+						return $this->removeFolder($request);
+					} else {
+						$http_code = 403;
+						$message = 'Unauthorized';
+						return $this->Response->Response($http_code, $message, null, null);
+					}
 				} else {
-					$http_code = 500;
-					$message = 'Internal Server Error';
-					return $this->Response->Response($http_code, $message);
+					return $this->removeFolder($request);
 				}
 			} else {
 				$http_code = 400;
@@ -273,9 +325,30 @@ class PCloudsController extends AppController
 		}
 	}
 
+	public function removeFolder($request = null)
+	{
+		$response = $this->PCloud->deleteFolder($request);
+		if ($response) {
+			if ($response['result'] === 0) {
+				$http_code = 200;
+				$message = 'Success';
+				return $this->Response->Response($http_code, $message, $response);
+			} else {
+				$http_code = $response['result'];
+				$message = $response['error'];
+				return $this->Response->PcloudMessage($http_code, $message);
+			}
+		} else {
+			$http_code = 500;
+			$message = 'Internal Server Error';
+			return $this->Response->Response($http_code, $message);
+		}
+	}
+
 	public function renameFile()
 	{
 		if ($this->request->is('post')) {
+			$auth = $this->Auth->user();
 			$request_body = $this->request->input('json_decode');
 			$validate = $this->Validation->validateRenameFile((array) $request_body);
 			if (empty($validate)) {
@@ -283,21 +356,18 @@ class PCloudsController extends AppController
 						'file_id' => $request_body->file_id,
 						'name' => $request_body->name,
 					];
-				$response = $this->PCloud->renameFile($request);
-				if ($response) {
-						if ($response['result'] === 0) {
-							$http_code = 200;
-							$message = 'Success';
-							return $this->Response->Response($http_code, $message, $response);
-						} else {
-							$http_code = $response['result'];
-							$message = $response['error'];
-							return $this->Response->PcloudMessage($http_code, $message);
-						}
+				$website_id = $request_body->website_id;
+				$filter = $this->Response->getFilterByWebsite($auth['group_id']);
+				if (!empty($filter)) {
+					if ($filter['website_id'] == $website_id) {
+						return $this->editFile($request);
+					} else {
+						$http_code = 403;
+						$message = 'Unauthorized';
+						return $this->Response->Response($http_code, $message, null, null);
+					}
 				} else {
-					$http_code = 500;
-					$message = 'Internal Server Error';
-					return $this->Response->Response($http_code, $message);
+					return $this->editFile($request);
 				}
 			} else {
 				$http_code = 400;
@@ -307,6 +377,26 @@ class PCloudsController extends AppController
 		}
 	}
 
+	public function editFile()
+	{
+		$response = $this->PCloud->renameFile($request);
+		if ($response) {
+			if ($response['result'] === 0) {
+				$http_code = 200;
+				$message = 'Success';
+				return $this->Response->Response($http_code, $message, $response);
+			} else {
+				$http_code = $response['result'];
+				$message = $response['error'];
+				return $this->Response->PcloudMessage($http_code, $message);
+			}
+		} else {
+			$http_code = 500;
+			$message = 'Internal Server Error';
+			return $this->Response->Response($http_code, $message);
+		}
+	}
+	
 	public function deleteFile()
 	{
 		if ($this->request->is('post')) {
@@ -319,15 +409,15 @@ class PCloudsController extends AppController
 				];
 				$response = $this->PCloud->deleteFile($request);
 				if ($response) {
-						if ($response['result'] === 0) {
-							$http_code = 200;
-							$message = 'Success';
-							return $this->Response->Response($http_code, $message, $response);
-						} else {
-							$http_code = $response['result'];
-							$message = $response['error'];
-							return $this->Response->PcloudMessage($http_code, $message);
-						}
+					if ($response['result'] === 0) {
+						$http_code = 200;
+						$message = 'Success';
+						return $this->Response->Response($http_code, $message, $response);
+					} else {
+						$http_code = $response['result'];
+						$message = $response['error'];
+						return $this->Response->PcloudMessage($http_code, $message);
+					}
 				} else {
 					$http_code = 500;
 					$message = 'Internal Server Error';
@@ -352,15 +442,15 @@ class PCloudsController extends AppController
 				];
 				$response = $this->PCloud->uploadFileProgress($request);
 				if ($response) {
-						if ($response['result'] === 0) {
-							$http_code = 200;
-							$message = 'Success';
-							return $this->Response->Response($http_code, $message, $response);
-						} else {
-							$http_code = $response['result'];
-							$message = $response['error'];
-							return $this->Response->PcloudMessage($http_code, $message);
-						}
+					if ($response['result'] === 0) {
+						$http_code = 200;
+						$message = 'Success';
+						return $this->Response->Response($http_code, $message, $response);
+					} else {
+						$http_code = $response['result'];
+						$message = $response['error'];
+						return $this->Response->PcloudMessage($http_code, $message);
+					}
 				} else {
 					$http_code = 500;
 					$message = 'Internal Server Error';
@@ -377,6 +467,7 @@ class PCloudsController extends AppController
 	public function uploadFile()
 	{
 		if ($this->request->is('post')) {
+			$auth = $this->Auth->user();
 			$file['file'] = [];
 			$request_body = $this->request->getQuery();
 			if ($this->request->getData()) {
@@ -386,21 +477,18 @@ class PCloudsController extends AppController
 			$data['file'] = $file['file'];
 			$validate = $this->Validation->validateUploadFile($data);
 			if (empty($validate)) {
-				$response = $this->PCloud->uploadFile($request_body, $file);
-				if ($response) {
-						if ($response['result'] === 0) {
-							$http_code = 200;
-							$message = 'Success';
-							return $this->Response->Response($http_code, $message, $response);
-						} else {
-							$http_code = $response['result'];
-							$message = $response['error'];
-							return $this->Response->PcloudMessage($http_code, $message);
-						}
+				$website_id = $request_body['website_id'];
+				$filter = $this->Response->getFilterByWebsite($auth['group_id']);
+				if (!empty($filter)) {
+					if ($filter['website_id'] == $website_id) {
+						return $this->uploadingFile($request_body, $file);
+					} else {
+						$http_code = 403;
+						$message = 'Unauthorized';
+						return $this->Response->Response($http_code, $message, null, null);
+					}
 				} else {
-					$http_code = 500;
-					$message = 'Internal Server Error';
-					return $this->Response->Response($http_code, $message);
+					return $this->uploadingFile($request_body, $file);
 				}
 			} else {
 				$http_code = 201;
@@ -408,6 +496,26 @@ class PCloudsController extends AppController
 				return $this->Response->Response($http_code, $message, null, $validate);
 			}
 			
+		}
+	}
+	
+	public function uploadingFile($request_body = null, $file)
+	{
+		$response = $this->PCloud->uploadFile($request_body, $file);
+		if ($response) {
+			if ($response['result'] === 0) {
+				$http_code = 200;
+				$message = 'Success';
+				return $this->Response->Response($http_code, $message, $response);
+			} else {
+				$http_code = $response['result'];
+				$message = $response['error'];
+				return $this->Response->PcloudMessage($http_code, $message);
+			}
+		} else {
+			$http_code = 500;
+			$message = 'Internal Server Error';
+			return $this->Response->Response($http_code, $message);
 		}
 	}
 }
