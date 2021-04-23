@@ -55,7 +55,7 @@ class MethodsTable extends Table
 			->notEmpty('sort')
 			->add('sort', [
 				'unique' => [
-					'rule' => ['validateUnique', ['scope' => 'id']],
+					'rule' => ['validateUnique', ['scope' => 'module_id']],
 					'provider' => 'table'
 				]
 			]);

@@ -2,7 +2,7 @@
 namespace App\Controller;
 use App\Controller\AppController;
 
-class MethodsController extends AppController
+class ComponentsController extends AppController
 {
 
 	public function initialize()
@@ -15,44 +15,21 @@ class MethodsController extends AppController
 	{
 		if ($this->request->is('post')) {
 			$auth = $this->Auth->user();
-			$request_body = $this->request->input('json_decode');
-			$data = (array)$request_body;
-			$condition = [];
-			if (!empty($data)) {
-				if (!empty($data['module_id'])) {
-					$condition['Methods.module_id'] = $data['module_id'];
+			if ($this->Response->allowOnlySuperUser($auth['group_id'])) {
+				$query = $this->Components->find()
+						->contain(['Templates']);
+				$data = [];
+				if ($query) {
+					$data = $query->toArray();
 				}
-				if (!empty($data['keywords'])) {
-					$keywords = $data['keywords'];
-					$condition['Methods.display ILIKE '] = "%$keywords%";
-				}
-			}
-			$super_user = $this->Response->allowOnlySuperUser($auth['group_id']);
-			$query = $this->Methods->find()
-						->contain(['Modules'])
-						->where($condition);
-			if (!$super_user) {
-				$role = $this->Response->getFilterRoleByGroup($auth['group_id']);
-				if ($role) {
-					$query->matching('Permissions', function($permission) use ($role) {
-						return $permission->where([
-							'Permissions.role_id' => $role['role_id'],
-						]);
-					})
-					->order(['Methods.sort' => 'asc']);
-				} else {
-					$query = false;
-				}
+				$http_code = 200;
+				$message = 'Success';
+				return $this->Response->Response($http_code, $message, $data);
 			} else {
-				$query->order(['Methods.sort' => 'asc']);
+				$http_code = 403;
+				$message = 'Unauthorized';
+				return $this->Response->Response($http_code, $message, null, null);
 			}
-			$data = [];
-			if ($query) {
-				$data = $query->toArray();
-			}
-			$http_code = 200;
-			$message = 'Success';
-			return $this->Response->Response($http_code, $message, $data);
 		}
 	}
 
@@ -61,18 +38,18 @@ class MethodsController extends AppController
 		if ($this->request->is('post')) {
 			$auth = $this->Auth->user();
 			if ($this->Response->allowOnlySuperUser($auth['group_id'])) {
-				$method = $this->Methods->newEntity();
+				$entity = $this->Components->newEntity();
 				$request_body = $this->request->input('json_decode');
 				$data = (array)$request_body;
-				$entity = $this->Methods->patchEntity($method, $data);
-				if ($this->Methods->save($entity)) {
+				$patchEntity = $this->Components->patchEntity($entity, $data);
+				if ($this->Components->save($patchEntity)) {
 					$http_code = 200;
 					$message = 'Success';
 					return $this->Response->Response($http_code, $message);
 				} else {
 					$http_code = 400;
 					$message = 'Add not success';
-					return $this->Response->Response($http_code, $message, null, $entity->errors());
+					return $this->Response->Response($http_code, $message, null, $patchEntity->errors());
 				}
 			} else {
 				$http_code = 403;
@@ -87,11 +64,11 @@ class MethodsController extends AppController
 	{
 		if ($this->request->is('post')) {
 			$request_body = $this->request->input('json_decode');
-			$method = $this->Methods->get($request_body->id);
-			if ($method) {
+			$query = $this->Components->get($request_body->id);
+			if ($query) {
 				$http_code = 200;
 				$message = 'Success';
-				return $this->Response->Response($http_code, $message, $method);
+				return $this->Response->Response($http_code, $message, $query);
 			} else {
 				$http_code = 404;
 				$message = 'User not found.';
@@ -99,7 +76,6 @@ class MethodsController extends AppController
 			}
 			
 		}
-		
 	}
 
 	public function edit()
@@ -108,17 +84,17 @@ class MethodsController extends AppController
 			$auth = $this->Auth->user();
 			if ($this->Response->allowOnlySuperUser($auth['group_id'])) {
 				$request_body = $this->request->input('json_decode');
-				$method = $this->Methods->get($request_body->id);
+				$query = $this->Components->get($request_body->id);
 				$data = (array)$request_body;
-				$entity = $this->Methods->patchEntity($method, $data);
-				if ($this->Methods->save($entity)) {
+				$patchEntity = $this->Components->patchEntity($query, $data);
+				if ($this->Components->save($patchEntity)) {
 					$http_code = 200;
 					$message = 'Success';
 					return $this->Response->Response($http_code, $message);
 				} else {
 					$http_code = 400;
 					$message = 'Edit not success';
-					return $this->Response->Response($http_code, $message, null, $entity->errors());
+					return $this->Response->Response($http_code, $message, null, $patchEntity->errors());
 				}
 			} else {
 				$http_code = 403;
@@ -134,8 +110,8 @@ class MethodsController extends AppController
 			$auth = $this->Auth->user();
 			if ($this->Response->allowOnlySuperUser($auth['group_id'])) {
 				$request_body = $this->request->input('json_decode');
-				$method = $this->Methods->get($request_body->id);
-				if ($this->Methods->delete($method)) {
+				$query = $this->Components->get($request_body->id);
+				if ($this->Components->delete($query)) {
 					$http_code = 200;
 					$message = 'Success';
 					return $this->Response->Response($http_code, $message);

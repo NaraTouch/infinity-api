@@ -262,5 +262,61 @@ Router::scope('/', function (RouteBuilder $routes) {
 				'controller' => 'PClouds',
 				'action' => 'uploadFileProgress'
 			]);
+	
+	// Templates
+	$routes->connect('/templates',
+			[
+				'controller' => 'Templates',
+				'action' => 'index'
+			]);
+
+	$routes->connect('/templates/add',
+			[
+				'controller' => 'Templates',
+				'action' => 'add'
+			]);
+	$routes->connect('/templates/view',
+			[
+				'controller' => 'Templates',
+				'action' => 'view'
+			]);
+	$routes->connect('/templates/edit',
+			[
+				'controller' => 'Templates',
+				'action' => 'edit'
+			]);
+	$routes->connect('/templates/delete',
+			[
+				'controller' => 'Templates',
+				'action' => 'delete'
+			]);
+	
+	// Components
+	$routes->connect('/components',
+			[
+				'controller' => 'Components',
+				'action' => 'index'
+			]);
+
+	$routes->connect('/components/add',
+			[
+				'controller' => 'Components',
+				'action' => 'add'
+			]);
+	$routes->connect('/components/view',
+			[
+				'controller' => 'Components',
+				'action' => 'view'
+			]);
+	$routes->connect('/components/edit',
+			[
+				'controller' => 'Components',
+				'action' => 'edit'
+			]);
+	$routes->connect('/components/delete',
+			[
+				'controller' => 'Components',
+				'action' => 'delete'
+			]);
 	$routes->fallbacks(DashedRoute::class);
 });

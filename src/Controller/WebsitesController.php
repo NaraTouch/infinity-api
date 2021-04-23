@@ -61,7 +61,7 @@ class WebsitesController extends AppController
 			} else {
 				$http_code = 403;
 				$message = 'Unauthorized';
-				return $this->Response->Response($http_code, $message, null, $entity->errors());
+				return $this->Response->Response($http_code, $message, null, null);
 			}
 		}
 	}
@@ -135,7 +135,7 @@ class WebsitesController extends AppController
 			} else {
 				$http_code = 403;
 				$message = 'Unauthorized';
-				return $this->Response->Response($http_code, $message, null, $entity->errors());
+				return $this->Response->Response($http_code, $message, null, null);
 			}
 			
 		}
