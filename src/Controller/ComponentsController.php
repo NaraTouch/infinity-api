@@ -14,10 +14,24 @@ class ComponentsController extends AppController
 	public function index()
 	{
 		if ($this->request->is('post')) {
+			$condition = [];
 			$auth = $this->Auth->user();
+			$request_body = $this->request->input('json_decode');
+			$data = (array)$request_body;
+			if (!empty($data)) {
+				if (!empty($data['template_id'])) {
+					$template_id = $data['template_id'];
+					$condition['Components.template_id '] = $template_id;
+				}
+				if (!empty($data['keywords'])) {
+					$keywords = $data['keywords'];
+					$condition['Components.name ILIKE '] = "%$keywords%";
+				}
+			}
 			if ($this->Response->allowOnlySuperUser($auth['group_id'])) {
 				$query = $this->Components->find()
-						->contain(['Templates']);
+						->contain(['Templates'])
+						->where($condition);
 				$data = [];
 				if ($query) {
 					$data = $query->toArray();

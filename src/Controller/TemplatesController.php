@@ -14,10 +14,20 @@ class TemplatesController extends AppController
 	public function index()
 	{
 		if ($this->request->is('post')) {
+			$condition = [];
 			$auth = $this->Auth->user();
+			$request_body = $this->request->input('json_decode');
+			$data = (array)$request_body;
+			if (!empty($data)) {
+				if (!empty($data['keywords'])) {
+					$keywords = $data['keywords'];
+					$condition['Templates.name ILIKE '] = "%$keywords%";
+				}
+			}
 			if ($this->Response->allowOnlySuperUser($auth['group_id'])) {
 				$query = $this->Templates->find()
-						->contain(['Components']);
+						->contain(['Components'])
+						->where($condition);
 				$data = [];
 				if ($query) {
 					$data = $query->toArray();
