@@ -318,5 +318,59 @@ Router::scope('/', function (RouteBuilder $routes) {
 				'controller' => 'Components',
 				'action' => 'delete'
 			]);
+	
+	// Pages
+	$routes->connect('/pages',
+			[
+				'controller' => 'IPages',
+				'action' => 'index'
+			]);
+	$routes->connect('/pages/add',
+			[
+				'controller' => 'IPages',
+				'action' => 'add'
+			]);
+	$routes->connect('/pages/view',
+			[
+				'controller' => 'IPages',
+				'action' => 'view'
+			]);
+	$routes->connect('/pages/edit',
+			[
+				'controller' => 'IPages',
+				'action' => 'edit'
+			]);
+	$routes->connect('/pages/delete',
+			[
+				'controller' => 'IPages',
+				'action' => 'delete'
+			]);
+	
+	// Subpages
+	$routes->connect('/subpages',
+			[
+				'controller' => 'Subpages',
+				'action' => 'index'
+			]);
+	$routes->connect('/subpages/add',
+			[
+				'controller' => 'Subpages',
+				'action' => 'add'
+			]);
+	$routes->connect('/subpages/view',
+			[
+				'controller' => 'Subpages',
+				'action' => 'view'
+			]);
+	$routes->connect('/subpages/edit',
+			[
+				'controller' => 'Subpages',
+				'action' => 'edit'
+			]);
+	$routes->connect('/subpages/delete',
+			[
+				'controller' => 'Subpages',
+				'action' => 'delete'
+			]);
 	$routes->fallbacks(DashedRoute::class);
 });

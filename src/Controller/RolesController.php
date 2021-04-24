@@ -87,7 +87,6 @@ class RolesController extends AppController
 				$message = 'User not found.';
 				return $this->Response->Response($http_code, $message, null, null);
 			}
-			
 		}
 		
 	}

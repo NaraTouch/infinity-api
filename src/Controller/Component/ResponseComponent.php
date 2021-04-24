@@ -7,12 +7,14 @@ class ResponseComponent extends Component
 {
 	private $Groups;
 	private $Roles;
+	private $Pages;
 	
 	public function initialize(array $config)
 	{
 		parent::initialize($config);
 		$this->Groups = TableRegistry::get('Groups');
 		$this->Roles = TableRegistry::get('Roles');
+		$this->Pages = TableRegistry::get('Pages');
 	}
 
 	public function getFilterByWebsite($group_id = null)
@@ -115,6 +117,19 @@ class ResponseComponent extends Component
 			} else {
 				return false;
 			}
+		} else {
+			return false;
+		}
+	}
+
+	public function getFilterPage($id = null)
+	{
+		if (!$id) {
+			return false;
+		}
+		$page = $this->Pages->getPageById($id);
+		if ($page) {
+			return ['website_id' => $page->website_id];
 		} else {
 			return false;
 		}

@@ -23,12 +23,17 @@ class WebsitesController extends AppController
 				$condition['Websites.id'] = $filter['website_id'];
 			}
 			if (!empty($data)) {
+				if (!empty($data['template_id'])) {
+					$template_id = $data['template_id'];
+					$condition['Websites.template_id '] = $template_id;
+				}
 				if (!empty($data['keywords'])) {
 					$keywords = $data['keywords'];
 					$condition['Websites.display ILIKE '] = "%$keywords%";
 				}
 			}
 			$query = $this->Websites->find()
+						->contain(['Templates'])
 						->where($condition);
 			$data = [];
 			if ($query) {

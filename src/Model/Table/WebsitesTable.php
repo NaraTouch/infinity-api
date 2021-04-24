@@ -22,6 +22,12 @@ class WebsitesTable extends Table
 		$this->hasOne('PClounds', [
 			'foreignKey' => 'website_id',
 		]);
+		$this->hasMany('Pages', [
+			'foreignKey' => 'website_id',
+		]);
+		$this->belongsTo('Templates')
+			->setForeignKey('template_id')
+			->setDependent(true);
 	}
 
 	public function validationDefault(Validator $validator)
@@ -51,6 +57,10 @@ class WebsitesTable extends Table
 		$validator
 			->boolean('active')
 			->allowEmptyString('active');
+	
+		$validator
+			->scalar('template_id')
+			->allowEmptyString('template_id');
 	
 		return $validator;
 	}

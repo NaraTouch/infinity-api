@@ -18,6 +18,9 @@ class TemplatesTable extends Table
 		$this->hasMany('Components', [
 			'foreignKey' => 'template_id',
 		]);
+		$this->hasMany('Websites', [
+			'foreignKey' => 'template_id',
+		]);
 	}
 
 	public function validationDefault(Validator $validator)

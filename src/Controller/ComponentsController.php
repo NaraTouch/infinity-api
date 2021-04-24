@@ -77,18 +77,24 @@ class ComponentsController extends AppController
 	public function view()
 	{
 		if ($this->request->is('post')) {
-			$request_body = $this->request->input('json_decode');
-			$query = $this->Components->get($request_body->id);
-			if ($query) {
-				$http_code = 200;
-				$message = 'Success';
-				return $this->Response->Response($http_code, $message, $query);
+			$auth = $this->Auth->user();
+			if ($this->Response->allowOnlySuperUser($auth['group_id'])) {
+				$request_body = $this->request->input('json_decode');
+				$query = $this->Components->get($request_body->id);
+				if ($query) {
+					$http_code = 200;
+					$message = 'Success';
+					return $this->Response->Response($http_code, $message, $query);
+				} else {
+					$http_code = 404;
+					$message = 'User not found.';
+					return $this->Response->Response($http_code, $message, null, null);
+				}
 			} else {
-				$http_code = 404;
-				$message = 'User not found.';
+				$http_code = 403;
+				$message = 'Unauthorized';
 				return $this->Response->Response($http_code, $message, null, null);
 			}
-			
 		}
 	}
 
