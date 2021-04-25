@@ -17,6 +17,9 @@ class SubpagesTable extends Table
 		$this->belongsTo('Pages')
 			->setForeignKey('page_id')
 			->setDependent(true);
+		$this->hasMany('Layouts', [
+			'foreignKey' => 'subpage_id',
+		]);
 	}
 
 	public function validationDefault(Validator $validator)
@@ -93,6 +96,20 @@ class SubpagesTable extends Table
 			->allowEmptyString('active');
 	
 		return $validator;
+	}
+	
+	public function getSubpageById($id = null)
+	{
+		if (!$id) {
+			return $id;
+		}
+		$query = $this->find()
+				->where(['id' => $id])
+				->first();
+		if ($query) {
+			return $query;
+		}
+		return false;
 	}
 
 }

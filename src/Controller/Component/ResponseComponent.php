@@ -8,6 +8,7 @@ class ResponseComponent extends Component
 	private $Groups;
 	private $Roles;
 	private $Pages;
+	private $Subpages;
 	
 	public function initialize(array $config)
 	{
@@ -15,6 +16,7 @@ class ResponseComponent extends Component
 		$this->Groups = TableRegistry::get('Groups');
 		$this->Roles = TableRegistry::get('Roles');
 		$this->Pages = TableRegistry::get('Pages');
+		$this->Subpages = TableRegistry::get('Subpages');
 	}
 
 	public function getFilterByWebsite($group_id = null)
@@ -130,6 +132,24 @@ class ResponseComponent extends Component
 		$page = $this->Pages->getPageById($id);
 		if ($page) {
 			return ['website_id' => $page->website_id];
+		} else {
+			return false;
+		}
+	}
+	
+	public function getWebsiteBySubpage($id = null)
+	{
+		if (!$id) {
+			return false;
+		}
+		$subpage = $this->Subpages->getSubpageById($id);
+		if ($subpage) {
+			$page = $this->Pages->getPageById($subpage->id);
+			if ($page) {
+				return ['website_id' => $page->website_id];
+			} else {
+				return false;
+			}
 		} else {
 			return false;
 		}

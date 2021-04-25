@@ -28,22 +28,16 @@ class ComponentsController extends AppController
 					$condition['Components.name ILIKE '] = "%$keywords%";
 				}
 			}
-			if ($this->Response->allowOnlySuperUser($auth['group_id'])) {
-				$query = $this->Components->find()
-						->contain(['Templates'])
-						->where($condition);
-				$data = [];
-				if ($query) {
-					$data = $query->toArray();
-				}
-				$http_code = 200;
-				$message = 'Success';
-				return $this->Response->Response($http_code, $message, $data);
-			} else {
-				$http_code = 403;
-				$message = 'Unauthorized';
-				return $this->Response->Response($http_code, $message, null, null);
+			$query = $this->Components->find()
+					->contain(['Templates'])
+					->where($condition);
+			$response = [];
+			if ($query) {
+				$response = $query->toArray();
 			}
+			$http_code = 200;
+			$message = 'Success';
+			return $this->Response->Response($http_code, $message, $response);
 		}
 	}
 

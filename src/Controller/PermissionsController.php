@@ -37,13 +37,13 @@ class PermissionsController extends AppController
 			}
 			if (!empty($conditions)) {
 				$query = $this->getPermission($conditions);
-				$data = [];
+				$response = [];
 				if (isset($query)) {
-					$data = $query;
+					$response = $query;
 				}
 				$http_code = 200;
 				$message = 'Success';
-				return $this->Response->Response($http_code, $message, $data);
+				return $this->Response->Response($http_code, $message, $response);
 			} else {
 				$http_code = 404;
 				$message = 'Permission not found.';

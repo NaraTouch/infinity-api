@@ -24,22 +24,16 @@ class TemplatesController extends AppController
 					$condition['Templates.name ILIKE '] = "%$keywords%";
 				}
 			}
-			if ($this->Response->allowOnlySuperUser($auth['group_id'])) {
-				$query = $this->Templates->find()
-						->contain(['Components'])
-						->where($condition);
-				$data = [];
-				if ($query) {
-					$data = $query->toArray();
-				}
-				$http_code = 200;
-				$message = 'Success';
-				return $this->Response->Response($http_code, $message, $data);
-			} else {
-				$http_code = 403;
-				$message = 'Unauthorized';
-				return $this->Response->Response($http_code, $message, null, null);
+			$query = $this->Templates->find()
+					->contain(['Components'])
+					->where($condition);
+			$response = [];
+			if ($query) {
+				$response = $query->toArray();
 			}
+			$http_code = 200;
+			$message = 'Success';
+			return $this->Response->Response($http_code, $message, $response);
 		}
 	}
 

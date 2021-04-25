@@ -18,6 +18,9 @@ class ComponentsTable extends Table
 		$this->belongsTo('Templates')
 			->setForeignKey('template_id')
 			->setDependent(true);
+		$this->hasMany('Layouts', [
+			'foreignKey' => 'component_id',
+		]);
 	}
 
 	public function validationDefault(Validator $validator)
@@ -52,7 +55,7 @@ class ComponentsTable extends Table
 			->notEmpty('sort')
 			->add('sort', [
 				'unique' => [
-					'rule' => ['validateUnique', ['scope' => 'id']],
+					'rule' => ['validateUnique', ['scope' => 'template_id']],
 					'provider' => 'table'
 				]
 			]);

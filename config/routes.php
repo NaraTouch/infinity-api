@@ -372,5 +372,32 @@ Router::scope('/', function (RouteBuilder $routes) {
 				'controller' => 'Subpages',
 				'action' => 'delete'
 			]);
+
+	// Layouts
+	$routes->connect('/layouts',
+			[
+				'controller' => 'Layouts',
+				'action' => 'index'
+			]);
+	$routes->connect('/layouts/add',
+			[
+				'controller' => 'Layouts',
+				'action' => 'add'
+			]);
+	$routes->connect('/layouts/view',
+			[
+				'controller' => 'Layouts',
+				'action' => 'view'
+			]);
+	$routes->connect('/layouts/edit',
+			[
+				'controller' => 'Layouts',
+				'action' => 'edit'
+			]);
+	$routes->connect('/layouts/delete',
+			[
+				'controller' => 'Layouts',
+				'action' => 'delete'
+			]);
 	$routes->fallbacks(DashedRoute::class);
 });

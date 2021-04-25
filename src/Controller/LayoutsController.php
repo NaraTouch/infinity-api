@@ -2,7 +2,7 @@
 namespace App\Controller;
 use App\Controller\AppController;
 
-class SubpagesController extends AppController
+class LayoutsController extends AppController
 {
 
 	public function initialize()
@@ -20,28 +20,31 @@ class SubpagesController extends AppController
 			$request_body = $this->request->input('json_decode');
 			$data = (array)$request_body;
 			if (!empty($data)) {
-				if (!empty($data['keywords'])) {
-					$keywords = $data['keywords'];
-					$condition['Subpages.name ILIKE '] = "%$keywords%";
-				}
-				if (!empty($data['page_id'])) {
-					$page_id = $data['page_id'];
-					$condition['Subpages.page_id '] = $page_id;
+				if (!empty($data['subpage_id'])) {
+					$subpage_id = $data['subpage_id'];
+					$condition['Layouts.subpage_id '] = $subpage_id;
 				}
 			}
-			$query = $this->Subpages->find();
+			$query = $this->Layouts->find();
 			if (!empty($filter)) {
-				$query->innerJoinWith('Pages', function($page) use ($filter) {
-						return $page
-							->where([
-								'Pages.website_id' => $filter['website_id'],
-							]);
-					})
-					->contain(['Pages'])
-					->where($condition);
+				$query->innerJoinWith('Subpages', function($subpage) use ($filter) {
+					return $subpage->innerJoinWith('Pages', function($page) use ($filter) {
+						return $page->where([
+							'Pages.website_id' => $filter['website_id'],
+						]);
+					});
+				})
+				->contain([
+					'Subpages',
+					'Components',
+				])
+				->where($condition);
 			} else {
 				$query
-					->contain(['Pages'])
+					->contain([
+						'Subpages',
+						'Components',
+					])
 					->where($condition);
 			}
 			$response = [];
@@ -63,25 +66,25 @@ class SubpagesController extends AppController
 			$request_body = $this->request->input('json_decode');
 			$data = (array)$request_body;
 			if (!empty($filter)) {
-				$page = $this->Response->getFilterPage($data['page_id']);
-				if ($this->Response->validateTheSameValue($filter['website_id'], $page['website_id'])) {
-					return $this->addSubpage($data);
+				$subpage = $this->Response->getWebsiteBySubpage($data['subpage_id']);
+				if ($this->Response->validateTheSameValue($filter['website_id'], $subpage['website_id'])) {
+					return $this->addLayout($data);
 				} else {
 					$http_code = 403;
 					$message = 'Unauthorized';
 					return $this->Response->Response($http_code, $message, null, null);
 				}
 			} else {
-				return $this->addSubpage($data);
+				return $this->addLayout($data);
 			}
 		}
 	}
 
-	public function addSubpage($data = null)
+	public function addLayout($data = null)
 	{
-		$entity = $this->Subpages->newEntity();
-		$patchEntity = $this->Subpages->patchEntity($entity, $data);
-		if ($this->Subpages->save($patchEntity)) {
+		$entity = $this->Layouts->newEntity();
+		$patchEntity = $this->Layouts->patchEntity($entity, $data);
+		if ($this->Layouts->save($patchEntity)) {
 			$http_code = 200;
 			$message = 'Success';
 			return $this->Response->Response($http_code, $message);
@@ -102,17 +105,18 @@ class SubpagesController extends AppController
 			$data = (array)$request_body;
 			if (!empty($data)) {
 				if (!empty($data['id'])) {
-					$condition['Subpages.id'] = $data['id'];
+					$condition['Layouts.id'] = $data['id'];
 				}
 			}
-			$query = $this->Subpages->find();
+			$query = $this->Layouts->find();
 			if (!empty($filter)) {
-				$query->innerJoinWith('Pages', function($page) use ($filter) {
-						return $page
-							->where([
-								'Pages.website_id' => $filter['website_id'],
-							]);
+				$query->innerJoinWith('Subpages', function($subpage) use ($filter) {
+					return $subpage->innerJoinWith('Pages', function($page) use ($filter) {
+						return $page->where([
+							'Pages.website_id' => $filter['website_id'],
+						]);
 					});
+				});
 			}
 			$query
 				->where($condition)
@@ -135,27 +139,27 @@ class SubpagesController extends AppController
 			$auth = $this->Auth->user();
 			$filter = $this->Response->getFilterByWebsite($auth['group_id']);
 			$request_body = $this->request->input('json_decode');
-			$query = $this->Subpages->get($request_body->id);
+			$query = $this->Layouts->get($request_body->id);
 			$data = (array)$request_body;
 			if (!empty($filter)) {
 				$page = $this->Response->getFilterPage($data['page_id']);
 				if ($this->Response->validateTheSameValue($filter['website_id'], $page['website_id'])) {
-					return $this->editSubpage($data, $query);
+					return $this->editLayout($data, $query);
 				} else {
 					$http_code = 403;
 					$message = 'Unauthorized';
 					return $this->Response->Response($http_code, $message, null, null);
 				}
 			} else {
-				return $this->editSubpage($data, $query);
+				return $this->editLayout($data, $query);
 			}
 		}
 	}
 
-	public function editSubpage($data = null, $query = null)
+	public function editLayout($data = null, $query = null)
 	{
-		$patchEntity = $this->Subpages->patchEntity($query, $data);
-		if ($this->Subpages->save($patchEntity)) {
+		$patchEntity = $this->Layouts->patchEntity($query, $data);
+		if ($this->Layouts->save($patchEntity)) {
 			$http_code = 200;
 			$message = 'Success';
 			return $this->Response->Response($http_code, $message);
@@ -172,25 +176,25 @@ class SubpagesController extends AppController
 			$auth = $this->Auth->user();
 			$filter = $this->Response->getFilterByWebsite($auth['group_id']);
 			$request_body = $this->request->input('json_decode');
-			$query = $this->Subpages->get($request_body->id);
+			$query = $this->Layouts->get($request_body->id);
 			if (!empty($filter)) {
 				$page = $this->Response->getFilterPage($query->page_id);
 				if ($this->Response->validateTheSameValue($filter['website_id'], $page['website_id'])) {
-					return $this->deleteSubpage($query);
+					return $this->deleteLayout($query);
 				} else {
 					$http_code = 403;
 					$message = 'Unauthorized';
 					return $this->Response->Response($http_code, $message, null, null);
 				}
 			} else {
-				return $this->deleteSubpage($query);
+				return $this->deleteLayout($query);
 			}
 		}
 	}
 	
-	public function deleteSubpage($query = null)
+	public function deleteLayout($query = null)
 	{
-		if ($this->Subpages->delete($query)) {
+		if ($this->Layouts->delete($query)) {
 			$http_code = 200;
 			$message = 'Success';
 			return $this->Response->Response($http_code, $message);

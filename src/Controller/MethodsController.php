@@ -46,13 +46,13 @@ class MethodsController extends AppController
 			} else {
 				$query->order(['Methods.sort' => 'asc']);
 			}
-			$data = [];
+			$response = [];
 			if ($query) {
-				$data = $query->toArray();
+				$response = $query->toArray();
 			}
 			$http_code = 200;
 			$message = 'Success';
-			return $this->Response->Response($http_code, $message, $data);
+			return $this->Response->Response($http_code, $message, $response);
 		}
 	}
 
