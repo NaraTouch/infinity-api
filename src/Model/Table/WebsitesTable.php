@@ -74,4 +74,5 @@ class WebsitesTable extends Table
 
 		return $rules;
 	}
+	
 }

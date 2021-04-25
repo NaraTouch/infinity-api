@@ -15,7 +15,6 @@ class ComponentsController extends AppController
 	{
 		if ($this->request->is('post')) {
 			$condition = [];
-			$auth = $this->Auth->user();
 			$request_body = $this->request->input('json_decode');
 			$data = (array)$request_body;
 			if (!empty($data)) {
@@ -141,4 +140,5 @@ class ComponentsController extends AppController
 			}
 		}
 	}
+
 }

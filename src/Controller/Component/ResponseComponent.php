@@ -9,6 +9,7 @@ class ResponseComponent extends Component
 	private $Roles;
 	private $Pages;
 	private $Subpages;
+	private $Websites;
 	
 	public function initialize(array $config)
 	{
@@ -17,6 +18,7 @@ class ResponseComponent extends Component
 		$this->Roles = TableRegistry::get('Roles');
 		$this->Pages = TableRegistry::get('Pages');
 		$this->Subpages = TableRegistry::get('Subpages');
+		$this->Websites = TableRegistry::get('Websites');
 	}
 
 	public function getFilterByWebsite($group_id = null)

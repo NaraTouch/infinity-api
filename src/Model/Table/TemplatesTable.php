@@ -63,4 +63,5 @@ class TemplatesTable extends Table
 
 		return $rules;
 	}
+	
 }
