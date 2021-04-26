@@ -20,9 +20,6 @@ class IPagesController extends AppController
 			$filter = $this->Response->getFilterByWebsite($auth['group_id']);
 			$request_body = $this->request->input('json_decode');
 			$data = (array)$request_body;
-			if (!empty($filter)) {
-				$condition['Pages.website_id'] = $filter['website_id'];
-			}
 			if (!empty($data)) {
 				if (!empty($data['keywords'])) {
 					$keywords = $data['keywords'];
@@ -32,6 +29,9 @@ class IPagesController extends AppController
 					$website_id = $data['website_id'];
 					$condition['Pages.website_id '] = $website_id;
 				}
+			}
+			if (!empty($filter)) {
+				$condition['Pages.website_id'] = $filter['website_id'];
 			}
 			$query = $this->Pages->find()
 					->contain([

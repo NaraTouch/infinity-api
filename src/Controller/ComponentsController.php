@@ -15,6 +15,8 @@ class ComponentsController extends AppController
 	{
 		if ($this->request->is('post')) {
 			$condition = [];
+			$auth = $this->Auth->user();
+			$filter = $this->Response->getFilterByWebsite($auth['group_id']);
 			$request_body = $this->request->input('json_decode');
 			$data = (array)$request_body;
 			if (!empty($data)) {
@@ -27,9 +29,22 @@ class ComponentsController extends AppController
 					$condition['Components.name ILIKE '] = "%$keywords%";
 				}
 			}
-			$query = $this->Components->find()
+			$query = $this->Components->find();
+			if (!empty($filter)) {
+				$query->innerJoinWith('Templates', function($template) use ($filter) {
+					return $template->innerJoinWith('Websites', function($website) use ($filter) {
+						return $website->where([
+							'Websites.id' => $filter['website_id'],
+						]);
+					});
+				})
+				->contain(['Templates'])
+				->where($condition);
+			} else {
+				$query
 					->contain(['Templates'])
 					->where($condition);
+			}
 			$response = [];
 			if ($query) {
 				$response = $query->toArray();
