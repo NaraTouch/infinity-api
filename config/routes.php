@@ -399,5 +399,13 @@ Router::scope('/', function (RouteBuilder $routes) {
 				'controller' => 'Layouts',
 				'action' => 'delete'
 			]);
+	
+	// Website Requests
+	$routes->connect('/weblayouts',
+			[
+				'controller' => 'WebsiteRequests',
+				'action' => 'webLayouts'
+			]);
+
 	$routes->fallbacks(DashedRoute::class);
 });

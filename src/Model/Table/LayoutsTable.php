@@ -32,7 +32,7 @@ class LayoutsTable extends Table
 		$validator
 			->scalar('subpage_id')
 			->requirePresence('subpage_id')
-			->notEmpty('subpage_id');
+			->allowEmptyString('subpage_id');
 		
 		$validator
 			->scalar('component_id')

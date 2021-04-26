@@ -65,25 +65,25 @@ class LayoutsController extends AppController
 			$filter = $this->Response->getFilterByWebsite($auth['group_id']);
 			$request_body = $this->request->input('json_decode');
 			$data = (array)$request_body;
+			$entity = $this->Layouts->newEntity();
+			$patchEntity = $this->Layouts->patchEntity($entity, $data);
 			if (!empty($filter)) {
 				$subpage = $this->Response->getWebsiteBySubpage($data['subpage_id']);
-				if ($this->Response->validateTheSameValue($filter['website_id'], $subpage['website_id'])) {
-					return $this->addLayout($data);
+				if ($subpage && $this->Response->validateTheSameValue($filter['website_id'], $subpage['website_id'])) {
+					return $this->addLayout($patchEntity);
 				} else {
 					$http_code = 403;
 					$message = 'Unauthorized';
-					return $this->Response->Response($http_code, $message, null, null);
+					return $this->Response->Response($http_code, $message, null, $patchEntity->errors());
 				}
 			} else {
-				return $this->addLayout($data);
+				return $this->addLayout($patchEntity);
 			}
 		}
 	}
 
-	public function addLayout($data = null)
+	public function addLayout($patchEntity = null)
 	{
-		$entity = $this->Layouts->newEntity();
-		$patchEntity = $this->Layouts->patchEntity($entity, $data);
 		if ($this->Layouts->save($patchEntity)) {
 			$http_code = 200;
 			$message = 'Success';
@@ -141,14 +141,15 @@ class LayoutsController extends AppController
 			$request_body = $this->request->input('json_decode');
 			$query = $this->Layouts->get($request_body->id);
 			$data = (array)$request_body;
+			$patchEntity = $this->Layouts->patchEntity($query, $data);
 			if (!empty($filter)) {
-				$page = $this->Response->getFilterPage($data['page_id']);
-				if ($this->Response->validateTheSameValue($filter['website_id'], $page['website_id'])) {
-					return $this->editLayout($data, $query);
+				$subpage = $this->Response->getWebsiteBySubpage($data['subpage_id']);
+				if ($subpage && $this->Response->validateTheSameValue($filter['website_id'], $subpage['website_id'])) {
+					return $this->editLayout($patchEntity);
 				} else {
 					$http_code = 403;
 					$message = 'Unauthorized';
-					return $this->Response->Response($http_code, $message, null, null);
+					return $this->Response->Response($http_code, $message, null, $patchEntity->errors());
 				}
 			} else {
 				return $this->editLayout($data, $query);
@@ -156,9 +157,8 @@ class LayoutsController extends AppController
 		}
 	}
 
-	public function editLayout($data = null, $query = null)
+	public function editLayout($patchEntity = null)
 	{
-		$patchEntity = $this->Layouts->patchEntity($query, $data);
 		if ($this->Layouts->save($patchEntity)) {
 			$http_code = 200;
 			$message = 'Success';
@@ -178,8 +178,8 @@ class LayoutsController extends AppController
 			$request_body = $this->request->input('json_decode');
 			$query = $this->Layouts->get($request_body->id);
 			if (!empty($filter)) {
-				$page = $this->Response->getFilterPage($query->page_id);
-				if ($this->Response->validateTheSameValue($filter['website_id'], $page['website_id'])) {
+				$subpage = $this->Response->getWebsiteBySubpage($query->subpage_id);
+				if ($this->Response->validateTheSameValue($filter['website_id'], $subpage['website_id'])) {
 					return $this->deleteLayout($query);
 				} else {
 					$http_code = 403;
