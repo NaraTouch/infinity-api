@@ -157,6 +157,23 @@ class ResponseComponent extends Component
 		}
 	}
 
+	public function getWebsiteByGroup($group_id = null)
+	{
+		if (!$group_id) {
+			return false;
+		}
+		$group = $this->Groups->getGroupById($group_id);
+		if ($group) {
+			$website = $this->Websites->getWebsiteById($group->website_id);
+			if (!$website) {
+				return false;
+			}
+			return $website;
+		} else {
+			return false;
+		}
+	}
+
 	public function Response($http_code = null, $message = null, $data = [], $error = [])
 	{
 		$http_status = (int) $http_code;

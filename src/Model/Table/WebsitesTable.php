@@ -75,4 +75,17 @@ class WebsitesTable extends Table
 		return $rules;
 	}
 	
+	public function getWebsiteById($id = null)
+	{
+		if (!$id) {
+			return false;
+		}
+		$query = $this->find()
+					->where(['id' => $id])
+					->first();
+		if (!$query) {
+			return false;
+		}
+		return $query;
+	}
 }

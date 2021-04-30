@@ -401,7 +401,13 @@ Router::scope('/', function (RouteBuilder $routes) {
 			]);
 	
 	// Website Requests
-	$routes->connect('/weblayouts',
+	$routes->connect('/websites/authorization',
+			[
+				'controller' => 'WebsiteRequests',
+				'action' => 'authorization'
+			]);
+	
+	$routes->connect('/websites/weblayouts',
 			[
 				'controller' => 'WebsiteRequests',
 				'action' => 'webLayouts'
