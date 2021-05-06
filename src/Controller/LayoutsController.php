@@ -141,24 +141,24 @@ class LayoutsController extends AppController
 			$request_body = $this->request->input('json_decode');
 			$query = $this->Layouts->get($request_body->id);
 			$data = (array)$request_body;
-			$patchEntity = $this->Layouts->patchEntity($query, $data);
 			if (!empty($filter)) {
 				$subpage = $this->Response->getWebsiteBySubpage($data['subpage_id']);
 				if ($subpage && $this->Response->validateTheSameValue($filter['website_id'], $subpage['website_id'])) {
-					return $this->editLayout($patchEntity);
+					return $this->editLayout($query, $data);
 				} else {
 					$http_code = 403;
 					$message = 'Unauthorized';
 					return $this->Response->Response($http_code, $message, null, $patchEntity->errors());
 				}
 			} else {
-				return $this->editLayout($data, $query);
+				return $this->editLayout($query, $data);
 			}
 		}
 	}
 
-	public function editLayout($patchEntity = null)
+	public function editLayout($query = null, $data = [])
 	{
+		$patchEntity = $this->Layouts->patchEntity($query, $data);
 		if ($this->Layouts->save($patchEntity)) {
 			$http_code = 200;
 			$message = 'Success';
