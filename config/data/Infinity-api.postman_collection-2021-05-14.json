@@ -1,0 +1,680 @@
+{
+	"info": {
+		"_postman_id": "c51d12bc-9af4-4ed4-be15-adb27fbb95c9",
+		"name": "Infinity-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost/infinity-api/user/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "infinityesport.guest@infinity.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Nara@12345678",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/infinity-api/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"infinity-api",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/infinity-api/user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIwN2ViNzYxOC00NTgzLTQ0MmItYjUxMi02MTUzODYxZTFmMjUiLCJleHAiOjE2MTU2OTkxNjQsInJvbGUiOiJHb2QifQ.772mKpcjn4rud8rvPjQw7C43nhWoEuN5XfAsVoziLVg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"aka\",\"email\":\"koka.nara@gmail.com\",\"group_id\":\"39844ee9-a935-4cb3-9eec-7246f702b040\",\"status\":\"true\",\"password\":\"Nara@12345678\",\"confirm_password\":\"Nara@12345678\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/infinity-api/users/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"infinity-api",
+						"users",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/infinity-api/user/view/1",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImV4cCI6MTYxNDE0NDAzMSwicm9sZSI6InJvb3QifQ.i_IDXUaSpCVAXal1SnAZlnS96P_5ElEQb7vPZhw4y9I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/infinity-api/user/view/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"infinity-api",
+						"user",
+						"view",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/infinity-api/user/add",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImV4cCI6MTYxNDE0NDAzMSwicm9sZSI6InJvb3QifQ.i_IDXUaSpCVAXal1SnAZlnS96P_5ElEQb7vPZhw4y9I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"\",\r\n    \"email\": \"sophonaratouch@gmail.com\",\r\n    \"password\": \"Nara@12345678\",\r\n    \"active\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/infinity-api/user/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"infinity-api",
+						"user",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/infinity-api/groups",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImV4cCI6MTYxNTYxMTMyMywicm9sZSI6IkdvZCJ9.YrC183pPhgReZ5SbUlwQMqdYUVizGihF6diVhZw-O1I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/infinity-api/groups",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"infinity-api",
+						"groups"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/infinity-api/users/delete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImV4cCI6MTYxNTcxNzQyMSwicm9sZSI6IkdvZCJ9.54QeSdESbP_V5xMZv4Eed7dPvGgKTeRFh_cPntQKrKE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\":\"4\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/infinity-api/users/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"infinity-api",
+						"users",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/infinity-api/users/edit",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImV4cCI6MTYxNTcxNTAwMSwicm9sZSI6IkdvZCJ9.YnTwNMxVbq4TRSAkK9GbwcKZFY3lN6hx697cU6k1dVk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\" : \"2\",\r\n  \"name\" : \"aka_2\",\r\n  \"email\" : \"koka.nara@gmail.com\",\r\n  \"group_id\" : \"1\",\r\n  \"active\" : \"1\",\r\n  \"password\" : \"sdadawd\",\r\n  \"confirm_password\" : \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/infinity-api/users/edit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"infinity-api",
+						"users",
+						"edit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/infinity-api/users/view",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImV4cCI6MTYxNTcwMTcxMiwicm9sZSI6IkdvZCJ9.uVDB7R3eT2snMOluR28EWlYrPopSo27ScRil6F5ayFs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\":\"1\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/infinity-api/users/view",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"infinity-api",
+						"users",
+						"view"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/infinity-api/pclouds/listfolder",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImV4cCI6MTYxNzc3MDg1Mywicm9sZSI6IkdvZCJ9.2dGcN2iLGsWL9XdUXxBHsA_ZLT4YIUKLS5BOxdD4CjA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"path\": \"/\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/infinity-api/pclouds/listfolder",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"infinity-api",
+						"pclouds",
+						"listfolder"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://api.pcloud.com/getpubthumb?fileid=29042063956&code=XZlcX2XZTi8AwvHHoYS3oyXHTkmMH0qalYRy&size=360x100",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://api.pcloud.com/getpubthumb?fileid=29042063956&code=XZlcX2XZTi8AwvHHoYS3oyXHTkmMH0qalYRy&size=360x100",
+					"protocol": "https",
+					"host": [
+						"api",
+						"pcloud",
+						"com"
+					],
+					"path": [
+						"getpubthumb"
+					],
+					"query": [
+						{
+							"key": "auth",
+							"value": "oA3BE7ZcH3R7Z6Ys6vCH8fky0YKU7LvyTh4i0L2ly",
+							"disabled": true
+						},
+						{
+							"key": "fileid",
+							"value": "29042063956"
+						},
+						{
+							"key": "code",
+							"value": "XZlcX2XZTi8AwvHHoYS3oyXHTkmMH0qalYRy"
+						},
+						{
+							"key": "size",
+							"value": "360x100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://api.pcloud.com/listfolder?auth=5d9wZcH3R7ZlRoeijhbuwfkVQLPDPwJkHUU0xUX&path=/Documents",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://api.pcloud.com/listfolder?auth=5d9wZcH3R7ZlRoeijhbuwfkVQLPDPwJkHUU0xUX&path=/Documents",
+					"protocol": "https",
+					"host": [
+						"api",
+						"pcloud",
+						"com"
+					],
+					"path": [
+						"listfolder"
+					],
+					"query": [
+						{
+							"key": "auth",
+							"value": "5d9wZcH3R7ZlRoeijhbuwfkVQLPDPwJkHUU0xUX"
+						},
+						{
+							"key": "path",
+							"value": "/Documents"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/infinity-api/pclouds/uploadprogress",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjYsImV4cCI6MTYxNzE3MjI5OSwicm9sZSI6IkdvZCJ9.y08rVvXNEuZS9f9kfnQWgdmpVZnP68gdON8Ge3ynIYU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"progresshash\": \"$2y$10$YGvoKYCbowPwgAP1kecrV.BHdzoD2n/ywaCUkkTIN4f9z.UfSTGda\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/infinity-api/pclouds/uploadprogress",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"infinity-api",
+						"pclouds",
+						"uploadprogress"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/infinity-api/pclouds/uploadfile?path=/Documents&filename=memo&progresshash=$2y$10$YGvoKYCbowPwgAP1kecrV.BHdzoD2n/ywaCUkkTIN4f9z.UfSTGda",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjYsImV4cCI6MTYxNzE3MjI5OSwicm9sZSI6IkdvZCJ9.y08rVvXNEuZS9f9kfnQWgdmpVZnP68gdON8Ge3ynIYU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/HP/Downloads/5969f09d12d84.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/infinity-api/pclouds/uploadfile?path=/Documents&filename=memo&progresshash=$2y$10$YGvoKYCbowPwgAP1kecrV.BHdzoD2n/ywaCUkkTIN4f9z.UfSTGda",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"infinity-api",
+						"pclouds",
+						"uploadfile"
+					],
+					"query": [
+						{
+							"key": "path",
+							"value": "/Documents"
+						},
+						{
+							"key": "filename",
+							"value": "memo"
+						},
+						{
+							"key": "progresshash",
+							"value": "$2y$10$YGvoKYCbowPwgAP1kecrV.BHdzoD2n/ywaCUkkTIN4f9z.UfSTGda"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/infinity-api/pclouds/createfolderifnotexists",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImV4cCI6MTYxNjQ4NDk2NCwicm9sZSI6IkdvZCJ9.iNvnIZiSkn-DueyqL3XJh0EdvjWuVFGJEWdU25r1nxA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"path\": \"/\",\r\n    \"folder_id\": \"0sds\",\r\n    \"name\": \"test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/infinity-api/pclouds/createfolderifnotexists",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"infinity-api",
+						"pclouds",
+						"createfolderifnotexists"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/infinity-api/pclouds/uploadfile?path=/Documents&folderid=0&filename=test1",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImV4cCI6MTYxNzc3NTI3OSwicm9sZSI6IkdvZCJ9.HYySdn53tJ_Jy3rI-IqfhVwiyHCif-c-0hVJC8_-CA4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/IT MART/Downloads/YnYdHkOETjaPRbuGFegt_5bXX2M4ovrL3941c.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/infinity-api/pclouds/uploadfile?path=/Documents&folderid=0&filename=test1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"infinity-api",
+						"pclouds",
+						"uploadfile"
+					],
+					"query": [
+						{
+							"key": "path",
+							"value": "/Documents"
+						},
+						{
+							"key": "folderid",
+							"value": "0"
+						},
+						{
+							"key": "filename",
+							"value": "test1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/infinity-api/securities/get_access_module",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjksImV4cCI6MTYyMTA2OTQwMCwicm9sZSI6ImluZmluaXR5LWVzcG9ydC13ZWJzaXRlLXVzZXIifQ.L3YbjdiRfVie4HBV9r7V6SkaK68OdOlLt4KPYvJlE0c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost/infinity-api/securities/get_access_module",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"infinity-api",
+						"securities",
+						"get_access_module"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/infinity-api/layouts/edit",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImV4cCI6MTYyMDM2MTgwMiwicm9sZSI6IkdvZCJ9.SMqnmKE10Em66PqVzppdzJpS9gC9xzWoaUM4KFvKKaQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": \"4\",\r\n  \"subpage_id\": \"2\",\r\n  \"component_id\": \"10\",\r\n  \"sort\": 33,\r\n  \"active\": \"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/infinity-api/layouts/edit",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"infinity-api",
+						"layouts",
+						"edit"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
