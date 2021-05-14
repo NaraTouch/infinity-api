@@ -17,10 +17,10 @@ class ErrorController extends AppController
 	public function beforeRender(Event $event)
 	{
 		parent::beforeRender($event);
-//		$error = $this->response->getStatusCode();
-//		if ($error != 200) {
-//			return $this->redirect(['controller' => 'Error', 'action' => 'Message', $error]);
-//		}
+		$error = $this->response->getStatusCode();
+		if ($error != 200) {
+			return $this->redirect(['controller' => 'Error', 'action' => 'Message', $error]);
+		}
 	}
 
 	public function Message($http_code = null)
