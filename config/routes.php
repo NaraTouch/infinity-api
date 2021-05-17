@@ -291,6 +291,33 @@ Router::scope('/', function (RouteBuilder $routes) {
 				'action' => 'delete'
 			]);
 	
+	// Applications
+	$routes->connect('/applications',
+			[
+				'controller' => 'Applications',
+				'action' => 'index'
+			]);
+	$routes->connect('/applications/add',
+			[
+				'controller' => 'Applications',
+				'action' => 'add'
+			]);
+	$routes->connect('/applications/view',
+			[
+				'controller' => 'Applications',
+				'action' => 'view'
+			]);
+	$routes->connect('/applications/edit',
+			[
+				'controller' => 'Applications',
+				'action' => 'edit'
+			]);
+	$routes->connect('/applications/delete',
+			[
+				'controller' => 'Applications',
+				'action' => 'delete'
+			]);
+	
 	// Components
 	$routes->connect('/components',
 			[

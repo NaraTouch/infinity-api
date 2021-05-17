@@ -2,7 +2,7 @@
 namespace App\Controller;
 use App\Controller\AppController;
 
-class WebsitesController extends AppController
+class ApplicationsController extends AppController
 {
 
 	public function initialize()
@@ -19,28 +19,35 @@ class WebsitesController extends AppController
 			$filter = $this->Response->getFilterByWebsite($auth['group_id']);
 			$request_body = $this->request->input('json_decode');
 			$data = (array)$request_body;
-			if (!empty($filter)) {
-				$condition['Websites.id'] = $filter['website_id'];
-			}
 			if (!empty($data)) {
 				if (!empty($data['template_id'])) {
 					$template_id = $data['template_id'];
-					$condition['Websites.template_id '] = $template_id;
+					$condition['Applications.template_id '] = $template_id;
 				}
 				if (!empty($data['keywords'])) {
 					$keywords = $data['keywords'];
-					$condition['Websites.display ILIKE '] = "%$keywords%";
+					$condition['Applications.name ILIKE '] = "%$keywords%";
 				}
 			}
-			$query = $this->Websites->find()
-						->contain([
-							'Templates',
-							'Applications'
-						])
-						->where($condition);
+			$query = $this->Applications->find();
+			if (!empty($filter)) {
+				$query->innerJoinWith('Templates', function($template) use ($filter) {
+					return $template->innerJoinWith('Websites', function($website) use ($filter) {
+						return $website->where([
+							'Websites.id' => $filter['website_id'],
+						]);
+					});
+				})
+				->contain(['Templates'])
+				->where($condition);
+			} else {
+				$query
+					->contain(['Templates'])
+					->where($condition);
+			}
 			$response = [];
 			if ($query) {
-				$response = $query;
+				$response = $query->toArray();
 			}
 			$http_code = 200;
 			$message = 'Success';
@@ -53,18 +60,43 @@ class WebsitesController extends AppController
 		if ($this->request->is('post')) {
 			$auth = $this->Auth->user();
 			if ($this->Response->allowOnlySuperUser($auth['group_id'])) {
-				$website = $this->Websites->newEntity();
+				$entity = $this->Applications->newEntity();
 				$request_body = $this->request->input('json_decode');
 				$data = (array)$request_body;
-				$entity = $this->Websites->patchEntity($website, $data);
-				if ($this->Websites->save($entity)) {
+				$patchEntity = $this->Applications->patchEntity($entity, $data);
+				if ($this->Applications->save($patchEntity)) {
 					$http_code = 200;
 					$message = 'Success';
 					return $this->Response->Response($http_code, $message);
 				} else {
 					$http_code = 400;
 					$message = 'Add not success';
-					return $this->Response->Response($http_code, $message, null, $entity->errors());
+					return $this->Response->Response($http_code, $message, null, $patchEntity->errors());
+				}
+			} else {
+				$http_code = 403;
+				$message = 'Unauthorized';
+				return $this->Response->Response($http_code, $message, null, null);
+			}
+			
+		}
+	}
+
+	public function view()
+	{
+		if ($this->request->is('post')) {
+			$auth = $this->Auth->user();
+			if ($this->Response->allowOnlySuperUser($auth['group_id'])) {
+				$request_body = $this->request->input('json_decode');
+				$query = $this->Applications->get($request_body->id);
+				if ($query) {
+					$http_code = 200;
+					$message = 'Success';
+					return $this->Response->Response($http_code, $message, $query);
+				} else {
+					$http_code = 404;
+					$message = 'User not found.';
+					return $this->Response->Response($http_code, $message, null, null);
 				}
 			} else {
 				$http_code = 403;
@@ -74,52 +106,28 @@ class WebsitesController extends AppController
 		}
 	}
 
-	public function view()
-	{
-		if ($this->request->is('post')) {
-			$request_body = $this->request->input('json_decode');
-			$id = $request_body->id;
-			$auth = $this->Auth->user();
-			$filter = $this->Response->getFilterByWebsite($auth['group_id']);
-			if (!empty($filter)) {
-				$id = $filter['website_id'];
-			}
-			$website = $this->Websites->get($id);
-			if ($website) {
-				$http_code = 200;
-				$message = 'Success';
-				return $this->Response->Response($http_code, $message, $website);
-			} else {
-				$http_code = 404;
-				$message = 'Website not found.';
-				return $this->Response->Response($http_code, $message, null, null);
-			}
-			
-		}
-		
-	}
-
 	public function edit()
 	{
 		if ($this->request->is(['patch', 'post', 'put'])) {
 			$auth = $this->Auth->user();
-			$request_body = $this->request->input('json_decode');
-			$id = $request_body->id;
-			$filter = $this->Response->getFilterByWebsite($auth['group_id']);
-			if (!empty($filter)) {
-				$id = $filter['website_id'];
-			}
-			$website = $this->Websites->get($id);
-			$data = (array)$request_body;
-			$entity = $this->Websites->patchEntity($website, $data);
-			if ($this->Websites->save($entity)) {
-				$http_code = 200;
-				$message = 'Success';
-				return $this->Response->Response($http_code, $message);
+			if ($this->Response->allowOnlySuperUser($auth['group_id'])) {
+				$request_body = $this->request->input('json_decode');
+				$query = $this->Applications->get($request_body->id);
+				$data = (array)$request_body;
+				$patchEntity = $this->Applications->patchEntity($query, $data);
+				if ($this->Applications->save($patchEntity)) {
+					$http_code = 200;
+					$message = 'Success';
+					return $this->Response->Response($http_code, $message);
+				} else {
+					$http_code = 400;
+					$message = 'Edit not success';
+					return $this->Response->Response($http_code, $message, null, $patchEntity->errors());
+				}
 			} else {
-				$http_code = 400;
-				$message = 'Edit not success';
-				return $this->Response->Response($http_code, $message, null, $entity->errors());
+				$http_code = 403;
+				$message = 'Unauthorized';
+				return $this->Response->Response($http_code, $message, null, null);
 			}
 		}
 	}
@@ -130,8 +138,8 @@ class WebsitesController extends AppController
 			$auth = $this->Auth->user();
 			if ($this->Response->allowOnlySuperUser($auth['group_id'])) {
 				$request_body = $this->request->input('json_decode');
-				$website = $this->Websites->get($request_body->id);
-				if ($this->Websites->delete($website)) {
+				$query = $this->Applications->get($request_body->id);
+				if ($this->Applications->delete($query)) {
 					$http_code = 200;
 					$message = 'Success';
 					return $this->Response->Response($http_code, $message);
@@ -145,7 +153,6 @@ class WebsitesController extends AppController
 				$message = 'Unauthorized';
 				return $this->Response->Response($http_code, $message, null, null);
 			}
-			
 		}
 	}
 }
