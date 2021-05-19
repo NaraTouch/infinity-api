@@ -30,7 +30,8 @@ class PagesTable extends Table
 
 		$validator
 			->scalar('website_id')
-			->notEmptyString('website_id');
+			->requirePresence('website_id')
+			->notEmpty('website_id');
 
 		$validator
 			->scalar('name')

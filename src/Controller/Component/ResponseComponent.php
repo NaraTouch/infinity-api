@@ -146,7 +146,7 @@ class ResponseComponent extends Component
 		}
 		$subpage = $this->Subpages->getSubpageById($id);
 		if ($subpage) {
-			$page = $this->Pages->getPageById($subpage->id);
+			$page = $this->Pages->getPageById($subpage->page_id);
 			if ($page) {
 				return ['website_id' => $page->website_id];
 			} else {

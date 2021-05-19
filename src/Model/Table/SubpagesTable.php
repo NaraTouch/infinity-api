@@ -30,7 +30,8 @@ class SubpagesTable extends Table
 
 		$validator
 			->scalar('page_id')
-			->notEmptyString('page_id');
+			->requirePresence('page_id')
+			->notEmpty('page_id');
 
 		$validator
 			->scalar('name')

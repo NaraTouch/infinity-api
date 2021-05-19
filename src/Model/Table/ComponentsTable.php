@@ -59,7 +59,11 @@ class ComponentsTable extends Table
 					'provider' => 'table'
 				]
 			]);
-
+	
+		$validator
+			->scalar('scritp')
+			->allowEmptyString('scritp');
+		
 		$validator
 			->boolean('active')
 			->allowEmptyString('active');

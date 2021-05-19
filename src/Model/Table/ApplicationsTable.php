@@ -52,6 +52,15 @@ class ApplicationsTable extends Table
 			->allowEmptyString('script');
 		
 		$validator
+			->scalar('layout')
+			->allowEmptyString('layout');
+		
+		$validator
+			->scalar('menu')
+			->allowEmptyString('menu');
+		
+		
+		$validator
 			->boolean('active')
 			->allowEmptyString('active');
 	
