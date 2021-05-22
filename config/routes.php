@@ -324,7 +324,6 @@ Router::scope('/', function (RouteBuilder $routes) {
 				'controller' => 'Components',
 				'action' => 'index'
 			]);
-
 	$routes->connect('/components/add',
 			[
 				'controller' => 'Components',
@@ -440,5 +439,32 @@ Router::scope('/', function (RouteBuilder $routes) {
 				'action' => 'webLayouts'
 			]);
 
+	/// GG Game template
+	//  GGMainSliders
+	$routes->connect('/ggmainsliders',
+			[
+				'controller' => 'GGMainSliders',
+				'action' => 'index'
+			]);
+	$routes->connect('/ggmainsliders/add',
+			[
+				'controller' => 'GGMainSliders',
+				'action' => 'add'
+			]);
+	$routes->connect('/ggmainsliders/view',
+			[
+				'controller' => 'GGMainSliders',
+				'action' => 'view'
+			]);
+	$routes->connect('/ggmainsliders/edit',
+			[
+				'controller' => 'GGMainSliders',
+				'action' => 'edit'
+			]);
+	$routes->connect('/ggmainsliders/delete',
+			[
+				'controller' => 'GGMainSliders',
+				'action' => 'delete'
+			]);
 	$routes->fallbacks(DashedRoute::class);
 });

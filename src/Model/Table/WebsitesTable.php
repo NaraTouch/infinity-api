@@ -32,6 +32,10 @@ class WebsitesTable extends Table
 
 		$this->belongsTo('Applications')
 			->setForeignKey('application_id');
+		
+		$this->hasMany('GGMainSliders', [
+			'foreignKey' => 'website_id',
+		]);
 	}
 
 	public function validationDefault(Validator $validator)
