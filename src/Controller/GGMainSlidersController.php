@@ -36,7 +36,8 @@ class GGMainSlidersController extends AppController
 			}
 			$query = $this->GGMainSliders->find()
 						->contain(['Websites'])
-						->where($condition);
+						->where($condition)
+						->order(['sort' => 'ASC']);
 			$response = [];
 			if ($query) {
 				$response = $query->toArray();

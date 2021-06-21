@@ -37,7 +37,7 @@ class GGMainSlidersTable extends Table
 		$validator
 			->scalar('display')
 			->maxLength('display', 255)
-			->notEmptyString('display');
+			->allowEmptyString('display');
 		
 		$validator
 			->scalar('descriptions')
