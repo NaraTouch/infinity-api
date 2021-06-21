@@ -174,6 +174,19 @@ class ResponseComponent extends Component
 		}
 	}
 
+	public function getWebsiteByCode($code = null)
+	{
+		if (!$code) {
+			return false;
+		}
+		$website = $this->Websites->getWebsiteByCode($code);
+		if ($website) {
+			return $website;
+		} else {
+			return false;
+		}
+	}
+
 	public function Response($http_code = null, $message = null, $data = [], $error = [])
 	{
 		$http_status = (int) $http_code;

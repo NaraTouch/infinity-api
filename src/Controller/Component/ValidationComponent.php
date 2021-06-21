@@ -164,4 +164,15 @@ class ValidationComponent extends Component
 			]);
 		return $this->validator->errors($data);
 	}
+	
+	public function validateFrontEndRequest($data = [])
+	{
+		$this->validator
+			->requirePresence('code')
+			->notEmptyString('code');
+		$this->validator
+			->requirePresence('REQUEST_DATA')
+			->notEmptyString('REQUEST_DATA');
+		return $this->validator->errors($data);
+	}
 }

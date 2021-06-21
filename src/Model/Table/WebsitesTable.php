@@ -100,4 +100,18 @@ class WebsitesTable extends Table
 		}
 		return $query;
 	}
+	
+	public function getWebsiteByCode($code = null)
+	{
+		if (!$code) {
+			return false;
+		}
+		$query = $this->find()
+					->where(['code' => $code])
+					->first();
+		if (!$query) {
+			return false;
+		}
+		return $query;
+	}
 }

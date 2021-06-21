@@ -78,5 +78,4 @@ class WebsiteRequestsController extends AppController
 		}
 	}
 
-	
 }

@@ -467,4 +467,11 @@ Router::scope('/', function (RouteBuilder $routes) {
 				'action' => 'delete'
 			]);
 	$routes->fallbacks(DashedRoute::class);
+	
+	// Start front end request 
+	$routes->connect('/front-end',
+			[
+				'controller' => 'FrontEndRequests',
+				'action' => 'frontEnd'
+			]);
 });

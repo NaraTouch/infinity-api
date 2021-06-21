@@ -33,6 +33,10 @@ class GGMainSlidersTable extends Table
 		$validator
 			->scalar('image')
 			->allowEmptyString('image');
+		
+		$validator
+			->scalar('thumb')
+			->allowEmptyString('thumb');
 
 		$validator
 			->scalar('display')
