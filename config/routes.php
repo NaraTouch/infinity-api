@@ -466,7 +466,32 @@ Router::scope('/', function (RouteBuilder $routes) {
 				'controller' => 'GGMainSliders',
 				'action' => 'delete'
 			]);
-	$routes->fallbacks(DashedRoute::class);
+	//  GGCategories
+	$routes->connect('/ggcategories',
+			[
+				'controller' => 'GGCategories',
+				'action' => 'index'
+			]);
+	$routes->connect('/ggcategories/add',
+			[
+				'controller' => 'GGCategories',
+				'action' => 'add'
+			]);
+	$routes->connect('/ggcategories/view',
+			[
+				'controller' => 'GGCategories',
+				'action' => 'view'
+			]);
+	$routes->connect('/ggcategories/edit',
+			[
+				'controller' => 'GGCategories',
+				'action' => 'edit'
+			]);
+	$routes->connect('/ggcategories/delete',
+			[
+				'controller' => 'GGCategories',
+				'action' => 'delete'
+			]);
 	
 	// Start front end request 
 	$routes->connect('/front-end',
@@ -474,4 +499,6 @@ Router::scope('/', function (RouteBuilder $routes) {
 				'controller' => 'FrontEndRequests',
 				'action' => 'frontEnd'
 			]);
+	
+	$routes->fallbacks(DashedRoute::class);
 });
