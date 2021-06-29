@@ -92,51 +92,43 @@ class WebsiteRequestsController extends AppController
 	{
 		if ($this->request->is('post')) {
 			$auth = $this->Auth->user();
-			$request_body = $this->request->input('json_decode');
-			$validate = $this->Validation->validateComponentScript((array) $request_body);
-			if (empty($validate)) {
-				$website = $this->Response->getWebsiteByGroup($auth['group_id']);
-				if ($website) {
-					$query = $this->Layouts->find()
-							->distinct(['Layouts.component_id'])
-							->innerJoinWith('Subpages', function($subpages) use($website) {
-								return $subpages
-										->innerJoinWith('Pages', function ($pages) use($website) {
-											return $pages
-												->where(['Pages.website_id' => $website->id]);
-									});
-							})
-							->contain([
-							'Components' => function($component) {
-								return $component
-									->select([
-										'Components.id',
-										'Components.name',
-										'Components.table_name',
-										'Components.description',
-										'Components.sort',
-										'Components.script',
-										'Components.active',
-									])
-									->where(['Components.active' => 1]);
-							}
-							]);
-					$response = [];
-					if ($query) {
-						$response = $query->toArray();
-					}
-					$http_code = 200;
-					$message = 'Success';
-					return $this->Response->Response($http_code, $message, $response);
-				} else {
-					$http_code = 404;
-					$message = 'Not found.';
-					return $this->Response->Response($http_code, $message, null, null);
+			$website = $this->Response->getWebsiteByGroup($auth['group_id']);
+			if ($website) {
+				$query = $this->Layouts->find()
+						->distinct(['Layouts.component_id'])
+						->innerJoinWith('Subpages', function($subpages) use($website) {
+							return $subpages
+									->innerJoinWith('Pages', function ($pages) use($website) {
+										return $pages
+											->where(['Pages.website_id' => $website->id]);
+								});
+						})
+						->contain([
+						'Components' => function($component) {
+							return $component
+								->select([
+									'Components.id',
+									'Components.name',
+									'Components.table_name',
+									'Components.description',
+									'Components.sort',
+									'Components.script',
+									'Components.active',
+								])
+								->where(['Components.active' => 1]);
+						}
+						]);
+				$response = [];
+				if ($query) {
+					$response = $query->toArray();
 				}
+				$http_code = 200;
+				$message = 'Success';
+				return $this->Response->Response($http_code, $message, $response);
 			} else {
-				$http_code = 400;
-				$message = 'Scripting Failed!!!';
-				return $this->Response->Response($http_code, $message, null, $validate);
+				$http_code = 404;
+				$message = 'Not found.';
+				return $this->Response->Response($http_code, $message, null, null);
 			}
 		}
 	}
