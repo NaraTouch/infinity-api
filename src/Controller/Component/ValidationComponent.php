@@ -175,4 +175,12 @@ class ValidationComponent extends Component
 			->notEmptyString('REQUEST_DATA');
 		return $this->validator->errors($data);
 	}
+	
+	public function validateComponentScript($data = [])
+	{
+		$this->validator
+			->requirePresence('SCRIPT_NAME')
+			->notEmptyString('SCRIPT_NAME');
+		return $this->validator->errors($data);
+	}
 }

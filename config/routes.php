@@ -438,6 +438,11 @@ Router::scope('/', function (RouteBuilder $routes) {
 				'controller' => 'WebsiteRequests',
 				'action' => 'webLayouts'
 			]);
+	$routes->connect('/websites/component-scripts',
+			[
+				'controller' => 'WebsiteRequests',
+				'action' => 'componentScripts'
+			]);
 
 	/// GG Game template
 	//  GGMainSliders
