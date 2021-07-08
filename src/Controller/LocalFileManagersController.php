@@ -2,7 +2,7 @@
 namespace App\Controller;
 use App\Controller\AppController;
 
-class RolesController extends AppController
+class LocalFileManagersController extends AppController
 {
 
 	public function initialize()
@@ -21,14 +21,14 @@ class RolesController extends AppController
 			$condition = [];
 			if (!empty($data)) {
 				if (!empty($data['group_id'])) {
-					$condition['Roles.group_id'] = $data['group_id'];
+					$condition['LocalFileManagers.group_id'] = $data['group_id'];
 				}
 				if (!empty($data['keywords'])) {
 					$keywords = $data['keywords'];
-					$condition['Roles.display ILIKE '] = "%$keywords%";
+					$condition['LocalFileManagers.web_url ILIKE '] = "%$keywords%";
 				}
 			}
-			$query = $this->Roles->find();
+			$query = $this->LocalFileManagers->find();
 			if (!empty($filter)) {
 				$query->innerJoinWith('Groups', function($qroup) use ($filter) {
 						return $qroup
@@ -63,10 +63,10 @@ class RolesController extends AppController
 			$data = (array)$request_body;
 			if (!empty($data)) {
 				if (!empty($data['id'])) {
-					$condition['Roles.id'] = $data['id'];
+					$condition['LocalFileManagers.id'] = $data['id'];
 				}
 			}
-			$query = $this->Roles->find();
+			$query = $this->LocalFileManagers->find();
 			if (!empty($filter)) {
 				$query->innerJoinWith('Groups', function($qroup) use ($filter) {
 						return $qroup
@@ -115,9 +115,9 @@ class RolesController extends AppController
 
 	public function addRole($data = null)
 	{
-		$role = $this->Roles->newEntity();
-		$entity = $this->Roles->patchEntity($role, $data);
-		if ($this->Roles->save($entity)) {
+		$local_file = $this->LocalFileManagers->newEntity();
+		$entity = $this->LocalFileManagers->patchEntity($local_file, $data);
+		if ($this->LocalFileManagers->save($entity)) {
 			$http_code = 200;
 			$message = 'Success';
 			return $this->Response->Response($http_code, $message);
@@ -133,27 +133,27 @@ class RolesController extends AppController
 			$auth = $this->Auth->user();
 			$filter = $this->Response->getFilterByWebsite($auth['group_id']);
 			$request_body = $this->request->input('json_decode');
-			$role = $this->Roles->get($request_body->id);
+			$local_file = $this->LocalFileManagers->get($request_body->id);
 			$data = (array)$request_body;
 			if (!empty($filter)) {
-				$requester_web = $this->Response->getFilterByWebsite($role->group_id);
+				$requester_web = $this->Response->getFilterByWebsite($local_file->group_id);
 				if ($this->Response->validateTheSameValue($filter['website_id'], $requester_web['website_id'])) {
-					return $this->editRole($role, $data);
+					return $this->editRole($local_file, $data);
 				} else {
 					$http_code = 403;
 					$message = 'Unauthorized';
 					return $this->Response->Response($http_code, $message, null, null);
 				}
 			} else {
-				return $this->editRole($role, $data);
+				return $this->editRole($local_file, $data);
 			}
 		}
 	}
 
-	public function editRole($role = null, $data = null)
+	public function editRole($local_file = null, $data = null)
 	{
-		$entity = $this->Roles->patchEntity($role, $data);
-		if ($this->Roles->save($entity)) {
+		$entity = $this->LocalFileManagers->patchEntity($local_file, $data);
+		if ($this->LocalFileManagers->save($entity)) {
 			$http_code = 200;
 			$message = 'Success';
 			return $this->Response->Response($http_code, $message);
@@ -168,27 +168,27 @@ class RolesController extends AppController
 	{
 		if ($this->request->is(['patch', 'post', 'put'])) {
 			$request_body = $this->request->input('json_decode');
-			$role = $this->Roles->get($request_body->id);
+			$local_file = $this->LocalFileManagers->get($request_body->id);
 			$auth = $this->Auth->user();
 			$filter = $this->Response->getFilterByWebsite($auth['group_id']);
 			if (!empty($filter)) {
-				$requester_web = $this->Response->getFilterByWebsite($role->group_id);
+				$requester_web = $this->Response->getFilterByWebsite($local_file->group_id);
 				if ($this->Response->validateTheSameValue($filter['website_id'], $requester_web['website_id'])) {
-					return $this->deleteRole($role);
+					return $this->deleteRole($local_file);
 				} else {
 					$http_code = 400;
 					$message = 'Delete not success';
 					return $this->Response->Response($http_code, $message, null, null);
 				}
 			} else {
-				return $this->deleteRole($role);
+				return $this->deleteRole($local_file);
 			}
 		}
 	}
 	
-	public function deleteRole($role = null)
+	public function deleteRole($local_file = null)
 	{
-		if ($this->Roles->delete($role)) {
+		if ($this->LocalFileManagers->delete($local_file)) {
 				$http_code = 200;
 				$message = 'Success';
 				return $this->Response->Response($http_code, $message);

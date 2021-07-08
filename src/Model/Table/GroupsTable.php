@@ -25,6 +25,10 @@ class GroupsTable extends Table
 		$this->belongsTo('Websites')
 			->setForeignKey('website_id')
 			->setDependent(true);
+
+		$this->hasMany('LocalFileManagers', [
+			'foreignKey' => 'group_id',
+		]);
 	}
 
 	public function validationDefault(Validator $validator)

@@ -426,6 +426,34 @@ Router::scope('/', function (RouteBuilder $routes) {
 				'action' => 'delete'
 			]);
 	
+	// Local File Managers
+	$routes->connect('/local-file-managers',
+			[
+				'controller' => 'LocalFileManagers',
+				'action' => 'index'
+			]);
+
+	$routes->connect('/local-file-managers/add',
+			[
+				'controller' => 'LocalFileManagers',
+				'action' => 'add'
+			]);
+	$routes->connect('/local-file-managers/view',
+			[
+				'controller' => 'LocalFileManagers',
+				'action' => 'view'
+			]);
+	$routes->connect('/local-file-managers/edit',
+			[
+				'controller' => 'LocalFileManagers',
+				'action' => 'edit'
+			]);
+	$routes->connect('/local-file-managers/delete',
+			[
+				'controller' => 'LocalFileManagers',
+				'action' => 'delete'
+			]);
+
 	// Website Requests
 	$routes->connect('/websites/authorization',
 			[

@@ -4,14 +4,14 @@ use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
-class UsersTable extends Table
+class LocalFileManagersTable extends Table
 {
 
 	public function initialize(array $config)
 	{
 		parent::initialize($config);
 
-		$this->setTable('users');
+		$this->setTable('local_file_managers');
 		$this->setDisplayField('name');
 		$this->setPrimaryKey('id');
 
@@ -21,9 +21,7 @@ class UsersTable extends Table
 			'foreignKey' => 'group_id',
 			'joinType' => 'INNER',
 		]);
-
-		$this->hasOne('Tokens')
-			->setForeignKey('user_id');
+		
 	}
 
 	public function validationDefault(Validator $validator)
@@ -33,48 +31,31 @@ class UsersTable extends Table
 			->allowEmptyString('id', null, 'create');
 
 		$validator
-			->requirePresence('name')
-			->maxLength('name', 255)
-			->notEmpty('name', 'Name'.MESSAGE_REQUIRED);
+			->scalar('group_id')
+			->requirePresence('group_id')
+			->allowEmptyString('group_id');
 	
 		$validator
-			->requirePresence('email')
-			->maxLength('email', 50)
-			->notEmpty('email', 'Email'.MESSAGE_REQUIRED);
+			->requirePresence('web_url')
+			->maxLength('web_url', 255)
+			->notEmpty('web_url', 'Web Url'.MESSAGE_REQUIRED);
 
 		$validator
-			->scalar('password')
-			->maxLength('password', 255)
-			->minLength('password', 8, 'Password minimun 8 charaters')
-			->requirePresence('password', 'create')
-			->notEmpty('password', MESSAGE_REQUIRED)
-			->add('password',
-					'custom',[
-						'rule' => function ($value, $context) {
-							if (!preg_match("/[A-Z]/", $value)
-								|| !preg_match("/\W/", $value)
-								|| !preg_match("/\d/", $value)) {
-								return false;
-							}
-							return true;
-						},
-						'message' => 'The password is required to be at least 8 carats and have uppercase letters, numbers and special characters (@#$%^&*)',
-					]);
+			->requirePresence('secret_key')
+			->maxLength('secret_key', 255)
+			->notEmpty('secret_key', 'Secret Key'.MESSAGE_REQUIRED);
+	
 		$validator
 			->boolean('active')
 			->allowEmptyString('active');
-	
-		$validator
-			->requirePresence('group_id')
-			->maxLength('group_id', 255)
-			->notEmpty('group_id', 'Groups'.MESSAGE_REQUIRED);
 
 		return $validator;
 	}
 
 	public function buildRules(RulesChecker $rules)
 	{
-		$rules->add($rules->isUnique(['email']));
+		$rules->add($rules->isUnique(['web_url']));
+		$rules->add($rules->isUnique(['secret_key']));
 		$rules->add($rules->existsIn(['group_id'], 'Groups'));
 
 		return $rules;
