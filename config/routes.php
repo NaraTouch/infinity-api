@@ -262,7 +262,68 @@ Router::scope('/', function (RouteBuilder $routes) {
 				'controller' => 'PClouds',
 				'action' => 'uploadFileProgress'
 			]);
-	
+	// AWS (S3)
+	$routes->connect('/aws',
+			[
+				'controller' => 'AWS',
+				'action' => 'index'
+			]);
+	$routes->connect('/aws/add',
+			[
+				'controller' => 'AWS',
+				'action' => 'add'
+			]);
+	$routes->connect('/aws/edit',
+			[
+				'controller' => 'AWS',
+				'action' => 'edit'
+			]);
+	$routes->connect('/aws/view',
+			[
+				'controller' => 'AWS',
+				'action' => 'view'
+			]);
+	$routes->connect('/aws/accounts',
+			[
+				'controller' => 'AWS',
+				'action' => 'accounts'
+			]);
+	$routes->connect('/aws/createfolder',
+			[
+				'controller' => 'AWS',
+				'action' => 'createFolder'
+			]);
+	$routes->connect('/aws/renamefolder',
+			[
+				'controller' => 'AWS',
+				'action' => 'renameFolder'
+			]);
+	$routes->connect('/aws/deletefolder',
+			[
+				'controller' => 'AWS',
+				'action' => 'deleteFolder'
+			]);
+	$routes->connect('/aws/renamefile',
+			[
+				'controller' => 'AWS',
+				'action' => 'renameFile'
+			]);
+	$routes->connect('/aws/deletefile',
+			[
+				'controller' => 'AWS',
+				'action' => 'deleteFile'
+			]);
+	$routes->connect('/aws/uploadfile',
+			[
+				'controller' => 'AWS',
+				'action' => 'uploadFile'
+			]);
+	$routes->connect('/aws/policy',
+			[
+				'controller' => 'AWS',
+				'action' => 'uploadFileProgress'
+			]);
+
 	// Templates
 	$routes->connect('/templates',
 			[
