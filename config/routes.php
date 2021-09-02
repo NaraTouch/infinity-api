@@ -263,66 +263,83 @@ Router::scope('/', function (RouteBuilder $routes) {
 				'action' => 'uploadFileProgress'
 			]);
 	// AWS (S3)
-	$routes->connect('/aws',
-			[
-				'controller' => 'AWS',
-				'action' => 'index'
-			]);
-	$routes->connect('/aws/add',
-			[
-				'controller' => 'AWS',
-				'action' => 'add'
-			]);
-	$routes->connect('/aws/edit',
-			[
-				'controller' => 'AWS',
-				'action' => 'edit'
-			]);
-	$routes->connect('/aws/view',
-			[
-				'controller' => 'AWS',
-				'action' => 'view'
-			]);
-	$routes->connect('/aws/accounts',
-			[
-				'controller' => 'AWS',
-				'action' => 'accounts'
-			]);
-	$routes->connect('/aws/createfolder',
-			[
-				'controller' => 'AWS',
-				'action' => 'createFolder'
-			]);
-	$routes->connect('/aws/renamefolder',
-			[
-				'controller' => 'AWS',
-				'action' => 'renameFolder'
-			]);
-	$routes->connect('/aws/deletefolder',
-			[
-				'controller' => 'AWS',
-				'action' => 'deleteFolder'
-			]);
-	$routes->connect('/aws/renamefile',
-			[
-				'controller' => 'AWS',
-				'action' => 'renameFile'
-			]);
-	$routes->connect('/aws/deletefile',
-			[
-				'controller' => 'AWS',
-				'action' => 'deleteFile'
-			]);
-	$routes->connect('/aws/uploadfile',
-			[
-				'controller' => 'AWS',
-				'action' => 'uploadFile'
-			]);
-	$routes->connect('/aws/policy',
-			[
-				'controller' => 'AWS',
-				'action' => 'uploadFileProgress'
-			]);
+	// AWS Objects  (S3)
+	$routes->connect('/listobjects',
+		[
+			'controller' => 'AWS',
+			'action' => 'listObjects'
+		]);
+	$routes->connect('/getobject',
+		[
+			'controller' => 'AWS',
+			'action' => 'getObject'
+		]);
+	$routes->connect('/deleteobject',
+	   [
+		   'controller' => 'AWS',
+		   'action' => 'deleteObject'
+	   ]);
+	$routes->connect('/putobject',
+	   [
+		   'controller' => 'AWS',
+		   'action' => 'putObject'
+	   ]);
+	$routes->connect('/getobjectacl',
+	   [
+		   'controller' => 'AWS',
+		   'action' => 'getObjectAcl'
+	   ]);
+	$routes->connect('/getobjecturl',
+	[
+		'controller' => 'AWS',
+		'action' => 'getObjectUrl '
+	]);
+	// AWS Buckets  (S3)
+	$routes->connect('/listbuckets',
+		[
+			'controller' => 'AWS',
+			'action' => 'listBuckets'
+		]);
+	$routes->connect('/deletebucket',
+		[
+			'controller' => 'AWS',
+			'action' => 'deleteBucket'
+		]);
+	$routes->connect('/createbucket',
+		[
+			'controller' => 'AWS',
+			'action' => 'createBucket'
+		]);
+	$routes->connect('/getbucketpolicy',
+		[
+			'controller' => 'AWS',
+			'action' => 'getBucketPolicy'
+		]);
+	$routes->connect('/putbucketpolicy',
+		[
+			'controller' => 'AWS',
+			'action' => 'putBucketPolicy'
+		]);
+	$routes->connect('/deletebucketpolicy',
+		[
+			'controller' => 'AWS',
+			'action' => 'deleteBucketPolicy'
+		]);
+	$routes->connect('/getacl',
+	[
+		'controller' => 'AWS',
+		'action' => 'getACL'
+	]);
+	$routes->connect('/getstorageclass',
+		[
+			'controller' => 'AWS',
+			'action' => 'getStorageClass'
+		]);
+	$routes->connect('/getlocationconstraint',
+		[
+			'controller' => 'AWS',
+			'action' => 'getLocationConstraint'
+		]);
 
 	// Templates
 	$routes->connect('/templates',
